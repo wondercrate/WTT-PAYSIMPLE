@@ -1,0 +1,19 @@
+{
+  "name": "WTT-PAYSIMPLE",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^3.3.7",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "fs-extra": "^3.0.1",
+    "jquery": "^3.2.1",
+    "mongoose": "^4.10.8",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
