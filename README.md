@@ -29,6 +29,7 @@ ZOHO CREATOR:
 //////////////////////////////////////////
 MAIN TASKS | OBJECTIVES	
 //////////////////////////////////////////
+
 1.) On form submission, create customer object within PaySimple, as well as a new record within Zoho Creator.
 2.) Embed PaySimple payment form Iframe on the client side -(if doable without the Iframe that would be preferable).
 3.) When the client makes a payment, ensure that the amountDue is being updated in PaySimple, Zoho Creator, and also the User model.
