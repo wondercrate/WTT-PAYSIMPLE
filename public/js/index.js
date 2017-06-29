@@ -384,12 +384,25 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		}; 
 		
 
+		$scope.getCost = function() {
+			function getTheCost() {
+				for(var i = 0; i < getTheProgram().length; i++) {
+					if(getTheProgram()[i].name == $scope.programs.selected) {
+						return getTheProgram()[i].price;
+					};
+				};
+			};
+			$scope.user.cost = getTheCost();
+		}
+		$scope.isSelected = function() {
+			return $scope.programs.selected !== undefined;
+		}
 
 
 
 
 
-		
+		/*
 		$scope.createUser = function() {
 			function getCost() {
 				for(var i = 0; i < getTheProgram().length; i++) {
@@ -421,6 +434,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 				console.log(response.data);
 			});
 		};
+		*/
 		
 
 

@@ -70,12 +70,6 @@ app.get('/api/me', function(req, res){
 /*******************************
 AUTHENTICATION & REDIRECT 
 *******************************/
-app.use(function(req, res, next) {
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader('Access-Control-Allow-Methods', 'POST', 'GET', 'PATCH', 'DELETE');
-	res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	next();
-})
 app.use(passportConfig.ensureAuthenticated);
 app.get('/', function(req, res){
   res.sendFile('/html/user.html', {root : './public'});

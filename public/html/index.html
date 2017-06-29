@@ -16,6 +16,7 @@
 	</head>
 	<body ng-controller="mainController">
 		<div class="container">
+			<a data-toggle="modal" data-target="#loginModal" style="float: right; margin-top: 15px; font-size: 16px;">login</a>
 			<div class="form-con clearfix">
 				<h1>WTT | PAYSIMPLE</h1>
 				<form class="clearfix" name="wtt-enroll-form" action="/auth/signup" method="post" novalidate>
@@ -71,30 +72,37 @@
 						<div class="group">
 							<select class="form-input select" ng-model="programs.selected" name="program" required>
 							  	<option value="" selected data-default id="select-default"></option>
-							  	<option ng-repeat="program in belizePrograms" ng-if="belize()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in canadaPrograms" ng-if="canada()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in chinaPrograms" ng-if="china()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in costaRicaPrograms" ng-if="costaRica()" ng-selected="getCost(program)" value="{{program.name}}">{{program.name}}</option>
-								<option ng-repeat="program in francePrograms" ng-if="france()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in guatemalaPrograms" ng-if="guatemala()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in peruPrograms" ng-if="peru()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in senegalPrograms" ng-if="senegal()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in spainPrograms" ng-if="spain()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in spainToMoroccoPrograms" ng-if="spainToMorocco()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in thailandPrograms" ng-if="thailand()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in italyPrograms" ng-if="italy()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in ecuadorPrograms" ng-if="ecuador()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in panamaPrograms" ng-if="panama()">{{program.name}}</option>
-								<option ng-repeat="program in southAfricaPrograms" ng-if="southAfrica()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in cubaPrograms" ng-if="cuba()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in usaPrograms" ng-if="usa()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in bhutanPrograms" ng-if="bhutan()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in australiaPrograms" ng-if="australia()" ng-selected="getCost(program)">{{program.name}}</option>
-								<option ng-repeat="program in japanPrograms" ng-if="japan()" ng-selected="getCost(program)">{{program.name}}</option>
+							  	<option ng-repeat="program in belizePrograms" ng-if="belize()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in canadaPrograms" ng-if="canada()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in chinaPrograms" ng-if="china()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in costaRicaPrograms" ng-if="costaRica()" ng-selected="getCost()" value="{{program.name}}">{{program.name}}</option>
+								<option ng-repeat="program in francePrograms" ng-if="france()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in guatemalaPrograms" ng-if="guatemala()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in peruPrograms" ng-if="peru()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in senegalPrograms" ng-if="senegal()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in spainPrograms" ng-if="spain()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in spainToMoroccoPrograms" ng-if="spainToMorocco()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in thailandPrograms" ng-if="thailand()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in italyPrograms" ng-if="italy()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in ecuadorPrograms" ng-if="ecuador()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in panamaPrograms" ng-if="panama()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in southAfricaPrograms" ng-if="southAfrica()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in cubaPrograms" ng-if="cuba()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in usaPrograms" ng-if="usa()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in bhutanPrograms" ng-if="bhutan()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in australiaPrograms" ng-if="australia()" ng-selected="getCost()">{{program.name}}</option>
+								<option ng-repeat="program in japanPrograms" ng-if="japan()" ng-selected="getCost()">{{program.name}}</option>
 						  	</select>
 					  		<span class="highlight"></span>
 							<span class="bar"></span>
 							<label>Select your Program</label>
+						</div>
+					</div>
+					<div class="input-con one clearfix" ng-show="isSelected()" style="display: none;">
+						<div class="group">      
+							<input type="email" class="form-input" name="amountDue" ng-model="user.cost" required/>
+							<span class="highlight"></span>
+							<span class="bar"></span>
 						</div>
 					</div>
 					<div class="input-con two clearfix">
@@ -115,10 +123,46 @@
 							</div>
 						</div>
 					</div>
-					<button class="btn btn-default" ng-click="createUser()" type="submit">Create Account</button>
+					<button class="btn btn-default" type="submit">Create Account</button>
 				</form>
 			</div>
 		</div>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+      	<form name="loginForm" action="/auth/login" method="post" novalidate>
+        <div class="input-con two clearfix">
+			<div class="input-con-inner clearfix">
+				<div class="group">      
+					<input type="email" class="form-input" name="email" required/>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Email</label>
+				</div>
+			</div>
+			<div class="input-con-inner clearfix">
+				<div class="group">      
+					<input type="password" class="form-input" name="password" required/>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Password</label>
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-default" type="submit">Login</button>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 	</body>
 </html>
 

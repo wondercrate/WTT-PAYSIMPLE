@@ -38,11 +38,7 @@ var authController = {
 					return res.send({error: 'An error occured, please try again.'})
 				}
 			}
-			//performLogin(req, res, next, user);
-			if(user) {
-				res.json(user);
-				return res.redirect('/');
-			}
+			performLogin(req, res, next, user);
 		});
 	},
 	logout: function(req, res) {
