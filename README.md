@@ -3,7 +3,7 @@ LIVE SITE: http://138.197.44.123:3000
 
 //////////////////////////////////////////
 
-LOGINS | CREDENTIALS
+LOGINS | CREDENTIALS | ASSETS
 
 //////////////////////////////////////////
 
@@ -43,8 +43,11 @@ ZOHO CREATOR:
 
 	-Password : C@lorado34*7
 
+PAYSIMPLE/NODE INTEGRATION REFERENCE CODE REPOSITORIES:
 
+	- https://github.com/ruffrey/node-paysimple
 
+	- https://github.com/rbaindourov/paysimple-node
 
 //////////////////////////////////////////
 
