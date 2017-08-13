@@ -5,6 +5,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
+var config = require("./config");
+var paymentController = require("./controllers/paymentController");
+var userController = require("./controllers/userController");
 
 /*******************************
 EXPRESS 
@@ -16,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 DB 
 *******************************/
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/wtt-paysimple');
+mongoose.connect(config.MONGODB_CONNECTION_STRING);
 
 /*******************************
 PASSPORT
@@ -75,12 +78,15 @@ app.get('/', function(req, res){
   res.sendFile('/html/user.html', {root : './public'});
 });
 
+app.use("/api/payment", paymentController.router);
+app.use("/api/user", userController.router);
+
 /*******************************
 SERVER
 *******************************/
-var port = 3000
-app.listen(port, function(){
-  console.log('Server running on port ' + port);
+
+app.listen(config.PORT, function(){
+  console.log('Server running on port ' + config.PORT);
 });
 
 
