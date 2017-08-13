@@ -11,10 +11,201 @@
 		<link type="text/css" rel="stylesheet" href="../css/user.css"/>
 		<!-- ANGULAR -->
 		<script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
+		<!--STRIPE-->
+		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 		<!-- INDEX.JS -->
 		<script type="text/javascript" src="../js/user.js"></script>
+		<!--ANGULAR PAYMENT-->
+		 <script data-require="angular-credit-cards@*" data-semver="3.0.1" src="https://rawgit.com/bendrucker/angular-credit-cards/v3.0.1/release/angular-credit-cards.js"></script>
 	</head>
 	<body ng-controller="mainController">
-		<h1>hello</h1>
+
+		<div class="col-md-6">
+			<h3>PAYMENT FORM</h3>
+		<form name="orderForm">
+			<h4>Order Information</h4>
+			<div  class="form-group col-md-12">
+				<label for="first-name">First Name</label>
+				<input ng-class="{ 'danger': orderForm.firstname.$invalid && orderForm.firstname.$touched}" ng-model="order.FirstName" name="firstname" class="form-control" type="text" ng-required="true">
+			</div>
+			<div class="form-group col-md-12">
+				<label for="last-name">Last name</label>
+				<input ng-class="{ 'danger': orderForm.lastname.$invalid && orderForm.lastname.$touched}" ng-model="order.LastName" name="lastname" class="form-control" type="text" ng-required="true">
+			</div>
+			<h4>Payment Information</h4>
+			<div class="form-group col-md-12">
+				<label for="payment_amount">Payment amount</label>
+				<input ng-model="order.amountDue" ng-disabled="true" name="payment_amount" class="form-control" type="text" ng-required="true">
+			</div>
+			<h4>Choose Payment Type:</h4>
+			<div class="form-group col-md-12">
+				<label for="card_number">Card number</label>
+				<!--<input type="card_number" ng-model="card.number" cc-number cc-type="cardType" ng-required="true" />-->
+				<input ng-class="{ 'danger': orderForm.card_number.$invalid && orderForm.card_number.$touched}" type="text" class="form-control" id="cardNumber" cc-number cc-eager-type name="card_number" ng-model="CreditCardNumber"
+					ng-required="true">
+
+			</div>
+			<div class="form-group col-md-12">
+				<label for="card_number">CVV2 Code</label>
+				<input ng-class="{ 'danger': orderForm.ccCvc.$invalid && orderForm.ccCvc.$touched}" type="text" class="form-control" id="cvc" cc-cvc cc-type="ccForm.ccNumber.$ccType" name="ccCvc" ng-model="CVV" ng-required="true">
+			</div>
+			<div class="form-group col-md-12">
+				<label  for="card_number">Expiration Date</label>
+				<select ng-model="expirationMonth" name="expirationMonth" id="">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
+				<select ng-model="expirationYear"  name="expirationYear" id="">
+					<option value="2017">2017</option>
+					<option value="2018">2018</option>
+					<option value="2019">2019</option>
+					<option value="2020">2020</option>
+					<option value="2021">2021</option>
+					<option value="2022">2022</option>
+					<option value="2023">2023</option>
+					<option value="2024">2024</option>
+					<option value="2025">2025</option>
+					<option value="2026">2026</option>
+					<option value="2027">2027</option>
+					<option value="2028">2028</option>
+					<option value="2029">2029</option>
+					<option value="2030">2030</option>
+					<option value="2031">2031</option>
+					<option value="2032">2032</option>
+				</select>		
+			</div>
+			<h4>Billing Address</h4>
+			<div class="form-group col-md-12">
+				<label for="address1">Address 1</label>
+				<input ng-class="{ 'danger': orderForm.address1.$invalid && orderForm.address1.$touched}" ng-model="order.BillingAddress.StreetAddress1" name="address1" class="form-control" type="text" ng-required="true">
+			</div>
+			<div class="form-group col-md-12">
+				<label for="City">City</label>
+				<input ng-class="{ 'danger': orderForm.City.$invalid && orderForm.City.$touched}" ng-model="order.BillingAddress.City" name="City" class="form-control" type="text" ng-required="true">
+			</div>
+			<div class="form-group col-md-12">
+				<label for="Country">Country</label>
+				<select ng-model="order.BillingAddress.Country" name="Country" ng-change="changeCountry()">
+					<option value="USA">USA</option>
+					<option value="Canada">Canada</option>	
+				</select>
+			</div>
+			<div class="form-group col-md-12">
+				<label for="state">State</label>
+				<select ng-model="order.BillingAddress.StateCode" name="state" ng-if="order.BillingAddress.Country=='Canada'">
+					<option value="AB">AB</option>
+					<option value="BC">BC</option>
+					<option value="MB">MB</option>
+					<option value="NB">NB</option>
+					<option value="NL">NL</option>
+					<option value="NT">NT</option>
+					<option value="NS">NS</option>
+					<option value="NU">NU</option>
+					<option value="ON">ON</option>
+					<option value="PE">PE</option>
+					<option value="QC">QC</option>
+					<option value="SK">SK</option>
+					<option value="YT">YT</option>
+				</select>
+				<select ng-model="order.BillingAddress.StateCode" name="state" ng-if="order.BillingAddress.Country=='USA'">
+					<option value="AK">AK</option>
+					<option value="AL">AL</option>
+					<option value="AR">AR</option>
+					<option value="AZ">AZ</option>
+					<option value="CA">CA</option>
+					<option value="CO">CO</option>
+					<option value="CT">CT</option>
+					<option value="DC">DC</option>
+					<option value="DE">DE</option>
+					<option value="FL">FL</option>
+					<option value="GA">GA</option>
+					<option value="HI">HI</option>
+					<option value="IA">IA</option>
+					<option value="ID">ID</option>
+					<option value="IL">IL</option>
+					<option value="IN">IN</option>
+					<option value="KS">KS</option>
+					<option value="KY">KY</option>
+					<option value="LA">LA</option>
+					<option value="MA">MA</option>
+					<option value="MD">MD</option>
+					<option value="ME">ME</option>
+					<option value="MI">MI</option>
+					<option value="MN">MN</option>
+					<option value="MO">MO</option>
+					<option value="MS">MS</option>
+					<option value="MT">MT</option>
+					<option value="NC">NC</option>
+					<option value="ND">ND</option>
+					<option value="NE">NE</option>
+					<option value="NH">NH</option>
+					<option value="NJ">NJ</option>
+					<option value="NM">NM</option>
+					<option value="NV">NV</option>
+					<option value="NY">NY</option>
+					<option value="OH">OH</option>
+					<option value="OK">OK</option>
+					<option value="OR">OR</option>
+					<option value="PA">PA</option>
+					<option value="RI">RI</option>
+					<option value="SC">SC</option>
+					<option value="SD">SD</option>
+					<option value="TN">TN</option>
+					<option value="TX">TX</option>
+					<option value="UT">UT</option>
+					<option value="VA">VA</option>
+					<option value="VT">VT</option>
+					<option value="WA">WA</option>
+					<option value="WI">WI</option>
+					<option value="WV">WV</option>
+					<option value="WY">WY</option>
+					<option value="PR">PR</option>
+					<option value="MP">MP</option>
+					<option value="GU">GU</option>
+					<option value="VI">VI</option>
+					<option value="MH">MH</option>
+					<option value="AS">AS</option>
+					<option value="AE">AE</option>
+					<option value="PW">PW</option>
+					<option value="AP">AP</option>
+					<option value="FM">FM</option>
+					<option value="AA">AA</option>
+				</select>
+			</div>
+			<div class="form-group col-md-12">
+				<label for="zip">ZIP/Postal Code</label>
+				<input ng-class="{ 'danger': orderForm.zip.$invalid && orderForm.zip.$touched}" ng-model="order.BillingAddress.ZipCode" name="zip"class="form-control" type="text" ng-required="true">
+			</div>
+			<div class="form-group col-md-12 ">
+				<button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="submit()">PAY</button>
+			</div>
+			<span ng-if="succsesMessage">
+				Succsess Payment
+			</span>
+		</form>
+	
+		</div>
+		<!--<div>
+			<iframe frameborder="0" style="overflow: hidden; height: 100%;
+        width: 100%; position: absolute;" height="100%" width="100%" frameborder="0" src="https://sandbox-payments.paysimple.com/buyer/checkoutformpay/7NNi8W85qISUCY-RGVPUjNRTr-g-" seamless></iframe>
+		</div>-->
+		<!--<div style="width:100%;text-align:center">
+			<input name="" type="button" value="Pay" style="color:#808080;background-color:#FFFFFF;font-family:Arial;font-size:px;" 
+			onclick="window.open('https://sandbox-payments.paysimple.com/Login/CheckOutFormLogin/7NNi8W85qISUCY-RGVPUjNRTr-g-')">
+			<a href="http://www.paysimple.com/security.html" style="display:block;font-size:8px;color:#999;margin:4px 0 0 0;">
+			Secure Payments</a>
+		</div>-->
+		<!--<button ng-click="checkform()">sad</button>-->
+		
 	</body>
 </html>
