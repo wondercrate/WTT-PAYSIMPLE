@@ -1,0 +1,19 @@
+{
+  "name": "wtt-paysimple",
+  "script": "./server.js",
+  "exec_mode": "fork_mode",
+  "ignoreWatch": [
+    "node_modules",
+    "test"
+  ],
+  "node_args": "--max_old_space_size=80 --max_semi_space_size=8",
+  "max_memory_restart" : "120M",
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "error_file": "/var/log/wtt-paysimple/wtt-paysimple.log",
+  "out_file": "/var/log/wtt-paysimple/wtt-paysimple.log",
+  "merge_logs" : true,
+  "pid_file": "/var/run/wtt-paysimple.pid",
+  "env":{
+    //"DEBUG":"pay"
+  }
+}

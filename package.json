@@ -22,7 +22,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "paysimple": "git+https://github.com/ruffrey/node-paysimple.git",
+    "paysimple": "git+https://github.com/superiority/node-paysimple.git",
     "uuid": "^3.1.0"
   }
 }

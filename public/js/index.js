@@ -6,14 +6,14 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
     	$scope.user = {};
 		$scope.programs = {};
 		$scope.destination = {};
-		$scope.paymentForUrl =  $sce.trustAsResourceUrl("https://sandbox-payments.paysimple.com/buyer/checkoutformpay/7NNi8W85qISUCY-RGVPUjNRTr-g-");
+		//$scope.paymentForUrl =  $sce.trustAsResourceUrl("https://sandbox-payments.paysimple.com/buyer/checkoutformpay/7NNi8W85qISUCY-RGVPUjNRTr-g-");
 		$scope.destinationSelected = function() {
 			return $scope.destination.selected !== undefined;
 		}
 		$scope.belizePrograms = [
 			{
 				name: '2017 Belize 10 Day Marine Conservation Expedition',
-				price: '3,206'
+				price: '3206'
 			}
 		];
 		$scope.belize = function() {
@@ -22,7 +22,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.canadaPrograms = [
 			{
 				name: '2017 Canada 10 Day Cultural Journey',
-				price: '2,113'
+				price: '2113'
 			}
 		];
 		$scope.canada = function() {
@@ -31,15 +31,15 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.chinaPrograms = [
 			{
 				name: '2017 China 15 Day Panda Expedition',
-				price: '1,035'
+				price: '1035'
 			},
 			{
 				name: '2017 China 15 Day Cultural Journey: East China',
-				price: '2,572'
+				price: '2572'
 			},
 			{
 				name: '2017 China 15 Day Cultural Journey: Trekking',
-				price: '3,004'
+				price: '3004'
 			}
 		];
 		$scope.china = function() {
@@ -48,27 +48,27 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.costaRicaPrograms = [
 			{
 				name: '2017 Costa Rica 10 Day Osa Wildlife Conservation Expedition',
-				price: '1,910'
+				price: '1910'
 			},
 			{
 				name: '2017 Costa Rica 15 Day Sea Turtle Conservation Expedition',
-				price: '2,444'
+				price: '2444'
 			},
 			{
 				name: '2017 Costa Rica 10 Day Surf and Service Program',
-				price: '2,133'
+				price: '2133'
 			},
 			{
 				name: '2017 Costa Rica 10 Day Service Adventure',
-				price: '1,607'
+				price: '1607'
 			},
 			{
 				name: '2017 Costa Rica 15 Day Service Adventure',
-				price: '1,971'
+				price: '1971'
 			},
 			{
 				name: '2017 Costa Rica 21 Day Service Adventure',
-				price: '2,646'
+				price: '2646'
 			},
 			{
 				name: '2017 Costa Rica 30 Day Service Adventure',
@@ -81,11 +81,11 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.francePrograms = [
 			{
 				name: '2017 France 10 Day Cultural Journey',
-				price: '2,315'
+				price: '2315'
 			},
 			{
 				name: '2017 France 15 Day Cultural Journey',
-				price: '3,422'
+				price: '3422'
 			}
 		];
 		$scope.france = function() {
@@ -94,19 +94,19 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.guatemalaPrograms = [
 			{
 				name: '2017 Guatemala 10 Day Service Adventure',
-				price: '1,715'
+				price: '1715'
 			},
 			{
 				name: '2017 Guatemala 15 Day Service Adventure',
-				price: '2,614'
+				price: '2614'
 			},
 			{
 				name: '2017 Guatemala 21 Day Service Adventure',
-				price: '3,112'
+				price: '3112'
 			},
 			{
 				name: '12-Day Guatemala Environmental Leadership Course',
-				price: '2,761'
+				price: '2761'
 			}
 		];
 		$scope.guatemala = function() {
@@ -115,15 +115,15 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.peruPrograms = [
 			{
 				name: '2017 Peru 15 Day Service Adventure',
-				price: '3,794'
+				price: '3794'
 			},
 			{
 				name: '2017 Peru 21 Day Service Adventure',
-				price: '3,814'
+				price: '3814'
 			},
 			{
 				name: '2017 Peru 30 Day Service Adventure',
-				price: '4,307'
+				price: '4307'
 			},
 						{
 				name: '15-Day Amazon to Andes Expedition: Ocelots',
@@ -136,11 +136,11 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.senegalPrograms = [
 			{
 				name: '2017 Senegal 15 Day Service Adventure ',
-				price: '4,050'
+				price: '4050'
 			},
 			{
 				name: '2017 Senegal 21 Day Service Adventure ',
-				price: '4,226'
+				price: '4226'
 			}
 		];
 		$scope.senegal = function() {
@@ -149,7 +149,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.spainPrograms = [
 			{
 				name: '2017 Spain North 15 Day Cultural Journey',
-				price: '3,949'
+				price: '3949'
 			}
 		];
 		$scope.spain = function() {
@@ -158,7 +158,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.spainToMoroccoPrograms = [
 			{
 				name: '2017 Spain/Morocco 15 Day Cultural Journey',
-				price: '4,111'
+				price: '4111'
 			}
 		];
 		$scope.spainToMorocco = function() {
@@ -167,11 +167,11 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.thailandPrograms = [
 			{
 				name: '2017 Thailand 15 Day Elephant Expedition',
-				price: '2,876'
+				price: '2876'
 			},
 			{
 				name: '2017 Thailand 21 Day Elephant Expedition',
-				price: '3,746'
+				price: '3746'
 			}
 		];
 		$scope.thailand = function() {
@@ -189,7 +189,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.ecuadorPrograms = [
 			{
 				name: '11-Day Galapagos Wildlife Expedition',
-				price: '4,965'
+				price: '4965'
 			}
 		];
 		$scope.ecuador = function() {
@@ -234,7 +234,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.bhutanPrograms = [
 			{
 				name: 'Land of the Thunder Dragon',
-				price: '8,060'
+				price: '8060'
 			}
 		];
 		$scope.bhutan = function() {

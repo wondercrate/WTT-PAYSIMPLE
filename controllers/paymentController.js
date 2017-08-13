@@ -25,11 +25,15 @@ function processTransaction(req, res, next){
             Email: req.body.Email,
             ShippingSameAsBilling: true
         };
-
-        let CustomerId = (yield createCustomer(customer)).Id;
-
-        if (!CustomerId)
-            throw new Error("Can't create customer!");
+        try {
+            var r1 = (yield createCustomer(customer));
+            var CustomerId = r1.Response.Id;
+            if (!CustomerId) throw new Error();
+        } catch (e){
+            let e = new Error("Can't create customer!");
+            e.info = r1;
+            throw e;
+        }
 
         let creditCard = {
             CreditCardNumber: req.body.CreditCardNumber,
@@ -39,10 +43,15 @@ function processTransaction(req, res, next){
             CustomerId: CustomerId
         };
 
-        let creditCardId = (yield addCreditCard(creditCard)).Id;
-
-        if (!creditCardId)
-            throw new Error("Can't create credit card!");
+        try {
+            var r2 = (yield addCreditCard(creditCard));
+            var creditCardId = r2.Response.Id;
+            if (!creditCardId) throw new Error();
+        } catch (e){
+            let e = new Error("Can't create credit card!");
+            e.info = r2;
+            throw e;
+        }
 
         let payment = {
             AccountId: creditCardId,
@@ -52,9 +61,12 @@ function processTransaction(req, res, next){
             SendToCustomer: true
         };
 
-        let paymentResponse = yield createPayment(payment);
-
-        if (paymentResponse.Status == 3 || paymentResponse.Status == "Failed"){
+        try {
+            var paymentResponse = (yield createPayment(payment)).Response;
+            if (paymentResponse.Status == 3 || paymentResponse.Status == "Failed") {
+                throw new Error();
+            }
+        } catch (e){
             let e = new Error("Cant process payment.");
             e.info = paymentResponse;
             throw e;
