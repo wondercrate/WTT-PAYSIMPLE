@@ -2,6 +2,7 @@
 
 module.exports = {
     PORT: 3000,
+    PASSWORD_RESET_LINK: "http://138.197.44.123:3000/reset-password",
     HOST: "localhost:3000",
     TOKEN_EXPIRATION_TIME: 1000 * 60 * 60 * 24,
     PROTOCOL: process.env.PROTOCOL || "http",

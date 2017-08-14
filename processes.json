@@ -6,6 +6,7 @@
     "node_modules",
     "test"
   ],
+  "cwd":"/root/WTT-PAYSIMPLE/",
   "node_args": "--max_old_space_size=80 --max_semi_space_size=8",
   "max_memory_restart" : "120M",
   "log_date_format": "YYYY-MM-DD HH:mm Z",

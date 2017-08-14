@@ -11,8 +11,11 @@ var userSchema = mongoose.Schema({
 	info: {
 		passwordResetToken:{type: String},
 		tokenExpireAt: {type:Date}
+	},
+	paysimpleInfo: {
+		CustomerId: {type: String}
 	}
-	
+
 });
 userSchema.pre('save', function(next) {
 	if(!this.isModified('password')) return next();

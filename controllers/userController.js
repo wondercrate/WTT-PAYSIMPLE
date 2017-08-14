@@ -66,5 +66,7 @@ function resetPassword(req, res, next){
 
 module.exports = {
     router: userRouter,
-    updateUser: updateUser
+    updateUser: updateUser,
+    resetPassword: resetPassword,
+    resetPasswordRequest: resetPasswordRequest
 };

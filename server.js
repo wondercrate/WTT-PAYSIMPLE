@@ -62,16 +62,19 @@ AUTH ROUTES
 app.get('/auth/login', authController.login);
 app.post('/auth/login', authController.processLogin);
 app.post('/auth/signup', authController.processSignup);
-app.use("/api/user", userController.router);
+
+app.post("/api/user/reset-password-request", userController.resetPasswordRequest);
+app.post("/api/user/reset-password", userController.resetPassword);
 /*******************************
 GET USER ROUTE
 *******************************/
 app.get('/api/me', function(req, res){
 	res.send(req.user);
 });
+
 app.get('/reset-password',function(req,res){
 	res.sendFile('/html/reset-password.html', {root : './public'});
-})
+});
 /*******************************
 AUTHENTICATION & REDIRECT 
 *******************************/
