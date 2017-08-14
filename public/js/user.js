@@ -45,7 +45,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
         $scope.failMes = false;
         $scope.succsesMessage = {
           id: res.data.Id,
-          description: res.data.description,
+          Description: res.data.Description,
           accountId: res.data.AccountId,
           CustomerFirstName: res.data.CustomerFirstName,
           CustomerLastName: res.data.CustomerLastName ,
@@ -54,11 +54,11 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
           Status:  res.data.Status,
           TraceNumber: res.data.TraceNumber,
         };
-        
       }).catch(function(e){
+
         $scope.failMes = true;
          $scope.succseMes = false;
-        $scope.failMessage = e;
+        $scope.failMessage = e.data;
       })
     }
 

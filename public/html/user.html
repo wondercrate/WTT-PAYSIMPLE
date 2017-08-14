@@ -189,8 +189,11 @@
 			<div class="form-group col-md-12 ">
 				<button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="submit()">PAY</button>
 			</div>
-			<span class="fail-text"  ng-if="failMes">Error while making a payment</span>
-			<span class="success-text" ng-if="succseMes">Success payment with data: {{succsesMessage | json}}</span>
+			<span class="fail-text"  ng-if="failMes">{{failMessage}}</span>
+			<span class="success-text" ng-if="succseMes">Success payment with data:</span>
+			<ul ng-if="succseMes">
+				<li ng-repeat="(key, value) in succsesMessage">{{key}}: {{value}}</li>
+			</ul>
 
 		</form>
 	
