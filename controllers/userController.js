@@ -52,11 +52,11 @@ function resetPassword(req, res, next){
     return co(function*(){
         let user = yield getUserByEmail(req.body.email);
         if (!user) return res.sendStatus(404);
-
-        if (user.info && user.info.passwordResetToken  == req.body.token && user.info.tokenExpireAt < Date.now()){
+        
+        if (user.info && user.info.passwordResetToken  == req.body.token && user.info.tokenExpireAt > Date.now()){
             delete user.info.passwordResetToken;
             delete user.info.tokenExpireAt;
-            user.password = req.newpw;
+            user.password = req.body.newpw;
             user.save();
             return res.sendStatus(200);
         }

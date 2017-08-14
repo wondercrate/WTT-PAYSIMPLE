@@ -30,7 +30,7 @@ function processTransaction(req, res, next){
             var CustomerId = r1.Response.Id;
             if (!CustomerId) throw new Error();
         } catch (e){
-            let e = new Error("Can't create customer!");
+            e = new Error("Can't create customer!");
             e.info = r1;
             throw e;
         }
@@ -48,7 +48,7 @@ function processTransaction(req, res, next){
             var creditCardId = r2.Response.Id;
             if (!creditCardId) throw new Error();
         } catch (e){
-            let e = new Error("Can't create credit card!");
+            e = new Error("Can't create credit card!");
             e.info = r2;
             throw e;
         }
@@ -67,7 +67,7 @@ function processTransaction(req, res, next){
                 throw new Error();
             }
         } catch (e){
-            let e = new Error("Cant process payment.");
+            e = new Error("Cant process payment.");
             e.info = paymentResponse;
             throw e;
         }

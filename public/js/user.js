@@ -22,7 +22,6 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
       },
     }
     $http.get('/api/me').then(function(res){
-      console.log(res.data);
       $scope.order.FirstName = res.data.firstName;
       $scope.order.LastName = res.data.lastName;
        $scope.order.amountDue = res.data.amountDue;
@@ -40,11 +39,27 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
       $scope.order.ExpirationDate = $scope.expirationMonth + '/'+ $scope.expirationYear;
       $scope.order.CreditCardNumber = $scope.CreditCardNumber;
       $scope.order.CVV = $scope.CVV;
-      $http.post('/api/payment/process-transaction', $scope.order).then(function(res){
-        console.log('res');
-        $scope.succsesMessage = true;
+      $http.post('/api/payment/process-transaction', $scope.order)
+      .then(function(res){
+        $scope.succseMes = true;
+        $scope.failMes = false;
+        $scope.succsesMessage = {
+          id: res.data.Id,
+          description: res.data.description,
+          accountId: res.data.AccountId,
+          CustomerFirstName: res.data.CustomerFirstName,
+          CustomerLastName: res.data.CustomerLastName ,
+          CustomerId: res.data.CustomerId,
+          PaymentDate: res.data.PaymentDate,
+          Status:  res.data.Status,
+          TraceNumber: res.data.TraceNumber,
+        };
+        
+      }).catch(function(e){
+        $scope.failMes = true;
+         $scope.succseMes = false;
+        $scope.failMessage = e;
       })
-      console.log($scope.order);
     }
 
     $scope.changeCountry = function(){

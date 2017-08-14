@@ -3,8 +3,9 @@ angular.module('wtt-paysimple', []);
 angular.module('wtt-paysimple');
 angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http', function($scope, $http) {
     console.log("hello from pass.js");
-    console.log('sadBoy');
-    
+
+    $scope.succsessMes = false;
+    $scope.failMes = false;
     $scope.resetPassword = function(){
         var paramsObject = {};
         window.location.search.replace(/\?/,'').split('&').map(function(o){ paramsObject[o.split('=')[0]]= o.split('=')[1]});
@@ -15,7 +16,8 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
         }
         console.log(postObj);
         $http.post('/api/user/reset-password', postObj).then(function(res){
-            console.log(res);
+            if(res.status === 200) $scope.succsessMes  = true;
+            else $scope.failMes = true;
         })
         }
   	}]);

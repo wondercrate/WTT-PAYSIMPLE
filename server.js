@@ -62,14 +62,16 @@ AUTH ROUTES
 app.get('/auth/login', authController.login);
 app.post('/auth/login', authController.processLogin);
 app.post('/auth/signup', authController.processSignup);
-
+app.use("/api/user", userController.router);
 /*******************************
 GET USER ROUTE
 *******************************/
 app.get('/api/me', function(req, res){
 	res.send(req.user);
 });
-
+app.get('/reset-password',function(req,res){
+	res.sendFile('/html/reset-password.html', {root : './public'});
+})
 /*******************************
 AUTHENTICATION & REDIRECT 
 *******************************/
@@ -79,7 +81,7 @@ app.get('/', function(req, res){
 });
 
 app.use("/api/payment", paymentController.router);
-app.use("/api/user", userController.router);
+
 
 /*******************************
 SERVER

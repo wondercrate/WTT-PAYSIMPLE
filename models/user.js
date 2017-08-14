@@ -7,7 +7,11 @@ var userSchema = mongoose.Schema({
 	program   : { type: String },
 	amountDue : { type: String },
 	email     : { type: String },
-	password  : { type: String }
+	password  : { type: String },
+	info: {
+		passwordResetToken:{type: String},
+		tokenExpireAt: {type:Date}
+	}
 	
 });
 userSchema.pre('save', function(next) {

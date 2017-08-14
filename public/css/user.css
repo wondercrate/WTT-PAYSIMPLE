@@ -1,3 +1,12 @@
 .danger {
     border: solid 2px red;
 }
+.success-text {
+    color: #5cb85c;
+}
+.fail-text{
+    color: red;
+}
+.danger {
+    border: solid 2px red;
+}
