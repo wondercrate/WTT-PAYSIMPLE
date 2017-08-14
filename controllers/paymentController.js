@@ -5,6 +5,7 @@ let express = require("express");
 let config = require("../config");
 let promisify = require("es6-promisify");
 let userController = require("./userController");
+let mailHelper = require("../lib/mail-helper");
 let paysimple = new (require('paysimple'))(config.PAYSIMPLE_PARAMS);
 
 process.env.ENVIRONMENT !== "prod" && paysimple.setDevmode();
@@ -77,6 +78,8 @@ function processTransaction(req, res, next){
             CustomerId: CustomerId
         };
         yield userController.updateUser(req.user);
+
+        //yield mailHelper.sendFinishedTransactionMail(req.user.email, paymentResponse);
 
         res.send(paymentResponse);
     }).catch(next);
