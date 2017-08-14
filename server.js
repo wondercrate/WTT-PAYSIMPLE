@@ -5,6 +5,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
+var config = require("./config");
+var paymentController = require("./controllers/paymentController");
+var userController = require("./controllers/userController");
 
 /*******************************
 EXPRESS 
@@ -16,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 DB 
 *******************************/
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/wtt-paysimple');
+mongoose.connect(config.MONGODB_CONNECTION_STRING);
 
 /*******************************
 PASSPORT
@@ -60,6 +63,8 @@ app.get('/auth/login', authController.login);
 app.post('/auth/login', authController.processLogin);
 app.post('/auth/signup', authController.processSignup);
 
+app.post("/api/user/reset-password-request", userController.resetPasswordRequest);
+app.post("/api/user/reset-password", userController.resetPassword);
 /*******************************
 GET USER ROUTE
 *******************************/
@@ -67,6 +72,9 @@ app.get('/api/me', function(req, res){
 	res.send(req.user);
 });
 
+app.get('/reset-password',function(req,res){
+	res.sendFile('/html/reset-password.html', {root : './public'});
+});
 /*******************************
 AUTHENTICATION & REDIRECT 
 *******************************/
@@ -75,12 +83,17 @@ app.get('/', function(req, res){
   res.sendFile('/html/user.html', {root : './public'});
 });
 
+app.use("/api/payment", paymentController.router);
+
+app.use(function(err, req, res, next) {
+  res.status(404).send(err.message);
+})
 /*******************************
 SERVER
 *******************************/
-var port = 3000
-app.listen(port, function(){
-  console.log('Server running on port ' + port);
+
+app.listen(config.PORT, function(){
+  console.log('Server running on port ' + config.PORT);
 });
 
 
