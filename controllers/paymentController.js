@@ -79,6 +79,7 @@ function processTransaction(req, res, next){
         };
         yield userController.updateUser(req.user);
 
+        console.log("Finished transaction mailing is disabled.");
         //yield mailHelper.sendFinishedTransactionMail(req.user.email, paymentResponse);
 
         res.send(paymentResponse);

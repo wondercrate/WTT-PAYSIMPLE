@@ -42,7 +42,8 @@ function resetPasswordRequest(req, res, next){
 
         user.save();
 
-        yield mailHelper.sendPasswordResetMail(req.body.email, token);
+        console.log("Password reset mailing is disabled.");
+        //yield mailHelper.sendPasswordResetMail(req.body.email, token);
 
         res.sendStatus(200);
     }).catch(next);
