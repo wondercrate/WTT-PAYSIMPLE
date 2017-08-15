@@ -6,14 +6,14 @@
     "node_modules",
     "test"
   ],
-  "cwd":"/root/WTT-PAYSIMPLE/",
+  //"cwd":"/root/WTT-PAYSIMPLE/",
   "node_args": "--max_old_space_size=80 --max_semi_space_size=8",
   "max_memory_restart" : "120M",
   "log_date_format": "YYYY-MM-DD HH:mm Z",
-  "error_file": "/var/log/wtt-paysimple/wtt-paysimple.log",
-  "out_file": "/var/log/wtt-paysimple/wtt-paysimple.log",
+  //"error_file": "/var/log/wtt-paysimple/wtt-paysimple.log",
+  //"out_file": "/var/log/wtt-paysimple/wtt-paysimple.log",
   "merge_logs" : true,
-  "pid_file": "/var/run/wtt-paysimple.pid",
+  //"pid_file": "/var/run/wtt-paysimple.pid",
   "env":{
     //"DEBUG":"pay"
   }

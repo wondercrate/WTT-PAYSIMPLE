@@ -8,6 +8,7 @@ var userSchema = mongoose.Schema({
 	amountDue : { type: String },
 	email     : { type: String },
 	password  : { type: String },
+	admin     : { type: String },
 	info: {
 		passwordResetToken:{type: String},
 		tokenExpireAt: {type:Date}

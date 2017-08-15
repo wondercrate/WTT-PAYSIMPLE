@@ -8,7 +8,7 @@ var passport = require('passport');
 var config = require("./config");
 var paymentController = require("./controllers/paymentController");
 var userController = require("./controllers/userController");
-
+var programController = require('./programs/programController');
 /*******************************
 EXPRESS 
 *******************************/
@@ -55,10 +55,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 DEPENDENCIES 
 *******************************/
 app.use('/node_modules', express.static(__dirname + "/node_modules"));
-
+app.use('/images', express.static(__dirname + "/images"));
 /*******************************
 AUTH ROUTES 
 *******************************/
+// GET PROGRAMS \\
+app.get('/api/programs/getPrograms', programController.getPrograms);
+
 app.get('/auth/login', authController.login);
 app.post('/auth/login', authController.processLogin);
 app.post('/auth/signup', authController.processSignup);
@@ -82,7 +85,10 @@ app.use(passportConfig.ensureAuthenticated);
 app.get('/', function(req, res){
   res.sendFile('/html/user.html', {root : './public'});
 });
-
+// ADD/DELETE/EDIT PROGRAMS \\
+app.post('/api/programs/addProgram', programController.addProgram);
+app.delete('/api/programs/deleteProgram/:id', programController.deleteProgram);
+app.post('/api/programs/updateProgram', programController.updateProgram);
 app.use("/api/payment", paymentController.router);
 
 app.use(function(err, req, res, next) {

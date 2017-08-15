@@ -1,0 +1,1540 @@
+<div class="wtt-enroll-header-con">
+	<h1>Program Enrollment</h1>
+	<h4>Congratulations on your decision to join one of our adventures! The following enrollment form will take about ten minutes to complete and will require the presence of both the participant and guardian as well as either a check or credit card to complete. Please call 303-242-8541 if you have any questions or issues with this form. We are happy to help.</h4>
+</div>
+<div class="wtt-enroll-form-con clearfix">
+<form id="msform" class="clearfix" novalidate method="POST" action="https://creator.zoho.com/api/zoho_lacey21/json/leadsapp/form/LeadsForm/record/add">
+<input type="hidden" name ="authtoken" value="e541da3a8a45335525231b4804918776">
+	<input type="hidden" name ="scope" id="scope" value="creatorapi">
+	<div class="prog-wrap">
+		<ul id="progressbar">
+			<li class="active">Traveler Info</li>
+			<li>Guardian Info</li>
+			<li>Medical & passport</li>
+			<li>Terms & conditions</li>
+			<li>Program Selection</li>
+			<li>Payment</li>
+		</ul>
+	</div>
+	<fieldset>
+		<h1>Traveler Information</h1>
+		<div class="important clearfix">
+			<h1>IMPORTANT!</h1>
+			<h4>Please enter the participant's full legal name as it appears on the​ir​ passport​. Do not enter nicknames or abbreviations in the the first, middle or last name fields below.</h4>
+		</div>
+		<div class="centered-form-item clearfix">
+			<div class="group">      
+				<input type="text" class="form-input" name="Company_Name" ng-model="traveler.travelerFullName" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Full Legal Name</label>
+			</div>
+		</div>
+		<div class="form-item-grid-3-con clearfix">
+			<div class="form-item-grid-3 clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="First_Name" ng-model="traveler.travelerFirstName" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>First Name</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-3 clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Middle_Name" ng-model="traveler.travelerMiddleName" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Middle Name</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-3 l clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Last_Name" ng-model="traveler.travelerLastName" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Last Name</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix">
+			<div class="group">      
+				<input type="text" class="form-input" name="Preferred_Name" ng-model="traveler.travelerNickName" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Preferred Name <span>(nickname)</span></label>
+			</div>
+		</div>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Mobile" ng-model="traveler.travelerMobilePhone" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Mobile Phone</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Phone" ng-model="traveler.travelerHomePhone" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Home Phone</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Email" ng-model="traveler.travelerPrimaryEmail" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Primary Email</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Secondary_Email" ng-model="traveler.travelerSecondaryEmail" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Secondary Email <span>(optional)</span></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">
+						<select class="form-input select" name="Sex" ng-model="traveler.travelerGender" required>
+			  				<option value="" selected data-default id="select-default"></option>
+			  				<option>Male</option>
+			  				<option>Female</option>
+			  				<option>Non-Binary</option>
+		  				</select>
+	  					<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Sex</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Date_of_Birth" ng-model="traveler.travelerBirthdate" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Birthdate <span>(MM/DD/YYYY)</span></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Street" ng-model="traveler.travelerMailingAddress" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Mailing Address</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="City" ng-model="traveler.travelerCity" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>City</label>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">
+						<select class="form-input select" name="State_Territory" ng-model="traveler.travelerState" required>
+			  				<option value="" selected data-default id="select-default"></option>
+					  		<option>Alabama</option>
+							<option>Alaska</option>
+							<option>Arizona</option>
+							<option>Arkansas</option>
+							<option>California</option>
+							<option>Colorado</option>
+							<option>Connecticut</option>
+							<option>Delaware</option>
+							<option>District Of Columbia</option>
+							<option>Florida</option>
+							<option>Georgia</option>
+							<option>Hawaii</option>
+							<option>Idaho</option>
+							<option>Illinois</option>
+							<option>Indiana</option>
+							<option>Iowa</option>
+							<option>Kansas</option>
+							<option>Kentucky</option>
+							<option>Louisiana</option>
+							<option>Maine</option>
+							<option>Maryland</option>
+							<option>Massachusetts</option>
+							<option>Michigan</option>
+							<option>Minnesota</option>
+							<option>Mississippi</option>
+							<option>Missouri</option>
+							<option>Montana</option>
+							<option>Nebraska</option>
+							<option>Nevada</option>
+							<option>New Hampshire</option>
+							<option>New Jersey</option>
+							<option>New Mexico</option>
+							<option>New York</option>
+							<option>North Carolina</option>
+							<option>North Dakota</option>
+							<option>Ohio</option>
+							<option>Oklahoma</option>
+							<option>Oregon</option>
+							<option>Pennsylvania</option>
+							<option>Rhode Island</option>
+							<option>South Carolina</option>
+							<option>South Dakota</option>
+							<option>Tennessee</option>
+							<option>Texas</option>
+							<option>Utah</option>
+							<option>Vermont</option>
+							<option>Virginia</option>
+							<option>Washington</option>
+							<option>West Virginia</option>
+							<option>Wisconsin</option>
+							<option>Wyoming</option>
+		  				</select>
+	  					<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>State</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Zip_Code" ng-model="traveler.travelerZipCode" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Postal Zip Code</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix">
+			<div class="group">
+				<select class="form-input select" ng-model="traveler.travelerCountry" name="Home_Country" required>
+			  		<option value="" selected data-default id="select-default"></option>
+			  		<option>United States</option>
+					<option>Afghanistan</option>
+					<option>Åland Islands</option>
+					<option>Albania</option>
+					<option>Algeria</option>
+					<option>American Samoa</option>
+					<option>Andorra</option>
+					<option>Angola</option>
+					<option>Anguilla</option>
+					<option>Antarctica</option>
+					<option>Antigua and Barbuda</option>
+					<option>Argentina</option>
+					<option>Armenia</option>
+					<option>Aruba</option>
+					<option>Australia</option>
+					<option>Austria</option>
+					<option>Azerbaijan</option>
+					<option>Bahamas</option>
+					<option>Bahrain</option>
+					<option>Bangladesh</option>
+					<option>Barbados</option>
+					<option>Belarus</option>
+					<option>Belgium</option>
+					<option>Belize</option>
+					<option>Benin</option>
+					<option>Bermuda</option>
+					<option>Bhutan</option>
+					<option>Bolivia, Plurinational State of</option>
+					<option>Bonaire, Sint Eustatius and Saba</option>
+					<option>Bosnia and Herzegovina</option>
+					<option>Botswana</option>
+					<option>Bouvet Island</option>
+					<option>Brazil</option>
+					<option>British Indian Ocean Territory</option>
+					<option>Brunei Darussalam</option>
+					<option>Bulgaria</option>
+					<option>Burkina Faso</option>
+					<option>Burundi</option>
+					<option>Cambodia</option>
+					<option>Cameroon</option>
+					<option>Canada</option>
+					<option>Cape Verde</option>
+					<option>Cayman Islands</option>
+					<option>Central African Republic</option>
+					<option>Chad</option>
+					<option>Chile</option>
+					<option>China</option>
+					<option>Christmas Island</option>
+					<option>Cocos (Keeling) Islands</option>
+					<option>Colombia</option>
+					<option>Comoros</option>
+					<option>Congo</option>
+					<option>Congo, the Democratic Republic of the</option>
+					<option>Cook Islands</option>
+					<option>Costa Rica</option>
+					<option>Côte d'Ivoire</option>
+					<option>Croatia</option>
+					<option>Cuba</option>
+					<option>Curaçao</option>
+					<option>Cyprus</option>
+					<option>Czech Republic</option>
+					<option>Denmark</option>
+					<option>Djibouti</option>
+					<option>Dominica</option>
+					<option>Dominican Republic</option>
+					<option>Ecuador</option>
+					<option>Egypt</option>
+					<option>El Salvador</option>
+					<option>Equatorial Guinea</option>
+					<option>Eritrea</option>
+					<option>Estonia</option>
+					<option>Ethiopia</option>
+					<option>Falkland Islands (Malvinas)</option>
+					<option>Faroe Islands</option>
+					<option>Fiji</option>
+					<option>Finland</option>
+					<option>France</option>
+					<option>French Guiana</option>
+					<option>French Polynesia</option>
+					<option>French Southern Territories</option>
+					<option>Gabon</option>
+					<option>Gambia</option>
+					<option>Georgia</option>
+					<option>Germany</option>
+					<option>Ghana</option>
+					<option>Gibraltar</option>
+					<option>Greece</option>
+					<option>Greenland</option>
+					<option>Grenada</option>
+					<option>Guadeloupe</option>
+					<option>Guam</option>
+					<option>Guatemala</option>
+					<option>Guernsey</option>
+					<option>Guinea</option>
+					<option>Guinea-Bissau</option>
+					<option>Guyana</option>
+					<option>Haiti</option>
+					<option>Heard Island and McDonald Islands</option>
+					<option>Holy See (Vatican City State)</option>
+					<option>Honduras</option>
+					<option>Hong Kong</option>
+					<option>Hungary</option>
+					<option>Iceland</option>
+					<option>India</option>
+					<option>Indonesia</option>
+					<option>Iran, Islamic Republic of</option>
+					<option>Iraq</option>
+					<option>Ireland</option>
+					<option>Isle of Man</option>
+					<option>Israel</option>
+					<option>Italy</option>
+					<option>Jamaica</option>
+					<option>Japan</option>
+					<option>Jersey</option>
+					<option>Jordan</option>
+					<option>Kazakhstan</option>
+					<option>Kenya</option>
+					<option>Kiribati</option>
+					<option>Korea, Democratic People's Republic of</option>
+					<option>Korea, Republic of</option>
+					<option>Kuwait</option>
+					<option>Kyrgyzstan</option>
+					<option>Lao People's Democratic Republic</option>
+					<option>Latvia</option>
+					<option>Lebanon</option>
+					<option>Lesotho</option>
+					<option>Liberia</option>
+					<option>Libya</option>
+					<option>Liechtenstein</option>
+					<option>Lithuania</option>
+					<option>Luxembourg</option>
+					<option>Macao</option>
+					<option>Macedonia, the former Yugoslav Republic of</option>
+					<option>Madagascar</option>
+					<option>Malawi</option>
+					<option>Malaysia</option>
+					<option>Maldives</option>
+					<option>Mali</option>
+					<option>Malta</option>
+					<option>Marshall Islands</option>
+					<option>Martinique</option>
+					<option>Mauritania</option>
+					<option>Mauritius</option>
+					<option>Mayotte</option>
+					<option>Mexico</option>
+					<option>Micronesia, Federated States of</option>
+					<option>Moldova, Republic of</option>
+					<option>Monaco</option>
+					<option>Mongolia</option>
+					<option>Montenegro</option>
+					<option>Montserrat</option>
+					<option>Morocco</option>
+					<option>Mozambique</option>
+					<option>Myanmar</option>
+					<option>Namibia</option>
+					<option>Nauru</option>
+					<option>Nepal</option>
+					<option>Netherlands</option>
+					<option>New Caledonia</option>
+					<option>New Zealand</option>
+					<option>Nicaragua</option>
+					<option>Niger</option>
+					<option>Nigeria</option>
+					<option>Niue</option>
+					<option>Norfolk Island</option>
+					<option>Northern Mariana Islands</option>
+					<option>Norway</option>
+					<option>Oman</option>
+					<option>Pakistan</option>
+					<option>Palau</option>
+					<option>Palestinian Territory, Occupied</option>
+					<option>Panama</option>
+					<option>Papua New Guinea</option>
+					<option>Paraguay</option>
+					<option>Peru</option>
+					<option>Philippines</option>
+					<option>Pitcairn</option>
+					<option>Poland</option>
+					<option>Portugal</option>
+					<option>Puerto Rico</option>
+					<option>Qatar</option>
+					<option>Réunion</option>
+					<option>Romania</option>
+					<option>Russian Federation</option>
+					<option>Rwanda</option>
+					<option>Saint Barthélemy</option>
+					<option>Saint Helena, Ascension and Tristan da Cunha</option>
+					<option>Saint Kitts and Nevis</option>
+					<option>Saint Lucia</option>
+					<option>Saint Martin (French part)</option>
+					<option>Saint Pierre and Miquelon</option>
+					<option>Saint Vincent and the Grenadines</option>
+					<option>Samoa</option>
+					<option>San Marino</option>
+					<option>Sao Tome and Principe</option>
+					<option>Saudi Arabia</option>
+					<option>Senegal</option>
+					<option>Serbia</option>
+					<option>Seychelles</option>
+					<option>Sierra Leone</option>
+					<option>Singapore</option>
+					<option>Sint Maarten (Dutch part)</option>
+					<option>Slovakia</option>
+					<option>Slovenia</option>
+					<option>Solomon Islands</option>
+					<option>Somalia</option>
+					<option>South Africa</option>
+					<option>South Georgia and the South Sandwich Islands</option>
+					<option>South Sudan</option>
+					<option>Spain</option>
+					<option>Sri Lanka</option>
+					<option>Sudan</option>
+					<option>Suriname</option>
+					<option>Svalbard and Jan Mayen</option>
+					<option>Swaziland</option>
+					<option>Sweden</option>
+					<option>Switzerland</option>
+					<option>Syrian Arab Republic</option>
+					<option>Taiwan, Province of China</option>
+					<option>Tajikistan</option>
+					<option>Tanzania, United Republic of</option>
+					<option>Thailand</option>
+					<option>Timor-Leste</option>
+					<option>Togo</option>
+					<option>Tokelau</option>
+					<option>Tonga</option>
+					<option>Trinidad and Tobago</option>
+					<option>Tunisia</option>
+					<option>Turkey</option>
+					<option>Turkmenistan</option>
+					<option>Turks and Caicos Islands</option>
+					<option>Tuvalu</option>
+					<option>Uganda</option>
+					<option>Ukraine</option>
+					<option>United Arab Emirates</option>
+					<option>United Kingdom</option>
+					<option>United States Minor Outlying Islands</option>
+					<option>Uruguay</option>
+					<option>Uzbekistan</option>
+					<option>Vanuatu</option>
+					<option>Venezuela, Bolivarian Republic of</option>
+					<option>Viet Nam</option>
+					<option>Virgin Islands, British</option>
+					<option>Virgin Islands, U.S.</option>
+					<option>Wallis and Futuna</option>
+					<option>Western Sahara</option>
+					<option>Yemen</option>
+					<option>Zambia</option>
+					<option>Zimbabwe</option>  		
+		  		</select>
+	  			<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Country</label>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix" ng-show="isUSA()">
+			<div class="group">      
+				<input type="text" class="form-input" name="Other_State_Non_U_S" ng-model="traveler.travelerNonUsState" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Non-US STATE</label>
+			</div>
+		</div>
+		<h1>Additional Traveler Info</h1>
+		<div class="form-sep clearfix"></div>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="School_Organization_Referencing" ng-model="traveler.travelerSchoolOrganization" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>School/Organization</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">
+						<select class="form-input select" name="Tshirt_Size" ng-model="traveler.travelerTshirtSize" required>
+			  				<option value="" selected data-default id="select-default"></option>
+			  				<option>XS</option>
+			  				<option>S</option>
+			  				<option>M</option>
+			  				<option>L</option>
+			  				<option>XL</option>
+		  				</select>
+	  					<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>T-shirt size</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">
+						<select class="form-input select" name="What_are_your_swimming_abilities" ng-model="traveler.travelerCanSwim" required>
+					  		<option value="" selected data-default id="select-default"></option>
+					  		<option>I don’t know how to swim</option>
+		  					<option>I’m a decent swimmer</option>
+		  					<option>I can swim like Michael Phelps</option>
+				  		</select>
+			  			<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Rate your swimming abilities</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">
+						<select class="form-input select" name="Can_you_ride_a_bike" ng-model="traveler.travelerCanBike" required>
+					  		<option value="" selected data-default id="select-default"></option>
+					  		<option>Yes</option>
+		  					<option>No</option>
+				  		</select>
+			  			<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Can you ride a bicycle?</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix">
+			<div class="group">      
+				<textarea type="text" class="form-input text-area" name="Hobbies_and_Interests" ng-model="traveler.travelerInterests" required></textarea>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>What are your hobbies or interests?</label>
+			</div>
+		</div>
+		<input name="next" class="next action-button back-to-top" value="Next" />
+		<p style="font-style: italic; font-size: 10px; font-color:">Smithsonian Student Adventures is operated by Walking Tree Travel under license from the Smithsonian Institution. The name of the Smithsonian and the sunburst logo are registered trademarks of the Smithsonian Institution and Walking Tree Travel is an authorized user. Walking Tree Travel and Smithsonian Student Adventures will be referred to collectively as WTT throughout this enrollment form.</p>
+	</fieldset>
+	<fieldset>
+		<h1>Guardian Information</h1>
+		<div class="form-sep clearfix"></div>
+		<div class="form-item-grid-3-con clearfix">
+			<div class="form-item-grid-3 clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Guardian_One_Name" ng-model="traveler.guardian1FullName" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 1 full name</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-3 clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Guardian_One_Phone" ng-model="traveler.guardian1PrimaryPhone" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 1 Phone</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-3 l clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Guardian_One_Email" ng-model="traveler.guardian1PrimaryEmail" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 1 Email</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-item-grid-3-con clearfix">
+			<div class="form-item-grid-3 clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Guardian_Two_Name" ng-model="traveler.guardian2FullName" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 2 full name</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-3 clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Guardian_Two_Phone" ng-model="traveler.guardian2PrimaryPhone" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 2 Phone</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-3 l clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Guardian_Two_Email" ng-model="traveler.guardian2PrimaryEmail" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 2 Email</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix">
+			<div class="group">
+				<select class="form-input select" name="Who_Does_Participant_Live_With" ng-model="traveler.travelerLivingSituation" required>
+			  		<option value="" selected data-default id="select-default"></option>
+  					<option>Guardian 1</option>
+  					<option>Guardian 2</option>
+  					<option>Both Guardians</option>
+		  		</select>
+	  			<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Who does the traveler live with?</label>
+			</div>
+		</div>
+		<div class="important clearfix">
+			<h1>EMERGENCY CONTACT</h1>
+			<h4>In case of an emergency, both guardians will be contacted. If we cannot reach either guardian, we will reach out to the emergency contact listed below.</h4>
+		</div>
+		<div class="form-item-grid-3-con clearfix">
+			<div class="form-item-grid-3 clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Emergency_Contact_Name" ng-model="traveler.emergencyContactFullName" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Full name</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-3 clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Emergency_Contact_Phone" ng-model="traveler.emergencyContactPrimaryPhone" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Primary Phone</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-3 l clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Emergency_Contact_Email" ng-model="traveler.emergencyContactPrimaryEmail" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Primary Email</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix">
+			<div class="group">      
+				<input type="text" class="form-input" name="Emergency_Contact_Relationship_to_Participant" ng-model="traveler.emergencyContactRelationship" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Relationship to participant</label>
+			</div>
+		</div>
+		<input type="button" name="previous" class="previous action-button back-to-top" value="Previous" />
+		<input type="button" name="next" class="next action-button back-to-top" value="Next" />
+		<p style="font-style: italic; font-size: 10px; font-color:">Smithsonian Student Adventures is operated by Walking Tree Travel under license from the Smithsonian Institution. The name of the Smithsonian and the sunburst logo are registered trademarks of the Smithsonian Institution and Walking Tree Travel is an authorized user. Walking Tree Travel and Smithsonian Student Adventures will be referred to collectively as WTT throughout this enrollment form.</p>
+	</fieldset>
+	<fieldset>
+		<h1>Medical Release Form</h1>
+		<div class="important clearfix">
+			<h4>WTT requests that participants disclose all medical and dietary information to accommodate all needs. This information will be kept confidential.</h4>
+		</div>
+		<div class="centered-form-item f clearfix">
+			<div class="group">      
+				<textarea type="text" class="form-input text-area l" name="Dietary_Information" ng-model="traveler.travelerMedicalIssues" required></textarea>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Dietary Requirements</label>
+			</div>
+		</div>
+		<div class="centered-form-item f clearfix">
+			<div class="group">      
+				<textarea type="text" class="form-input text-area l" name="Medical_Information" ng-model="traveler.travelerDietaryRequirements" required></textarea>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Medical Disclosure</label>
+			</div>
+		</div>
+		<h1>Passport Confirmation</h1>
+		<div class="important clearfix">
+			<h4>This information is required in order to make certain in-country reservations for your program. If you do not have a passport that is valid for at least 6 months beyond the final date of your program, please renew your passport as soon as possible. If you do not have a valid passport, please enter NA in the fields below.</h4>
+		</div>
+		<div class="centered-form-item clearfix">
+			<div class="group">      
+				<input type="text" class="form-input" name="Full_Name_on_Passport" ng-model="traveler.travelerPassportFullName" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Full Name <span>(as it appears on passport)</span></label>
+			</div>
+		</div>
+		<div class="form-item-grid-3-con clearfix">
+			<div class="form-item-grid-3 clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Passport_Number" ng-model="traveler.travelerPassportNumber" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Passport Number</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-3 clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Passport_Expires_On" ng-model="traveler.travelerPassportExirationDate" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Passport Expiration Date</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-3 l clearfix">
+				<div class="form-item-grid-3-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="Issue_Date" ng-model="traveler.travelerPassportDateOfIssue" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Date of Issue</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix">
+			<div class="group">
+				<select class="form-input select" name="Nationality_on_Passport" ng-model="traveler.travelerPassportCountryOfIssue" required>
+			  		<option value="" selected data-default id="select-default"></option>
+			  		<option>United States</option>
+					<option>Afghanistan</option>
+					<option>Åland Islands</option>
+					<option>Albania</option>
+					<option>Algeria</option>
+					<option>American Samoa</option>
+					<option>Andorra</option>
+					<option>Angola</option>
+					<option>Anguilla</option>
+					<option>Antarctica</option>
+					<option>Antigua and Barbuda</option>
+					<option>Argentina</option>
+					<option>Armenia</option>
+					<option>Aruba</option>
+					<option>Australia</option>
+					<option>Austria</option>
+					<option>Azerbaijan</option>
+					<option>Bahamas</option>
+					<option>Bahrain</option>
+					<option>Bangladesh</option>
+					<option>Barbados</option>
+					<option>Belarus</option>
+					<option>Belgium</option>
+					<option>Belize</option>
+					<option>Benin</option>
+					<option>Bermuda</option>
+					<option>Bhutan</option>
+					<option>Bolivia, Plurinational State of</option>
+					<option>Bonaire, Sint Eustatius and Saba</option>
+					<option>Bosnia and Herzegovina</option>
+					<option>Botswana</option>
+					<option>Bouvet Island</option>
+					<option>Brazil</option>
+					<option>British Indian Ocean Territory</option>
+					<option>Brunei Darussalam</option>
+					<option>Bulgaria</option>
+					<option>Burkina Faso</option>
+					<option>Burundi</option>
+					<option>Cambodia</option>
+					<option>Cameroon</option>
+					<option>Canada</option>
+					<option>Cape Verde</option>
+					<option>Cayman Islands</option>
+					<option>Central African Republic</option>
+					<option>Chad</option>
+					<option>Chile</option>
+					<option>China</option>
+					<option>Christmas Island</option>
+					<option>Cocos (Keeling) Islands</option>
+					<option>Colombia</option>
+					<option>Comoros</option>
+					<option>Congo</option>
+					<option>Congo, the Democratic Republic of the</option>
+					<option>Cook Islands</option>
+					<option>Costa Rica</option>
+					<option>Côte d'Ivoire</option>
+					<option>Croatia</option>
+					<option>Cuba</option>
+					<option>Curaçao</option>
+					<option>Cyprus</option>
+					<option>Czech Republic</option>
+					<option>Denmark</option>
+					<option>Djibouti</option>
+					<option>Dominica</option>
+					<option>Dominican Republic</option>
+					<option>Ecuador</option>
+					<option>Egypt</option>
+					<option>El Salvador</option>
+					<option>Equatorial Guinea</option>
+					<option>Eritrea</option>
+					<option>Estonia</option>
+					<option>Ethiopia</option>
+					<option>Falkland Islands (Malvinas)</option>
+					<option>Faroe Islands</option>
+					<option>Fiji</option>
+					<option>Finland</option>
+					<option>France</option>
+					<option>French Guiana</option>
+					<option>French Polynesia</option>
+					<option>French Southern Territories</option>
+					<option>Gabon</option>
+					<option>Gambia</option>
+					<option>Georgia</option>
+					<option>Germany</option>
+					<option>Ghana</option>
+					<option>Gibraltar</option>
+					<option>Greece</option>
+					<option>Greenland</option>
+					<option>Grenada</option>
+					<option>Guadeloupe</option>
+					<option>Guam</option>
+					<option>Guatemala</option>
+					<option>Guernsey</option>
+					<option>Guinea</option>
+					<option>Guinea-Bissau</option>
+					<option>Guyana</option>
+					<option>Haiti</option>
+					<option>Heard Island and McDonald Islands</option>
+					<option>Holy See (Vatican City State)</option>
+					<option>Honduras</option>
+					<option>Hong Kong</option>
+					<option>Hungary</option>
+					<option>Iceland</option>
+					<option>India</option>
+					<option>Indonesia</option>
+					<option>Iran, Islamic Republic of</option>
+					<option>Iraq</option>
+					<option>Ireland</option>
+					<option>Isle of Man</option>
+					<option>Israel</option>
+					<option>Italy</option>
+					<option>Jamaica</option>
+					<option>Japan</option>
+					<option>Jersey</option>
+					<option>Jordan</option>
+					<option>Kazakhstan</option>
+					<option>Kenya</option>
+					<option>Kiribati</option>
+					<option>Korea, Democratic People's Republic of</option>
+					<option>Korea, Republic of</option>
+					<option>Kuwait</option>
+					<option>Kyrgyzstan</option>
+					<option>Lao People's Democratic Republic</option>
+					<option>Latvia</option>
+					<option>Lebanon</option>
+					<option>Lesotho</option>
+					<option>Liberia</option>
+					<option>Libya</option>
+					<option>Liechtenstein</option>
+					<option>Lithuania</option>
+					<option>Luxembourg</option>
+					<option>Macao</option>
+					<option>Macedonia, the former Yugoslav Republic of</option>
+					<option>Madagascar</option>
+					<option>Malawi</option>
+					<option>Malaysia</option>
+					<option>Maldives</option>
+					<option>Mali</option>
+					<option>Malta</option>
+					<option>Marshall Islands</option>
+					<option>Martinique</option>
+					<option>Mauritania</option>
+					<option>Mauritius</option>
+					<option>Mayotte</option>
+					<option>Mexico</option>
+					<option>Micronesia, Federated States of</option>
+					<option>Moldova, Republic of</option>
+					<option>Monaco</option>
+					<option>Mongolia</option>
+					<option>Montenegro</option>
+					<option>Montserrat</option>
+					<option>Morocco</option>
+					<option>Mozambique</option>
+					<option>Myanmar</option>
+					<option>Namibia</option>
+					<option>Nauru</option>
+					<option>Nepal</option>
+					<option>Netherlands</option>
+					<option>New Caledonia</option>
+					<option>New Zealand</option>
+					<option>Nicaragua</option>
+					<option>Niger</option>
+					<option>Nigeria</option>
+					<option>Niue</option>
+					<option>Norfolk Island</option>
+					<option>Northern Mariana Islands</option>
+					<option>Norway</option>
+					<option>Oman</option>
+					<option>Pakistan</option>
+					<option>Palau</option>
+					<option>Palestinian Territory, Occupied</option>
+					<option>Panama</option>
+					<option>Papua New Guinea</option>
+					<option>Paraguay</option>
+					<option>Peru</option>
+					<option>Philippines</option>
+					<option>Pitcairn</option>
+					<option>Poland</option>
+					<option>Portugal</option>
+					<option>Puerto Rico</option>
+					<option>Qatar</option>
+					<option>Réunion</option>
+					<option>Romania</option>
+					<option>Russian Federation</option>
+					<option>Rwanda</option>
+					<option>Saint Barthélemy</option>
+					<option>Saint Helena, Ascension and Tristan da Cunha</option>
+					<option>Saint Kitts and Nevis</option>
+					<option>Saint Lucia</option>
+					<option>Saint Martin (French part)</option>
+					<option>Saint Pierre and Miquelon</option>
+					<option>Saint Vincent and the Grenadines</option>
+					<option>Samoa</option>
+					<option>San Marino</option>
+					<option>Sao Tome and Principe</option>
+					<option>Saudi Arabia</option>
+					<option>Senegal</option>
+					<option>Serbia</option>
+					<option>Seychelles</option>
+					<option>Sierra Leone</option>
+					<option>Singapore</option>
+					<option>Sint Maarten (Dutch part)</option>
+					<option>Slovakia</option>
+					<option>Slovenia</option>
+					<option>Solomon Islands</option>
+					<option>Somalia</option>
+					<option>South Africa</option>
+					<option>South Georgia and the South Sandwich Islands</option>
+					<option>South Sudan</option>
+					<option>Spain</option>
+					<option>Sri Lanka</option>
+					<option>Sudan</option>
+					<option>Suriname</option>
+					<option>Svalbard and Jan Mayen</option>
+					<option>Swaziland</option>
+					<option>Sweden</option>
+					<option>Switzerland</option>
+					<option>Syrian Arab Republic</option>
+					<option>Taiwan, Province of China</option>
+					<option>Tajikistan</option>
+					<option>Tanzania, United Republic of</option>
+					<option>Thailand</option>
+					<option>Timor-Leste</option>
+					<option>Togo</option>
+					<option>Tokelau</option>
+					<option>Tonga</option>
+					<option>Trinidad and Tobago</option>
+					<option>Tunisia</option>
+					<option>Turkey</option>
+					<option>Turkmenistan</option>
+					<option>Turks and Caicos Islands</option>
+					<option>Tuvalu</option>
+					<option>Uganda</option>
+					<option>Ukraine</option>
+					<option>United Arab Emirates</option>
+					<option>United Kingdom</option>
+					<option>United States Minor Outlying Islands</option>
+					<option>Uruguay</option>
+					<option>Uzbekistan</option>
+					<option>Vanuatu</option>
+					<option>Venezuela, Bolivarian Republic of</option>
+					<option>Viet Nam</option>
+					<option>Virgin Islands, British</option>
+					<option>Virgin Islands, U.S.</option>
+					<option>Wallis and Futuna</option>
+					<option>Western Sahara</option>
+					<option>Yemen</option>
+					<option>Zambia</option>
+					<option>Zimbabwe</option>  		
+		  		</select>
+	  			<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Country of Issue</label>
+			</div>
+		</div>
+		<div class="important clearfix">
+			<h1>PASSPORT DISCLOSURE</h1>
+			<h4>I the (Guardian) understand that the participant is responsible for his/her own passport during the program and agree to pay all fees associated with passport replacement, lost or stolen passports or misplaced passports. I confirm that the information provided above is complete and accurate.</h4>
+			<div class="centered-form-item checkbox clearfix">
+				<input type="checkbox" class="checkbox"/>
+			</div>
+		</div>
+		<h1 style="margin-top: 25px;">Medication Policy, Waiver and Authorization</h1>
+		<div class="form-sep clearfix"></div>
+		<h5 class="tandc5 l">If your child requires oversight in self-administering medication(s), please list such medications above.  Staff will oversee him/her self-administer the above listed medications consistent with this policy and your authorization.</h5>
+		<h5 class="tandc5 l">By signing below, you agree you are familiar with the medical condition(s) of your child and you authorize him/her to self-administer the medications listed consistent with the information you provide. You acknowledge that the program staff who will oversee your child self-administer medication have no medical background or training.  You, on behalf of yourself and your child, agree to release, waive, and hold harmless Walking Tree Travel (WTT), the Smithsonian and its agents and employees and you assume full responsibility for any risk of loss, damage, death or injury arising directly or indirectly from your child’s medications.</h5>
+		<h5 class="tandc5 l">Given the nature of your WTT program, it is possible that an emergency necessitating medical treatment could arise. Should this occur, WTT will make every possible effort to contact the emergency contact listed on this form and listed guardians as soon as possible. WTT staff use international cellular phones and should be able to reach the emergency contact and/or parents or guardians so that they are informed and can direct the treatment process. WTT cannot guarantee that our staff will be able to make timely contact; thus, we require all parents/guardians to sign the following statement so that emergency treatment can be obtained if necessary and in a timely manner.</h5>
+		<h5 class="tandc5 l">If a medical emergency occurs involving the participant, I (Guardian) hereby authorize the WTT staff to obtain the treatment that is deemed necessary and will reimburse WTT for any expenses incurred in this treatment.</h5>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 1 Signature <span>(Full Name)</span></label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 2 Signature <span>(Full Name)</span></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="button" name="previous" class="previous action-button back-to-top" value="Previous" />
+		<input type="button" class="next action-button back-to-top" value="next"/>
+		<p style="font-style: italic; font-size: 10px; font-color:">Smithsonian Student Adventures is operated by Walking Tree Travel under license from the Smithsonian Institution. The name of the Smithsonian and the sunburst logo are registered trademarks of the Smithsonian Institution and Walking Tree Travel is an authorized user. Walking Tree Travel and Smithsonian Student Adventures will be referred to collectively as WTT throughout this enrollment form.</p>
+	</fieldset>
+	<fieldset>
+		<h1>Terms and Conditions</h1>
+		<h4>Please read the below carefully and check the required boxes as you go.</h4>
+		<div class="form-sep clearfix"></div>
+		<div class="terms-con clearfix">
+		<h4 class="tandc4">What Is Included in the Program Cost:</h4>
+		<ul>
+			<li>
+				<h5 class="tandc5 l xx">Expertise of a WTT Country Director, travel program director, and local guides throughout the program</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">All gratuities for the Country Director, travel program director, on-program guides, and drivers</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">On-program medical evacuation insurance (up to $100,000), emergency medical expense coverage (up to $25,000), travel medical assistance, and worldwide travel assistance. Full details of included coverages can be found at https://walkingtree.org/insurance-information/</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Pre-program information, including a dedicated webpage for each departure with details about the itinerary, leadership, programming etc., pre departure orientation call(s) and availability to answer any questions.</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">All on-program transportation, unless otherwise noted</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">All accommodations for the duration of the program</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">All meals for the duration of the program</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">All sightseeing and visits as noted in the itinerary</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l">For Custom Group Travel Programs, Airfare to/from your departure city is included, unless noted otherwise in the What is Included section on the program webpage. For Open Enrollment Programs, Airfare is not included.</h5>
+			</li>
+		</ul>
+		<h4 class="tandc4">What Is Not Included in the Program Cost:</h4>
+		<ul>
+			<li>
+				<h5 class="tandc5 l xx">Passport and all visa fees and photos; immunization(s); travel medications; and any other travel documentation fees as required</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Optional travel insurance, including cancellation/delay/lost baggage insurance (learn more at https://smithsonianstudentadventures.com/insurance-information/)</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Personal items, unless otherwise stated, such as souvenirs and additional snacks.</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Expenses incurred by Walking Tree Travel in making any individual travel arrangements in conjunction with the program</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Airline baggage and other airline fees and associated taxes, unless noted in program description</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Communication charges (e.g.: phone, Internet, etc.)</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l">Other items noted as optional or not specifically mentioned as included</h5>
+			</li>
+		</ul>
+		<h4 class="tandc4">Enrollment and Application Process</h4>
+		<h5 class="tandc5 l">The following information is required: In accordance with the Transportation Security Administration’s (TSA) Secure Flight program, for all international tours, passport information is required, including the following: full name as it appears on the participant’s passport, date of birth, and gender (for further information, please visit www.tsa.gov. For programs that include round-trip international airfare: If you provide incorrect information to the ticketing agent, or if the participant uses a different passport than originally cited, you will be responsible for charges associated with the ticket’s reissue.</h5>
+		<h4 class="tandc4">Payments</h4>
+		<h5 class="tandc5 l">A deposit of $250 per person, is required to reserve a space on a program. All payments may be made by credit card or check to the program operator, Walking Tree Travel. Deposits are applied to final payment of the program price. The deposit is nonrefundable 72 hours after submission. If the program does not meet the minimum pre-established enrollment, the deposit will be refunded.Final payment is due 75 days prior to departure, unless otherwise noted, upon invoicing. If full payment is not received by the final payment due date, the participant’s place cannot be guaranteed on the program. If an application is received within 90 days of the program departure date, 100% of the program fee will be due at the time of enrollment. Any participant who returns from a program before the scheduled return date forfeits the program fee and must cover all expenses associated with an early return. Financial Aid for participants applying for financial aid, the deposit is 100% refundable if Walking Tree Travel is unable to come to an agreement with the participant’s family on financial aid. When the aid package is finalized, the deposit check will be cashed. The deposit is non-refundable.</h5>
+		<h4 class="tandc4">Credit Cards</h4>
+		<h5 class="tandc5 l">Fees for credit card payments will not be refunded.</h5>
+		<h4 class="tandc4">Alumni Discount</h4>
+		<h5 class="tandc5 l">For open enrollment programs only, a 10% discount will be awarded to all returning alumni and a 30% discount for all Junior Leaders. Alumni status to be verified and approved by Walking Tree Travel at time of enrollment.</h5>
+		<h4 class="tandc4">Late Registration</h4>
+		<h5 class="tandc5 l">Any registration received within 90 days of departure is considered “on-request” and is subject to specific confirmation. Some programs are more restrictive. Payment in full must be made immediately by credit card, or by check sent by overnight mail to Walking Tree Travel, before confirmation is possible. Once confirmed, cancellation penalties apply as set forth below. If confirmation is not possible, all payments made will be refunded in full. Late registration confirmation procedures apply to any participant who is transferred from the wait list to the program within the designated late registration period for that program.</h5>
+		<h4 class="tandc4">A Note About Costs</h4>
+		<h5 class="tandc5 l">All prices are quoted in U.S. dollars. Program costs are based upon current airfares, tariffs, currency values, and on the basis of a presumptive minimum number of participants. While we will do everything possible to maintain the listed prices, they are subject to change. Due to fluctuations in oil prices, a fuel surcharge may be added to the participant’s program fee (e.g. internal flights, cruises, etc.). Details and costs will be advised prior to departure.</h5>
+		<h4 class="tandc4">Wait List</h4>
+		<h5 class="tandc5 l">If the program of the participant’s choice is fully subscribed, you may choose to be placed on a wait list. Individuals on the wait list will be contacted if space becomes available and can inquire about program status by contacting Walking Tree Travel. If you choose to withdraw from a wait list, please notify us.</h5>
+		<h4 class="tandc4">Cancellation and Refund Policy</h4>
+		<h5 class="tandc5 l xx">Following enrollment, a participant’s withdrawal from the program for any reason, including, but not limited to, illness, injury, family engagements, work-related issues, or geopolitical concerns, etc., will be deemed a cancellation. Please understand that there will be no exceptions to our cancellation policy. Per person cancellation fees are based on date of written notice to Walking Tree Travel. Walking Tree Travel will refund on the following basis:</h5>
+		<ul>
+			<li>
+				<h5 class="tandc5 l xx">Cancellations within 72 hours of booking: Full Refund</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Cancellations 120 days prior to departure or less: 75% refund of program cost</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Cancellations 90 days prior to departure or less: 50% refund of program cost</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Cancellations 60 days prior to departure or less: No refund</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Cancellation by WTT : Full Refund or Credit</h5>
+			</li>
+		</ul>
+		<h5 class="tandc5 l">If the participant has scheduled their own airfare and if the flight is delayed or if for any reason the participant is prevented from joining the program on the scheduled departure date and time, or if the participant chooses to leave the program early, we cannot provide a full or partial refund or credit toward a future program. We reserve the right to cancel any program due to low enrollment or when a U.S. Department of State Travel Warning is issued for the destination.</h5>
+		<h4 class="tandc4">Air Service</h4>
+		<h5 class="tandc5 l">For programs that include round-trip international airfare, rates are based on economy class from designated departure cities as shown. Airfares from other cities are available upon request. Airline upgrades at additional cost may be available on request for the international portion of the participant’s flight. If an air schedule requires an overnight stay in a gateway city, the cost of the overnight will be at the participant’s expense. For programs that include round-trip international airfare, we will be happy to help with arrangements.</h5>
+		<h4 class="tandc4">Air Service/Tickets Purchased Independently of the Program</h4>
+		<h5 class="tandc5 l">International and domestic air schedules are subject to change at any time. If you make the participant’s airline reservations, we recommend that you purchase refundable tickets or tickets with low penalties for changes. We urge you to check airline cancellation penalties before purchasing airline tickets since international departure times and flights can change. Neither the Smithsonian Institution nor Walking Tree Travel accepts liability for cancellation penalties related to domestic or international airline tickets purchased independently in conjunction with a program.</h5>
+		<h4 class="tandc4">Travel Insurance – Cancellation/Delay/Lost Baggage</h4>
+		<h5 class="tandc5 l">We recommend that all participants purchase travel insurance. Learn more at https://smithsonianstudentadventures.com/insurance-information/.</h5>
+		<h4 class="tandc4">Travel Documents and Information</h4>
+		<h5 class="tandc5 l">Participants are responsible for obtaining any documents required for their participation in the program such as a valid passport, all visas, vaccination certificates, and any other documents. If the participant’s program requires a visa or other entry documents, we will send you that information after you make a reservation. Failure to obtain documents does not negate these terms and conditions. Any extra costs incurred for rerouting or delay due to travel without the necessary documents will be the participant’s responsibility. During the program, the participant is responsible for his/her own passport. Any and all fees associated with passport replacement, lost or stolen passports or misplaced passports are the responsibility of the participant.
+		For all international departures, a passport valid for at least six months after the completion of the participant’s program, and with at least six blank visa pages, is required for U.S. citizens on all Programs. For more information on how or where to apply, please visit Travel.State.Gove/ApplyEarly.</h5>
+		<h4 class="tandc4">Physical and Medical Considerations</h4>
+		<h5 class="tandc5 l">To enjoy the travel experience, participants should be in good physical and mental health. All programs require an element of walking (up to two miles per day over uneven terrain) and of climbing stairs, often without handrails. Participants should have sufficient stamina to keep pace with an active group of participants on long days of programming. If you have any questions about the participant’s ability to participate in a program, please call us at 303-997-0351. Any physical condition, diet, allergy, medication or special request for accommodation must be identified in writing on the Medical Disclosure Form when the enrollment form is completed. Some programs have additional information regarding physical and medical considerations, which may be discussed with Walking Tree Travel at 303-997-0351 or info@smithsonianSA.com. Please be aware that health care standards, facilities, and services abroad may be different or even inadequate for treating certain health conditions. It is essential that you inform us in writing (on the provided Medical Release Form) of any existing condition for which the participant may require medical attention or accommodation during the program. We will make reasonable efforts to accommodate the needs of our participants; however, services of a personal nature cannot be expected or guaranteed. By forwarding the deposit for pre-registration or registration in full, you affirm that the participant does not have any physical or other limitations that would create a hazard for themselves or other participants or would require adjustments to the program for other participants.</h5>
+		<h4 class="tandc4">Medical Release</h4>
+		<h5 class="tandc5 l">Given the nature of WTT programs, it is possible that an emergency necessitating medical treatment could arise. Please complete and sign the medical release form within the online application and submit it with your application package.</h5>
+		<h4 class="tandc4">Itinerary or Program Modifications</h4>
+		<h5 class="tandc5 l">WTT strives to improve program itineraries and their features. If improvements can be made, or unforeseen circumstances beyond our control make changes necessary, at our sole discretion, we reserve the right to vary itineraries and to substitute elements of the program. These elements include, but are not limited to: hotels, staff, speakers, site visits, and services for any stated in the itinerary. Every effort will be made to carry out the program as planned but alterations may still occur after the final itinerary has been sent to you. Please note that weather and other conditions may force changes to the advertised schedule on programs that include water elements. A ship’s captain has the authority to change the ship’s schedule.</h5>
+		<h4 class="tandc4">Accommodations</h4>
+		<h5 class="tandc5 l">Walking Tree Travel chooses lodging based on a combination of safety, cleanliness, location, service, suitability for student groups, and price. Program pricing is based on participants sharing rooms, separated by gender. Detailed information of all program lodging can be found on the program webpage. Some programs involve home stays (accommodations are provided by a family in the community where the program itinerary takes place). Walking Tree Travel works with families in well-vetted home stay communities. Home stay families electing to participate in this program must complete a screening and training process. Where possible, home stay families pass a federal background check and where not possible pass the next closest equivalent. Home stay families also meet with Walking Tree Travel staff for training and orientation where we review our standards and give families guidelines for the hosting experience. Home stays are selected to offer a safe and stable environment with facilities reflective of the local conditions. More information about the community your participant will be a guest in can be found on the program webpage.</h5>
+		<h4 class="tandc4">Unused Parts of Program</h4>
+		<h5 class="tandc5 l">Should the participant decide not to participate in certain parts of the program or use certain goods included in the program, no refunds will be made for those unused parts of the program or goods.</h5>
+		<h4 class="tandc4">Dispute Resolution</h4>
+		<h5 class="tandc5 l">If a complaint arises, the participant should first inform a member of the on-program staff, so that the staff can attempt to rectify the matter. If the issue remains unresolved, the individual should submit the complaint in writing to Walking Tree Travel within 30 days of the completion of the program. Any dispute that arises under the program between you and Walking Tree Travel (WTT) (excluding the Smithsonian) that is not resolved through the above process shall be initially submitted to mediation in Denver, Colorado before a mediator agreed upon by you and WTT; if the parties cannot agree upon a mediator, then they shall submit their dispute to the Judicial Arbiter Group, or, if that company no longer exists, to the American Arbitration Association, for mediation. If a dispute is not resolved within thirty days of the holding of a mediation session, then it shall be submitted for binding arbitration to the Judicial Arbiter Group, or, if that company no longer exists, to the American Arbitration Association in Denver, Colorado pursuant to its Commercial Arbitration Rules, except that: (a) disputes concerning $15,000 or less shall be resolved in the small claims or county courts of Denver, Colorado; and (b) disputes in which a party seeks injunctive relief shall be resolved in the courts with jurisdiction over Denver, Colorado, in which case all claims between you and WTT shall be resolved in such lawsuit. You consent and WTT consent to personal jurisdiction and venue being proper in such courts. In an arbitration, the arbitrator’s award shall be final and binding on us and WTT and may be entered in any court having jurisdiction thereof. Attorneys’ fees and costs shall be awarded to the prevailing party. Any action or legal proceeding against the Smithsonian Institution in connection with the program and the Responsibility Statement and Liability Disclaimer shall be brought only in a United States federal court of competent jurisdiction. For all purposes, this contract shall be construed in accordance with applicable federal laws and the laws of the District of Columbia without regard to conflicts-of-law principles. Photography and Video Participants on program may be photographed or recorded (audio and video) for the educational and promotional purposes of the Smithsonian Institution and Smithsonian authorized third parties (including Walking Tree Travel). This content may be used in marketing publications and posted on websites to promote WTT without compensation to the participant. Participants who prefer that their name, voice and/or image not be used must notify us in writing prior to the beginning of the program.</h5>
+		<h4 class="tandc4">Standards of Behavior</h4>
+		<h5 class="tandc5 l">We aim to provide significant, impactful and fun summer programs for high school students. In order to achieve this goal, program staff and participants must create an environment of trust, security and respect. All individuals participating in WTT programs are required to take responsibility for their actions and adhere to a high standard of behavior. We reserve the right, without penalty, to require any participant to withdraw from the program when their actions are determined by program staff to be in the best interests of the health, safety or general welfare of the program group or the individual participant.</h5>
+		<h4 class="tandc4">Grounds for Immediate Dismissal Include:</h4>
+		<ul>
+			<li>
+				<h5 class="tandc5 l xx">Possessing, consuming or distributing alcohol, illegal drugs or tobacco </h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Associating with participants while they are in possession of or are consuming or distributing alcohol or illegal drugs </h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Seriously jeopardizing personal or group safety. </h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Getting a piercing or tattoo</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Stealing, or deliberately damaging or defacing any personal property, buildings or materials</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Riding mopeds, motorcycles, or any other type of unauthorized vehicle </h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Being out of designated area or accommodations after curfew</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Breaking group rules or disobeying group leaders</h5>
+			</li>
+			<li>
+				<h5 class="tandc5 l xx">Consistently displaying a negative attitude, intimidating or excluding other participants, or any other behavior that is not conducive to an atmosphere of trust and mutual respect.</h5>
+			</li>
+		</ul>
+		<h5 class="tandc5 l">These standards are essential for the successful completion of a WTT program. If a participant breaks any of these standards of behavior, or acts in a way that is harmful to the operation of the program, he/she may be dismissed and sent home early at his/her own expense. In-country consequences are punitive actions determined by the program staff, such as not being able to participate in a community celebration or join the group on a zipline adventure.</h5>
+		<h4 class="tandc4">Early Return and Cancellation Agreement</h4>
+		<h5 class="tandc5 l">In the event that a participant is required to return home from a program for any reason (disciplinary, medical, etc.), other than trip cancellation by us, the parents or legal guardians of the participant are responsible for all costs incurred. In such a circumstance we will do everything we can to keep the costs as reasonable as possible. An itemized invoice will be submitted upon request.</h5>
+		<h4 class="tandc4">Additional Monies Agreement</h4>
+		<h5 class="tandc5 l">We encourage participants to bring ample spending money in the form of cash and a back-up bank-issued debit card (gift cards cannot be used in most countries). In the event that participants must borrow funds from a program leader during the program, Walking Tree Travel must be repaid within 15 days of the program return date.</h5>
+		<h4 class="tandc4">READ CAREFULLY: RESPONSIBILITY STATEMENT AND LIABILITY DISCLAIMER</h4>
+		<h5 class="tandc5 l">Smithsonian Student Adventures is managed by Walking Tree Travel (“WTT”), under license from the Smithsonian Institution. The Smithsonian Institution and WTT reserve the right, without penalty, to make changes in the published itinerary whenever, in their judgment, conditions warrant, or if they deem it necessary for the comfort, convenience, or safety of program participants. The Smithsonian Institution and WTT also reserve the right, without penalty, to withdraw the program announced, to decline to accept any person as a participant in a program, or to require any participant to withdraw from the program at any time, when such action is determined by program staff to be in the best interests of the health, safety or general welfare of the program group or the individual participant. The responsibility of the Smithsonian Institution and WTT for the participant ends with his/her dismissal from the program. Dismissal may occur at a location far from the participant’s home. Should the participant be dismissed from the program, WTT will arrange for the participant’s immediate return home at the participant’s expense. There will be no refund of the tuition of dismissed participants, and WTT will require payment for the participant’s return home to be made in advance of making return arrangements, or directly to the party providing transportation. There will also be no refund to participants who withdraw voluntarily, or as a result of illness during the program. Baggage and personal effects are at all times the sole responsibility of the participant. Dates, schedules, program details, and costs, although provided in good faith based on information available at the time of publication of the brochure or catalog, are subject to change and revision.</h5>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 1 Signature <span>(Full Name)</span></label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 2 Signature <span>(Full Name)</span></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h4 class="tandc4">AS A CONDITION OF ACCEPTANCE OF ANY APPLICATION, EACH APPLICANT MUST AGREE TO THE STATEMENT SET FORTH BELOW:</h4>
+		<h5 class="tandc5 l">We, the undersigned, are the parents or legal guardians of the participant applying to participate in a WTT program ("Parents;" Participant and Parents are collectively referred to as "we," "us," or "our"). We are submitting a deposit payable to Walking Tree Travel, which is to be credited to the participant’s tuition fee and is refundable only if the application is not accepted. We have read carefully this Responsibility Statement and Liability Disclaimer, the schedule of activities for this program, as well as the terms and conditions of application, payment, and participation as set forth on the WTT and SSA websites and enrollment form, and recognize and accept any risk associated with the program and the conditions, including the refund policy, set forth in the program brochure(s). We acknowledge that participants in Smithsonian Student Adventures live and travel in- and out-of-doors, engage in various physical activities and do volunteer work in a variety of settings. As a result, they are subject to risks, physical, environmental, and other, including risks of loss of property, injury and death. WTT can involve travel to and staying in remote places, raising issues regarding the ready or rapid accessibility of communication, transportation, and medical care facilities. We further acknowledge that there are many risks and uncertainties inherent in any travel program, including but not limited to the hazards of various modes of transportation, forces of nature, acts or omissions of foreign governments, terrorism, war or insurrection, theft, illness, and damage to person or property due to the negligent acts or omissions of program staff or others. In consideration of, and as part payment for, the right to participate in the program, we, on behalf of the participant, his/her dependents, heirs, executors, administrators and assigns, agree to release, indemnify, and hold harmless the Smithsonian Institution, its Regents, officers, employees, representatives or agents, the United States, and WTT, its employees, shareholders, subsidiaries, affiliates, officers, directors, successors, and agents (collectively, the “Released Parties”), from liability for personal injury, death, property damage or loss suffered by any person in connection with this program, even if caused by the negligence (but not the reckless, willful, or fraudulent conduct) of program staff or other related persons or entities. We understand that WTT engages independent contractors to provide services for the program such as lodging, transportation, activities, food, and other goods and services, and agree that the Released Parties are not liable for personal injury, death, property damage or accident, delay or irregularity arising out of any action or failure to act of any such independent contractors. In addition, by registering for this program, we certify that the participant is mentally and physically capable of full participation in this program. We acknowledge that the program may include activities that require participants to sign a liability waiver in order to participate and that it may not be possible for all such waivers to be provided to us for signature in advance of the program start date. In order for a participant under the age of 18 to participate in these activities, the WTT Program Leader needs to be authorized to sign the waiver on the participant’s behalf. We hereby give permission to the WTT Program Leader to sign the liability waiver required for these activities on behalf of the participant and us. We acknowledge that granting this permission is completely voluntary. If permission is not granted, the participant will not be allowed to participate in any activity that requires a waiver. We acknowledge that if permission is not granted for a specific activity, covered by a waiver delivered in advance, that the participant will be withheld from participation.</h5>
+		</div>
+		<h4 class="tandc4">AS A CONDITION OF ACCEPTANCE OF ANY APPLICATION, EACH APPLICANT MUST AGREE TO THE STATEMENT SET FORTH BELOW:</h4>
+		<div class="terms-con clearfix" style="height: auto!important">
+			<h5 class="tandc5 l">We, the undersigned, are the parents or legal guardians of the participant applying to participate in a WTT program ("Parents;" Participant and Parents are collectively referred to as "we," "us," or "our"). We are submitting a deposit payable to Walking Tree Travel, which is to be credited to the participant’s tuition fee and is refundable only if the application is not accepted. We have read carefully this Responsibility Statement and Liability Disclaimer, the schedule of activities for this program, as well as the terms and conditions of application, payment, and participation as set forth on the WTT and SSA websites and enrollment form, and recognize and accept any risk associated with the program and the conditions, including the refund policy, set forth in the program brochure(s). We acknowledge that participants in Smithsonian Student Adventures live and travel in- and out-of-doors, engage in various physical activities and do volunteer work in a variety of settings. As a result, they are subject to risks, physical, environmental, and other, including risks of loss of property, injury and death. WTT can involve travel to and staying in remote places, raising issues regarding the ready or rapid accessibility of communication, transportation, and medical care facilities. We further acknowledge that there are many risks and uncertainties inherent in any travel program, including but not limited to the hazards of various modes of transportation, forces of nature, acts or omissions of foreign governments, terrorism, war or insurrection, theft, illness, and damage to person or property due to the negligent acts or omissions of program staff or others. In consideration of, and as part payment for, the right to participate in the program, we, on behalf of the participant, his/her dependents, heirs, executors, administrators and assigns, agree to release, indemnify, and hold harmless the Smithsonian Institution, its Regents, officers, employees, representatives or agents, the United States, and WTT, its employees, shareholders, subsidiaries, affiliates, officers, directors, successors, and agents (collectively, the “Released Parties”), from liability for personal injury, death, property damage or loss suffered by any person in connection with this program, even if caused by the negligence (but not the reckless, willful, or fraudulent conduct) of program staff or other related persons or entities. We understand that WTT engages independent contractors to provide services for the program such as lodging, transportation, activities, food, and other goods and services, and agree that the Released Parties are not liable for personal injury, death, property damage or accident, delay or irregularity arising out of any action or failure to act of any such independent contractors. In addition, by registering for this program, we certify that the participant is mentally and physically capable of full participation in this program. We acknowledge that the program may include activities that require participants to sign a liability waiver in order to participate and that it may not be possible for all such waivers to be provided to us for signature in advance of the program start date. In order for a participant under the age of 18 to participate in these activities, the WTT Program Leader needs to be authorized to sign the waiver on the participant’s behalf. We hereby give permission to the WTT Program Leader to sign the liability waiver required for these activities on behalf of the participant and us. We acknowledge that granting this permission is completely voluntary. If permission is not granted, the participant will not be allowed to participate in any activity that requires a waiver. We acknowledge that if permission is not granted for a specific activity, covered by a waiver delivered in advance, that the participant will be withheld from participation.</h5>
+			<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 1 Signature <span>(Full Name)</span></label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 2 Signature <span>(Full Name)</span></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="important clearfix" style="background-color: white!important;">
+			<h4 style="color: black!important">We Grant Permission</h4>
+			<div class="centered-form-item checkbox clearfix">
+				<input type="checkbox" class="checkbox"/>
+			</div>
+		</div>
+		<div class="important clearfix" style="background-color: white!important;">
+			<h4 style="color: black!important">We Do Not Grant Permission</h4>
+			<div class="centered-form-item checkbox clearfix">
+				<input type="checkbox" class="checkbox"/>
+			</div>
+		</div>
+		<h5 class="tandc5 l">We are the parents or legal guardians of ${Q-D},(“our child”). The information provided on our application form is complete and accurate to the best of our knowledge. In consideration of our child’s participation in the program, we agree to the terms and conditions contained in this Registration and this Responsibility and Liability Disclaimer and we grant permission for our child to participate fully in the program under the terms and conditions described therein.</h5>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 1 Signature <span>(Full Name)</span></label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Guardian 2 Signature <span>(Full Name)</span></label>
+					</div>
+				</div>
+			</div>
+		</div>
+  
+		<input type="button" name="previous" class="previous action-button back-to-top" value="Previous" />
+		<input type="button" class="next action-button back-to-top" value="next"/>
+		<p style="font-style: italic; font-size: 10px; font-color:">Smithsonian Student Adventures is operated by Walking Tree Travel under license from the Smithsonian Institution. The name of the Smithsonian and the sunburst logo are registered trademarks of the Smithsonian Institution and Walking Tree Travel is an authorized user. Walking Tree Travel and Smithsonian Student Adventures will be referred to collectively as WTT throughout this enrollment form.</p>
+	</fieldset>
+	<fieldset>
+		<h1>Program Selection</h1>
+		<div class="form-sep clearfix"></div>
+		<h4>Are you traveling with a teacher (Custom Group Travel), or traveling individually (Open Enrollment High School Program)? Please choose one below.</h4>
+		<div class="centered-form-item clearfix">
+			<div class="group">
+				<select class="form-input select" name="Program_Type" ng-model="traveler.travelerProgramType" required>
+			  		<option value="" selected data-default id="select-default">Choose one</option>
+			  		<option>Custom Enrollment</option>
+  					<option>Open Enrollment</option>
+		  		</select>
+	  			<span class="highlight"></span>
+				<span class="bar"></span>
+			</div>
+		</div>
+		<div class="centered-form-item f clearfix" ng-show="!isCustom()">
+			<div class="group">      
+				<textarea type="text" class="form-input text-area" name="Personal_Statement" required></textarea>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Tell us a bit why you chose to travel with WTT</label>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix" ng-show="isCustom()">
+			<div class="group">      
+				<input type="text" class="form-input" name="Teacher_Organizer_Email" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Teacher Email</label>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix" ng-show="programTypeSelected()">
+			<div class="group">
+				<select class="form-input select" ng-model="destination.selected" name="travelerProgramDestinationCountry" required>
+			  		<option value="" selected data-default id="select-default"></option>
+			  		<option value="Belize">Belize</option>
+					<option value="Canada">Canada</option>
+					<option value="China">China</option>
+					<option value="Costa Rica">Costa Rica</option>
+					<option value="France">France</option>
+					<option value="Guatemala">Guatemala</option>
+					<option value="Peru">Peru</option>
+					<option value="Senegal">Senegal</option>
+					<option value="Spain">Spain</option>
+					<option value="Spain to Morocco">Spain to Morocco</option>
+					<option value="Thailand">Thailand</option>
+					<option value="Italy">Italy</option>
+					<option value="Ecuador">Ecuador</option>
+					<option value="Panama">Panama</option>
+					<option value="South Africa">South Africa</option>
+					<option value="Cuba">Cuba</option>
+					<option value="USA">USA</option>
+					<option value="Bhutan">Bhutan</option>
+					<option value="Australia">Australia</option>
+					<option value="Japan">Japan</option>
+		  		</select>
+	  			<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Program Destination Country</label>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix" ng-show="destinationSelected()">
+			<div class="group">
+				<select class="form-input select" ng-model="programs.selected" name="travelerProgramSelection" required>
+			  		<option value="" selected data-default id="select-default"></option>
+			  		<option ng-repeat="program in belizePrograms" ng-if="belize()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in canadaPrograms" ng-if="canada()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in chinaPrograms" ng-if="china()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in costaRicaPrograms" ng-if="costaRica()" ng-selected="getCost()" value="{{program.name}}">{{program.name}}</option>
+						<option ng-repeat="program in francePrograms" ng-if="france()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in guatemalaPrograms" ng-if="guatemala()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in peruPrograms" ng-if="peru()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in senegalPrograms" ng-if="senegal()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in spainPrograms" ng-if="spain()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in spainToMoroccoPrograms" ng-if="spainToMorocco()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in thailandPrograms" ng-if="thailand()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in italyPrograms" ng-if="italy()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in ecuadorPrograms" ng-if="ecuador()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in panamaPrograms" ng-if="panama()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in southAfricaPrograms" ng-if="southAfrica()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in cubaPrograms" ng-if="cuba()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in usaPrograms" ng-if="usa()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in bhutanPrograms" ng-if="bhutan()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in australiaPrograms" ng-if="australia()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in japanPrograms" ng-if="japan()" ng-selected="getCost()">{{program.name}}</option>
+		  		</select>
+	  			<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Select your Program</label>
+			</div>
+		</div>
+		<div class="input-con one clearfix" ng-show="isSelected()" style="display: none;">
+			<div class="group">      
+				<input type="text" class="form-input" name="amountDue" ng-model="user.cost" required/>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix">
+			<div class="group">
+				<select class="form-input select" ng-model="traveler.travelerDiscovery" name="How_did_you_hear_of_WTT_SA" required>
+			  		<option value="" selected data-default id="select-default"></option>
+			  		<option>School Sponsored Program</option>
+  					<option>Online Search</option>
+  					<option>In Class Presentation</option>
+  					<option>Referral</option>
+  					<option>Press</option>
+  					<option>Conference or Event</option>
+  					<option>Facebook Post</option>
+  					<option>Instagram</option>
+  					<option>Representative</option>
+  					<option>Step up to Excellence</option>
+  					<option>I'm An Alumni</option>
+		  		</select>
+	  			<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>How did you hear about Walking Tree Travel?</label>
+			</div>
+		</div>
+		<div class="form-item-grid-2-con clearfix" ng-show="isReferral()">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="travelerReferralName" ng-model="traveler.travelerReferralName" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Name of Referrer</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="text" class="form-input" name="travelerReferralEmail" ng-model="traveler.travelerReferralEmail" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Referrer's Email</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="centered-form-item clearfix">
+			<h4 style="padding-bottom: 15px;">If you have been given a code to use for any special promotion, please enter it here</h4>
+			<div class="group">      
+				<input type="text" class="form-input" name="Promo_Code" ng-model="traveler.travelerPromoCode" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Promo Code</label>
+			</div>
+		</div>
+		<div class="important l clearfix" ng-show="isCustoml()">
+			<h4 style="color: black;">Please check the box if you are applying for financial aid.</h4>
+			<div class="centered-form-item checkbox clearfix">
+				<input type="checkbox" class="aid" name="Applying_for_Financial_Aid"/>
+			</div>
+		</div>
+		<input type="button" name="previous" class="previous action-button" value="Previous" />
+		<input type="submit" name="next" class="next action-button" value="next"/>
+		<p style="font-style: italic; font-size: 10px; font-color:">Smithsonian Student Adventures is operated by Walking Tree Travel under license from the Smithsonian Institution. The name of the Smithsonian and the sunburst logo are registered trademarks of the Smithsonian Institution and Walking Tree Travel is an authorized user. Walking Tree Travel and Smithsonian Student Adventures will be referred to collectively as WTT throughout this enrollment form.</p>
+	</fieldset>
+	<fieldset>
+		<div class="form-item-grid-2-con clearfix">
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="email" class="form-input" ng-model="traveler.travelerPrimaryEmail" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Email</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-item-grid-2 clearfix">
+				<div class="form-item-grid-2-inner clearfix">
+					<div class="group">      
+						<input type="password" class="form-input" ng-model="traveler.password" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Password</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="button" name="previous" class="previous action-button" value="Previous" />
+		<input type="button" name="next" class="next action-button" ng-click="createTraveler()" data-toggle="modal" data-target="#travelerAccountModal" value="Login"/>
+		<p style="font-style: italic; font-size: 10px; font-color:">Smithsonian Student Adventures is operated by Walking Tree Travel under license from the Smithsonian Institution. The name of the Smithsonian and the sunburst logo are registered trademarks of the Smithsonian Institution and Walking Tree Travel is an authorized user. Walking Tree Travel and Smithsonian Student Adventures will be referred to collectively as WTT throughout this enrollment form.</p>
+	</fieldset>		 
+</form>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="travelerAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">Traveler Login</h2>
+      </div>
+      <div class="modal-body">
+      	<form action="/auth/login" method="post">
+	    	<div class="centered-form-item clearfix">
+				<div class="group">      
+					<input type="email" class="form-input" name="email">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Username</label>
+				</div>
+			</div>
+			<div class="centered-form-item clearfix">
+				<div class="group">      
+					<input type="password" class="form-input" name="password">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Password</label>
+				</div>
+			</div>
+			<button class="btn btn-default" type="submit">Login</button>
+		</form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+

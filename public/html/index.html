@@ -6,199 +6,103 @@
 		<meta name="viewport" content="width=device-width"/>
 		<!-- JQUERY -->
 		<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		<!-- BOOTSTRAP -->
 		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
 		<script type="text/javascript" src="/node_modules/bootstrap/js/modal.js"></script>
+		<!-- FONT AWESOME -->
+		<link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
 		<!-- STYLE.CSS -->
 		<link type="text/css" rel="stylesheet" href="../css/style.css"/>
 		<!-- ANGULAR -->
 		<script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
+		<!-- ANGULAR ROUTE -->
+		<script type="text/javascript" src="/node_modules/angular-route/angular-route.min.js"></script>
 		<!--ANGULAR PAYMENT-->
 		<script type="text/javascript" src="/node_modules/angular-payments/lib/angular-payments.js"> </script>
 		<!-- INDEX.JS -->
 		<script type="text/javascript" src="../js/index.js"></script>
 	</head>
 	<body ng-controller="mainController">
-		<div class="container">
-			<a data-toggle="modal" data-target="#loginModal" style="float: right; margin-top: 15px; font-size: 16px;">login</a>
-			<a data-toggle="modal" data-target="#ResetPassword" style="float: right; margin-top: 15px; font-size: 16px; margin-right:20px">Reset Password</a>
-			<div class="form-con clearfix">
-				<h1>WTT | PAYSIMPLE</h1>
-				<form class="clearfix" name="wtt-enroll-form" action="/auth/signup" method="post" novalidate>
-					<div class="input-con two clearfix">
-						<div class="input-con-inner clearfix">
-							<div class="group">      
-								<input type="text" class="form-input" name="firstName" ng-model="user.firstName" ng-required = "true"/>
-								<span class="highlight"></span>
-								<span class="bar"></span>
-								<label>First Name</label>
+		<header class="wtt-header-fixed clearfix">
+			<div class="wtt-header-outer">
+				<div class="wtt-header">
+					<div class="wtt-header-sun"></div>
+					<div class="wtt-header-background"></div>
+					<a href="#home"><div class="wtt-header-grid" id="wtthgl"></div></a>
+					<div class="wtt-header-grid" id="wtthgm"></div>
+					<div class="wtt-header-grid" id="wtthgr">
+						<div class="inner-grid">
+							<div class="nav-item-con">
+								<h4>find a program</h4>
 							</div>
 						</div>
-						<div class="input-con-inner clearfix">
-							<div class="group">      
-								<input type="text" class="form-input" name="lastName" ng-model="user.lastName" required/>
-								<span class="highlight"></span>
-								<span class="bar"></span>
-								<label>Last Name</label>
+						<div class="inner-grid">
+							<div class="nav-item-con">
+								<h4>how it works</h4>
+							</div>
+						</div>
+						<div class="inner-grid">
+							<div class="nav-item-con">
+								<h4>why us</h4>
+							</div>
+						</div>
+						<div class="inner-grid">
+							<a href="#enroll"><div class="nav-item-con">
+								<h4>enroll now</h4>
+							</div></a>
+						</div>
+						<div class="inner-grid">
+							<div class="nav-item-con">
+								<h4>talk to us</h4>
+							</div>
+						</div>
+						<div class="inner-grid">
+							<div class="nav-item-con" id="my-account" data-toggle="modal" data-target="#myAccountModal">
+								<i class="fa fa-user fa-3x" id="my-account-icon"></i>
+								<h5>my account</h5>
 							</div>
 						</div>
 					</div>
-					<div class="input-con one clearfix">
-						<div class="group">
-							<select class="form-input select" ng-model="destination.selected" required>
-				  				<option value="" selected data-default id="select-default"></option>
-						  		<option value="Belize">Belize</option>
-								<option value="Canada">Canada</option>
-								<option value="China">China</option>
-								<option value="Costa Rica">Costa Rica</option>
-								<option value="France">France</option>
-								<option value="Guatemala">Guatemala</option>
-								<option value="Peru">Peru</option>
-								<option value="Senegal">Senegal</option>
-								<option value="Spain">Spain</option>
-								<option value="Spain to Morocco">Spain to Morocco</option>
-								<option value="Thailand">Thailand</option>
-								<option value="Italy">Italy</option>
-								<option value="Ecuador">Ecuador</option>
-								<option value="Panama">Panama</option>
-								<option value="South Africa">South Africa</option>
-								<option value="Cuba">Cuba</option>
-								<option value="USA">USA</option>
-								<option value="Bhutan">Bhutan</option>
-								<option value="Australia">Australia</option>
-								<option value="Japan">Japan</option>
-			  				</select>
-		  					<span class="highlight"></span>
-							<span class="bar"></span>
-							<label>Destination Country</label>
-						</div>
-					</div>
-					<div class="input-con one clearfix">
-						<div class="group">
-							<select class="form-input select" ng-model="programs.selected" name="program" required>
-							  	<option value="" selected data-default id="select-default"></option>
-							  	<option ng-repeat="program in belizePrograms" ng-if="belize()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in canadaPrograms" ng-if="canada()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in chinaPrograms" ng-if="china()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in costaRicaPrograms" ng-if="costaRica()" ng-selected="getCost()" value="{{program.name}}">{{program.name}}</option>
-								<option ng-repeat="program in francePrograms" ng-if="france()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in guatemalaPrograms" ng-if="guatemala()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in peruPrograms" ng-if="peru()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in senegalPrograms" ng-if="senegal()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in spainPrograms" ng-if="spain()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in spainToMoroccoPrograms" ng-if="spainToMorocco()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in thailandPrograms" ng-if="thailand()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in italyPrograms" ng-if="italy()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in ecuadorPrograms" ng-if="ecuador()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in panamaPrograms" ng-if="panama()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in southAfricaPrograms" ng-if="southAfrica()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in cubaPrograms" ng-if="cuba()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in usaPrograms" ng-if="usa()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in bhutanPrograms" ng-if="bhutan()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in australiaPrograms" ng-if="australia()" ng-selected="getCost()">{{program.name}}</option>
-								<option ng-repeat="program in japanPrograms" ng-if="japan()" ng-selected="getCost()">{{program.name}}</option>
-						  	</select>
-					  		<span class="highlight"></span>
-							<span class="bar"></span>
-							<label>Select your Program</label>
-						</div>
-					</div>
-					<div class="input-con one clearfix" ng-show="isSelected()" style="display: none;">
+				</div>
+			</div>
+		</header>
+		<div ng-view class="route-window"></div>
+		<!-- Modal -->
+		<div class="modal fade" id="myAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h2 class="modal-title" id="myModalLabel">Admin Login</h2>
+		      </div>
+		      <div class="modal-body">
+		      	<form action="/auth/signup" method="post">
+			    	<div class="centered-form-item clearfix">
 						<div class="group">      
-							<input type="email" class="form-input" name="amountDue" ng-model="user.cost" required/>
+							<input type="email" class="form-input" name="email">
 							<span class="highlight"></span>
 							<span class="bar"></span>
+							<label>Username</label>
 						</div>
 					</div>
-					<div class="input-con two clearfix">
-						<div class="input-con-inner clearfix">
-							<div class="group">      
-								<input type="email" class="form-input" name="email" ng-model="user.email" required/>
-								<span class="highlight"></span>
-								<span class="bar"></span>
-								<label>Email</label>
-							</div>
-						</div>
-						<div class="input-con-inner clearfix">
-							<div class="group">      
-								<input type="password" class="form-input" name="password" ng-model="user.password" required/>
-								<span class="highlight"></span>
-								<span class="bar"></span>
-								<label>Password</label>
-							</div>
+					<div class="centered-form-item clearfix">
+						<div class="group">      
+							<input type="password" class="form-input" name="password">
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>Password</label>
 						</div>
 					</div>
-					<button ng-disabled="" class="btn btn-default" type="submit">Create Account</button>
-
+					<input style="display: none" type="text" value="yes" name="admin">
+					<button class="btn btn-default" type="submit">Login</button>
 				</form>
-			</div>
+		      </div>
+		      <div class="modal-footer">
+		      </div>
+		    </div>
+		  </div>
 		</div>
-<!-- Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-      	<form name="loginForm" action="/auth/login" method="post" novalidate>
-        <div class="input-con two clearfix">
-			<div class="input-con-inner clearfix">
-				<div class="group">      
-					<input type="email" class="form-input" name="email" required/>
-					<span class="highlight"></span>
-					<span class="bar"></span>
-					<label>Email</label>
-				</div>
-			</div>
-			<div class="input-con-inner clearfix">
-				<div class="group">      
-					<input type="password" class="form-input" name="password" required/>
-					<span class="highlight"></span>
-					<span class="bar"></span>
-					<label>Password</label>
-				</div>
-			</div>
-		</div>
-		<button class="btn btn-default" type="submit">Login</button>	
-		</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!--RESET PASSWORD-->
-<div class="modal fade" id="ResetPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-      	<form name="loginForm" action="/api/user/reset-password-request" method="post" novalidate>
-        <div class="input-con two clearfix">
-			<div class="input-con-inner clearfix">
-				<div class="group">      
-					<input type="email" class="form-input" name="email" required/>
-					<span class="highlight"></span>
-					<span class="bar"></span>
-					<label>Email</label>
-				</div>
-			</div>
-			<div>
-				<button class="btn btn-default"> Reset Password</button>
-			</div>
-		</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 	</body>
 </html>
 

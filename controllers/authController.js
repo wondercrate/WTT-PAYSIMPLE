@@ -27,7 +27,8 @@ var authController = {
 			program          : req.body.program, 
 			amountDue        : req.body.amountDue,
 			email            : req.body.email,
-			password         : req.body.password
+			password         : req.body.password,
+			admin            : req.body.admin
 		});
 		user.save(function(err, user) {
 			if(err) {
