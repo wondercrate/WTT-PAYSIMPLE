@@ -7,13 +7,21 @@
 <input type="hidden" name ="authtoken" value="e541da3a8a45335525231b4804918776">
 	<input type="hidden" name ="scope" id="scope" value="creatorapi">
 	<div class="prog-wrap">
-		<ul id="progressbar">
+		<ul id="progressbar" class="prog-desk">
 			<li class="active">Traveler Info</li>
 			<li>Guardian Info</li>
 			<li>Medical & passport</li>
 			<li>Terms & conditions</li>
 			<li>Program Selection</li>
 			<li>Payment</li>
+		</ul>
+		<ul id="progressbar" class="prog-mobile">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
 		</ul>
 	</div>
 	<fieldset>
@@ -1429,7 +1437,7 @@
 		  		</select>
 	  			<span class="highlight"></span>
 				<span class="bar"></span>
-				<label>How did you hear about Walking Tree Travel?</label>
+				<label>How did you hear about WTT?</label>
 			</div>
 		</div>
 		<div class="form-item-grid-2-con clearfix" ng-show="isReferral()">
@@ -1511,7 +1519,7 @@
         <h2 class="modal-title" id="myModalLabel">Traveler Login</h2>
       </div>
       <div class="modal-body">
-      	<form action="/auth/login" method="post">
+      	<form action="/wtt/" method="post">
 	    	<div class="centered-form-item clearfix">
 				<div class="group">      
 					<input type="email" class="form-input" name="email">

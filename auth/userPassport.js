@@ -1,6 +1,6 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var User = require('../models/user');
+var User = require('./userModel');
 passport.serializeUser(function(user, done) {
 	done(null, user.id);
 });
@@ -33,6 +33,6 @@ module.exports = {
 		if(req.isAuthenticated()) {
 			return next();
 		}
-		res.redirect('/auth/login');
+		res.redirect('/wtt/');
 	}
 };

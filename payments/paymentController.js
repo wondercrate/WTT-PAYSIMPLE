@@ -4,7 +4,7 @@ let co = require("co");
 let express = require("express");
 let config = require("../config");
 let promisify = require("es6-promisify");
-let userController = require("./userController");
+let userController = require("../auth/resetUserController");
 let mailHelper = require("../lib/mail-helper");
 let paysimple = new (require('paysimple'))(config.PAYSIMPLE_PARAMS);
 

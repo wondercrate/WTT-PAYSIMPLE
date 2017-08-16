@@ -1,9 +1,9 @@
 var passport = require('passport');
-var User = require('../models/user');
+var User = require('./userModel');
 var performLogin = function(req, res, next, user) {
 	req.login(user, function(err) {
 		if(err) return next(err);
-		return res.redirect('/');
+		return res.redirect('/my-account');
 	});
 };
 var authController = {
@@ -41,10 +41,6 @@ var authController = {
 			}
 			performLogin(req, res, next, user);
 		});
-	},
-	logout: function(req, res) {
-		req.logout();
-		res.redirect('/auth/signup');
 	}
 };
 module.exports = authController;

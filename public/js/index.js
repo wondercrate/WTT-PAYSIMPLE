@@ -323,7 +323,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 				password: $scope.traveler.password, 
 				admin: "no"
 			}
-			$http.post('/auth/signup', data).then(function() {
+			$http.post('/wtt/signup', data).then(function() {
 
 			})
 		}

@@ -6,8 +6,9 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 var config = require("./config");
-var paymentController = require("./controllers/paymentController");
-var userController = require("./controllers/userController");
+//var paymentController = require("./controllers/paymentController");
+var paymentController = require("./payments/paymentController");
+var userController = require("./auth/resetUserController");
 var programController = require('./programs/programController');
 /*******************************
 EXPRESS 
@@ -24,12 +25,12 @@ mongoose.connect(config.MONGODB_CONNECTION_STRING);
 /*******************************
 PASSPORT
 *******************************/
-var passportConfig = require('./passport/passport');
-
+//var passportConfig = require('./passport/passport');
+var passportConfig = require('./auth/userPassport');
 /*******************************
 AUTH CONTROLLER 
 *******************************/
-var authController = require('./controllers/authController');
+var authController = require('./auth/userController');
 
 /*******************************
 BODY PARSER
@@ -62,9 +63,9 @@ AUTH ROUTES
 // GET PROGRAMS \\
 app.get('/api/programs/getPrograms', programController.getPrograms);
 
-app.get('/auth/login', authController.login);
-app.post('/auth/login', authController.processLogin);
-app.post('/auth/signup', authController.processSignup);
+app.get('/wtt/', authController.login);
+app.post('/wtt/', authController.processLogin);
+app.post('/wtt/signup', authController.processSignup);
 
 app.post("/api/user/reset-password-request", userController.resetPasswordRequest);
 app.post("/api/user/reset-password", userController.resetPassword);
@@ -82,7 +83,7 @@ app.get('/reset-password',function(req,res){
 AUTHENTICATION & REDIRECT 
 *******************************/
 app.use(passportConfig.ensureAuthenticated);
-app.get('/', function(req, res){
+app.get('/my-account', function(req, res){
   res.sendFile('/html/user.html', {root : './public'});
 });
 // ADD/DELETE/EDIT PROGRAMS \\

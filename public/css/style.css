@@ -767,7 +767,10 @@ ENROLL PAGE
 }
 
 #progressbar {
+  width: 100%;
+  margin: auto;
   counter-reset: step;
+  padding-left: 0px;
 }
 .prog-wrap {
   padding-bottom: 50px;
@@ -1051,13 +1054,94 @@ label > span {
   font-size: 12px!important;
 }
 
+.prog-mobile {
+  display: none;
+}
 
 
 
-
-
-
-
+/*--------------------------------
+RESPONSIVE 
+---------------------------------*/
+@media (max-width: 1024px) {
+  #msform {
+    width: 90%;
+  }
+  #wtthgm {
+    display: none;
+  }
+  #wtthgr {
+    width: 80%;
+  }
+  .wtt-header-background {
+    width: 50%;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+  .nav-item-con {
+    position: relative;
+  }
+  .nav-item-con h4 {
+    position: absolute;
+    font-size: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  #msform {
+    width: 100%;
+  }
+  #progressbar {
+    width: 85%;
+  }
+  .centered-form-item {
+    width: 60%;
+  }
+  .wtt-header-outer {
+    padding-right: 0px;
+  }
+  #my-account {
+    width: 100%;
+  }
+}
+@media (max-width: 425px) {
+  .prog-desk {
+    display: none;
+  }
+  .prog-mobile {
+    display: block;
+  }
+  #progressbar {
+    width: 90%;
+  }
+  .centered-form-item, .form-item-grid-2, .form-item-grid-3, .form-item-grid-2-inner, .form-item-grid-3-inner {
+    width: 100%;
+  }
+  .wtt-enroll-header-con {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  #msform .action-button {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+  }
+}
+@media (max-width: 375px) {
+  #progressbar {
+    width: 100%;
+  }
+  #msform fieldset {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 320px) {
+  
+}
 
 
 

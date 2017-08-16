@@ -1,10 +1,10 @@
 "use strict";
 
 let co = require("co");
-let uuid = require("uuid");
+let uuid = require("uuid"); 
 let express = require("express");
 let config = require("../config");
-let User = require('../models/user');
+let User = require('./userModel');
 let mailHelper = require("../lib/mail-helper");
 let userRouter = express.Router();
 
