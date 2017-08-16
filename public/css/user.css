@@ -11,16 +11,6 @@
     border: solid 2px red;
 }
 
-
-
-h1 {
-	width: 100%;
-	text-align: center;
-}
-form {
-	width: 40%;
-	margin: auto;
-}
 input {
 	margin: 10px;
 }
@@ -28,7 +18,7 @@ input {
 	margin: 10px;
 	width: 100%;
 }
-h3, h4, h5 {
+h1, h2, h3, h4, h5 {
 	margin: 0px;
 }
 .programs-con {
@@ -62,3 +52,103 @@ h3, h4, h5 {
 	margin-top: 10px;
 	margin-left: 0px;
 }
+
+
+
+.nav-con {
+	width: 100%;
+	height: auto;
+	padding: 25px;
+	border-bottom: 1px solid #f2f2f2;
+}
+.nav-con h2, .nav-con button {
+	display: inline-block;
+}
+.nav-con button {
+	border: none;
+	border-radius: 5px;
+	padding: 15px 25px 15px 25px;
+	background-color: #ffd809;
+	float: right;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
+.modal-title {
+	text-align: center;
+}
+.info-con {
+	padding-top: 50px;
+	text-align: center;
+}
+.info-con h2, .info-con h3 {
+	margin-top: 15px;
+}
+.name {
+	padding-top: 10px;
+}
+.info-con button {
+	border: none;
+	border-radius: 5px;
+	padding: 15px 25px 15px 25px;
+	background-color: #ffd809;
+	letter-spacing: 2px;
+	font-weight: bold;
+	display: none;
+}
+.admin-con {
+	padding-top: 50px;
+}
+.admin-con h1 {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 25px;
+}
+.admin-con form {
+	width: 50%;
+	margin: auto;
+}
+.admin-con input, .admin-con button {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+@media (max-width: 425px) {
+	.info-con button {
+		display: block;
+		margin: auto;
+	}
+	.nav-con button {
+		display: none;
+	}
+	.admin-con form {
+		width: 90%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

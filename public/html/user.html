@@ -19,250 +19,278 @@
 		 <script data-require="angular-credit-cards@*" data-semver="3.0.1" src="https://rawgit.com/bendrucker/angular-credit-cards/v3.0.1/release/angular-credit-cards.js"></script>
 	</head>
 	<body ng-controller="mainController">
-
-		<div class="col-md-6" ng-if="!isAdmin()">
-			<h3>PAYMENT FORM</h3>
-		<form name="orderForm">
-			<h4>Order Information</h4>
-			<div  class="form-group col-md-12">
-				<label for="first-name">First Name</label>
-				<input ng-class="{ 'danger': orderForm.firstname.$invalid && orderForm.firstname.$touched}" ng-model="order.FirstName" name="firstname" class="form-control" type="text" ng-required="true">
+		<div ng-if="!isAdmin()">
+			<div class="nav-con clearfix">
+				<!--<a style="display: block;" href="/wtt/">logout</a>-->
+				<h2 class="name">Welcome, {{user.firstName}}</h2>
+				<button data-toggle="modal" data-target="#payModal">MAKE A PAYMENT</button>
 			</div>
-			<div class="form-group col-md-12">
-				<label for="last-name">Last name</label>
-				<input ng-class="{ 'danger': orderForm.lastname.$invalid && orderForm.lastname.$touched}" ng-model="order.LastName" name="lastname" class="form-control" type="text" ng-required="true">
+			<div class="info-con">
+				<h2>TRIP INFO</h2>
+				<h3>{{user.program}}</h3>
+				<h2>AMOUNT DUE</h2>
+				<h3 style="margin-bottom: 15px;">{{user.amountDue}}</h3>
+				<button data-toggle="modal" data-target="#payModal">MAKE A PAYMENT</button>
 			</div>
-			<h4>Payment Information</h4>
-			<div class="form-group col-md-12">
-				<label for="payment_amount">Payment amount</label>
-				<input ng-model="order.amountDue" ng-disabled="true" name="payment_amount" class="form-control" type="text" ng-required="true">
-			</div>
-			<h4>Choose Payment Type:</h4>
-			<div class="form-group col-md-12">
-				<label for="card_number">Card number</label>
-				<!--<input type="card_number" ng-model="card.number" cc-number cc-type="cardType" ng-required="true" />-->
-				<input ng-class="{ 'danger': orderForm.card_number.$invalid && orderForm.card_number.$touched}" type="text" class="form-control" id="cardNumber" cc-number cc-eager-type name="card_number" ng-model="CreditCardNumber"
-					ng-required="true">
-
-			</div>
-			<div class="form-group col-md-12">
-				<label for="card_number">CVV2 Code</label>
-				<input ng-class="{ 'danger': orderForm.ccCvc.$invalid && orderForm.ccCvc.$touched}" type="text" class="form-control" id="cvc" cc-cvc cc-type="ccForm.ccNumber.$ccType" name="ccCvc" ng-model="CVV" ng-required="true">
-			</div>
-			<div class="form-group col-md-12">
-				<label  for="card_number">Expiration Date</label>
-				<select ng-model="expirationMonth" name="expirationMonth" id="">
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-					<option value="11">11</option>
-					<option value="12">12</option>
-				</select>
-				<select ng-model="expirationYear"  name="expirationYear" id="">
-					<option value="2017">2017</option>
-					<option value="2018">2018</option>
-					<option value="2019">2019</option>
-					<option value="2020">2020</option>
-					<option value="2021">2021</option>
-					<option value="2022">2022</option>
-					<option value="2023">2023</option>
-					<option value="2024">2024</option>
-					<option value="2025">2025</option>
-					<option value="2026">2026</option>
-					<option value="2027">2027</option>
-					<option value="2028">2028</option>
-					<option value="2029">2029</option>
-					<option value="2030">2030</option>
-					<option value="2031">2031</option>
-					<option value="2032">2032</option>
-				</select>		
-			</div>
-			<h4>Billing Address</h4>
-			<div class="form-group col-md-12">
-				<label for="address1">Address 1</label>
-				<input ng-class="{ 'danger': orderForm.address1.$invalid && orderForm.address1.$touched}" ng-model="order.BillingAddress.StreetAddress1" name="address1" class="form-control" type="text" ng-required="true">
-			</div>
-			<div class="form-group col-md-12">
-				<label for="City">City</label>
-				<input ng-class="{ 'danger': orderForm.City.$invalid && orderForm.City.$touched}" ng-model="order.BillingAddress.City" name="City" class="form-control" type="text" ng-required="true">
-			</div>
-			<div class="form-group col-md-12">
-				<label for="Country">Country</label>
-				<select ng-model="order.BillingAddress.Country" name="Country" ng-change="changeCountry()">
-					<option value="USA">USA</option>
-					<option value="Canada">Canada</option>	
-				</select>
-			</div>
-			<div class="form-group col-md-12">
-				<label for="state">State</label>
-				<select ng-model="order.BillingAddress.StateCode" name="state" ng-if="order.BillingAddress.Country=='Canada'">
-					<option value="AB">AB</option>
-					<option value="BC">BC</option>
-					<option value="MB">MB</option>
-					<option value="NB">NB</option>
-					<option value="NL">NL</option>
-					<option value="NT">NT</option>
-					<option value="NS">NS</option>
-					<option value="NU">NU</option>
-					<option value="ON">ON</option>
-					<option value="PE">PE</option>
-					<option value="QC">QC</option>
-					<option value="SK">SK</option>
-					<option value="YT">YT</option>
-				</select>
-				<select ng-model="order.BillingAddress.StateCode" name="state" ng-if="order.BillingAddress.Country=='USA'">
-					<option value="AK">AK</option>
-					<option value="AL">AL</option>
-					<option value="AR">AR</option>
-					<option value="AZ">AZ</option>
-					<option value="CA">CA</option>
-					<option value="CO">CO</option>
-					<option value="CT">CT</option>
-					<option value="DC">DC</option>
-					<option value="DE">DE</option>
-					<option value="FL">FL</option>
-					<option value="GA">GA</option>
-					<option value="HI">HI</option>
-					<option value="IA">IA</option>
-					<option value="ID">ID</option>
-					<option value="IL">IL</option>
-					<option value="IN">IN</option>
-					<option value="KS">KS</option>
-					<option value="KY">KY</option>
-					<option value="LA">LA</option>
-					<option value="MA">MA</option>
-					<option value="MD">MD</option>
-					<option value="ME">ME</option>
-					<option value="MI">MI</option>
-					<option value="MN">MN</option>
-					<option value="MO">MO</option>
-					<option value="MS">MS</option>
-					<option value="MT">MT</option>
-					<option value="NC">NC</option>
-					<option value="ND">ND</option>
-					<option value="NE">NE</option>
-					<option value="NH">NH</option>
-					<option value="NJ">NJ</option>
-					<option value="NM">NM</option>
-					<option value="NV">NV</option>
-					<option value="NY">NY</option>
-					<option value="OH">OH</option>
-					<option value="OK">OK</option>
-					<option value="OR">OR</option>
-					<option value="PA">PA</option>
-					<option value="RI">RI</option>
-					<option value="SC">SC</option>
-					<option value="SD">SD</option>
-					<option value="TN">TN</option>
-					<option value="TX">TX</option>
-					<option value="UT">UT</option>
-					<option value="VA">VA</option>
-					<option value="VT">VT</option>
-					<option value="WA">WA</option>
-					<option value="WI">WI</option>
-					<option value="WV">WV</option>
-					<option value="WY">WY</option>
-					<option value="PR">PR</option>
-					<option value="MP">MP</option>
-					<option value="GU">GU</option>
-					<option value="VI">VI</option>
-					<option value="MH">MH</option>
-					<option value="AS">AS</option>
-					<option value="AE">AE</option>
-					<option value="PW">PW</option>
-					<option value="AP">AP</option>
-					<option value="FM">FM</option>
-					<option value="AA">AA</option>
-				</select>
-			</div>
-			<div class="form-group col-md-12">
-				<label for="zip">ZIP/Postal Code</label>
-				<input ng-class="{ 'danger': orderForm.zip.$invalid && orderForm.zip.$touched}" ng-model="order.BillingAddress.ZipCode" name="zip"class="form-control" type="text" ng-required="true">
-			</div>
-			<div class="form-group col-md-12 ">
-				<button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="submit()">PAY</button>
-			</div>
-			<span class="fail-text"  ng-if="failMes">{{failMessage}}</span>
-			<span class="success-text" ng-if="succseMes">Success payment with data:</span>
-			<ul ng-if="succseMes">
-				<li ng-repeat="(key, value) in succsesMessage">{{key}}: {{value}}</li>
-			</ul>
-
-		</form>
-	
 		</div>
-		<div class="admin-con" ng-if="isAdmin()">
-			<h1>Add Programs</h1>
-			<form>
-				<input class="form-control" ng-model="program.name" type="text" placeholder="Program name.."/>
-				<input class="form-control" ng-model="program.country" type="text" placeholder="Program country.."/>
-				<input class="form-control" ng-model="program.duration" type="text" placeholder="Program duration.."/>
-				<input class="form-control" ng-model="program.price" type="text" placeholder="Program cost.."/>
-				<button class="btn btn-success submit-btn" ng-click="addProgram(program)" type="submit">Submit</button>
-			</form>
-			<div class="programs-con clearfix">
-				<div class="container">
-					<div class="programs" ng-repeat="program in programsArray">
-						<div class="programs-grid-titles clearfix">
-							<h3>{{program.name}}</h3>
-							<button class="btn btn-default edit-btn" data-toggle="modal" data-target="#editModal" ng-click="pushProgram(program)">Edit</button>
-							<div class="programs-grid-inner">
-								<h4>Country</h4>
+
+
+			<div class="admin-con" ng-if="isAdmin()">
+				<h1>Add Programs</h1>
+				<form>
+					<input class="form-control" ng-model="program.name" type="text" placeholder="Program name.."/>
+					<input class="form-control" ng-model="program.country" type="text" placeholder="Program country.."/>
+					<input class="form-control" ng-model="program.duration" type="text" placeholder="Program duration.."/>
+					<input class="form-control" ng-model="program.price" type="text" placeholder="Program cost.."/>
+					<button class="btn btn-success submit-btn" ng-click="addProgram(program)" type="submit">Submit</button>
+				</form>
+				<div class="programs-con clearfix">
+					<div class="container">
+						<div class="programs" ng-repeat="program in programsArray">
+							<div class="programs-grid-titles clearfix">
+								<h3>{{program.name}}</h3>
+								<button class="btn btn-default edit-btn" data-toggle="modal" data-target="#editModal" ng-click="pushProgram(program)">Edit</button>
+								<div class="programs-grid-inner">
+									<h4>Country</h4>
+								</div>
+								<div class="programs-grid-inner">
+									<h4>Duration</h4>
+								</div>
+								<div class="programs-grid-inner">
+									<h4>$Cost</h4>
+								</div>
 							</div>
-							<div class="programs-grid-inner">
-								<h4>Duration</h4>
+							<div class="divider clearfix"></div>
+							<div class="programs-grid-info clearfix">
+								<div class="programs-grid-inner">
+									<h5>{{program.country}}</h5>
+								</div>
+								<div class="programs-grid-inner">
+									<h5>{{program.duration}}</h5>
+								</div>
+								<div class="programs-grid-inner">
+									<h5>{{program.price}}</h5>
+								</div>
 							</div>
-							<div class="programs-grid-inner">
-								<h4>$Cost</h4>
+							<!-- Modal -->
+							<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-repeat="program in singleProgramArray">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <h4 class="modal-title" id="myModalLabel">{{program.name}}</h4>
+							      </div>
+							      <div class="modal-body">
+							        <h5>Name</h5>
+							        <input class="form-control" ng-model="program.name" placeholder="{{program.name}}">
+							        <h5>Country</h5>
+							        <input class="form-control" ng-model="program.country" placeholder="{{program.country}}">
+							        <h5>duration</h5>
+							        <input class="form-control" ng-model="program.duration" placeholder="{{program.duration}}">
+							        <h5>$Cost</h5>
+							        <input class="form-control" ng-model="program.price" placeholder="{{program.price}}">
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateProgram()">Save changes</button>
+							        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteProgram(program._id)">Delete</button>
+							      </div>
+							    </div>
+							  </div>
 							</div>
-						</div>
-						<div class="divider clearfix"></div>
-						<div class="programs-grid-info clearfix">
-							<div class="programs-grid-inner">
-								<h5>{{program.country}}</h5>
-							</div>
-							<div class="programs-grid-inner">
-								<h5>{{program.duration}}</h5>
-							</div>
-							<div class="programs-grid-inner">
-								<h5>{{program.price}}</h5>
-							</div>
-						</div>
-						<!-- Modal -->
-						<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-repeat="program in singleProgramArray">
-						  <div class="modal-dialog" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        <h4 class="modal-title" id="myModalLabel">{{program.name}}</h4>
-						      </div>
-						      <div class="modal-body">
-						        <h5>Name</h5>
-						        <input class="form-control" ng-model="program.name" placeholder="{{program.name}}">
-						        <h5>Country</h5>
-						        <input class="form-control" ng-model="program.country" placeholder="{{program.country}}">
-						        <h5>duration</h5>
-						        <input class="form-control" ng-model="program.duration" placeholder="{{program.duration}}">
-						        <h5>$Cost</h5>
-						        <input class="form-control" ng-model="program.price" placeholder="{{program.price}}">
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateProgram()">Save changes</button>
-						        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteProgram(program._id)">Delete</button>
-						      </div>
-						    </div>
-						  </div>
 						</div>
 					</div>
 				</div>
 			</div>
+		
+
+		<div class="modal fade" id="payModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h2 class="modal-title" id="myModalLabel">PAYMENT FORM</h2>
+		      </div>
+		      <div class="modal-body">
+		      	<div class="user-con">
+			<form name="orderForm">
+				<h4>Order Information</h4>
+				<div  class="form-group col-md-12">
+					<label for="first-name">First Name</label>
+					<input ng-class="{ 'danger': orderForm.firstname.$invalid && orderForm.firstname.$touched}" ng-model="order.FirstName" name="firstname" class="form-control" type="text" ng-required="true">
+				</div>
+				<div class="form-group col-md-12">
+					<label for="last-name">Last name</label>
+					<input ng-class="{ 'danger': orderForm.lastname.$invalid && orderForm.lastname.$touched}" ng-model="order.LastName" name="lastname" class="form-control" type="text" ng-required="true">
+				</div>
+				<h4>Payment Information</h4>
+				<div class="form-group col-md-12">
+					<label for="payment_amount">Payment amount</label>
+					<input ng-model="order.amountDue" ng-disabled="true" name="payment_amount" class="form-control" type="text" ng-required="true">
+				</div>
+				<h4>Choose Payment Type:</h4>
+				<div class="form-group col-md-12">
+					<label for="card_number">Card number</label>
+					<!--<input type="card_number" ng-model="card.number" cc-number cc-type="cardType" ng-required="true" />-->
+					<input ng-class="{ 'danger': orderForm.card_number.$invalid && orderForm.card_number.$touched}" type="text" class="form-control" id="cardNumber" cc-number cc-eager-type name="card_number" ng-model="CreditCardNumber"
+						ng-required="true">
+
+				</div>
+				<div class="form-group col-md-12">
+					<label for="card_number">CVV2 Code</label>
+					<input ng-class="{ 'danger': orderForm.ccCvc.$invalid && orderForm.ccCvc.$touched}" type="text" class="form-control" id="cvc" cc-cvc cc-type="ccForm.ccNumber.$ccType" name="ccCvc" ng-model="CVV" ng-required="true">
+				</div>
+				<div class="form-group col-md-12">
+					<label  for="card_number">Expiration Date</label>
+					<select ng-model="expirationMonth" name="expirationMonth" id="">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>
+					<select ng-model="expirationYear"  name="expirationYear" id="">
+						<option value="2017">2017</option>
+						<option value="2018">2018</option>
+						<option value="2019">2019</option>
+						<option value="2020">2020</option>
+						<option value="2021">2021</option>
+						<option value="2022">2022</option>
+						<option value="2023">2023</option>
+						<option value="2024">2024</option>
+						<option value="2025">2025</option>
+						<option value="2026">2026</option>
+						<option value="2027">2027</option>
+						<option value="2028">2028</option>
+						<option value="2029">2029</option>
+						<option value="2030">2030</option>
+						<option value="2031">2031</option>
+						<option value="2032">2032</option>
+					</select>		
+				</div>
+				<h4>Billing Address</h4>
+				<div class="form-group col-md-12">
+					<label for="address1">Address 1</label>
+					<input ng-class="{ 'danger': orderForm.address1.$invalid && orderForm.address1.$touched}" ng-model="order.BillingAddress.StreetAddress1" name="address1" class="form-control" type="text" ng-required="true">
+				</div>
+				<div class="form-group col-md-12">
+					<label for="City">City</label>
+					<input ng-class="{ 'danger': orderForm.City.$invalid && orderForm.City.$touched}" ng-model="order.BillingAddress.City" name="City" class="form-control" type="text" ng-required="true">
+				</div>
+				<div class="form-group col-md-12">
+					<label for="Country">Country</label>
+					<select ng-model="order.BillingAddress.Country" name="Country" ng-change="changeCountry()">
+						<option value="USA">USA</option>
+						<option value="Canada">Canada</option>	
+					</select>
+				</div>
+				<div class="form-group col-md-12">
+					<label for="state">State</label>
+					<select ng-model="order.BillingAddress.StateCode" name="state" ng-if="order.BillingAddress.Country=='Canada'">
+						<option value="AB">AB</option>
+						<option value="BC">BC</option>
+						<option value="MB">MB</option>
+						<option value="NB">NB</option>
+						<option value="NL">NL</option>
+						<option value="NT">NT</option>
+						<option value="NS">NS</option>
+						<option value="NU">NU</option>
+						<option value="ON">ON</option>
+						<option value="PE">PE</option>
+						<option value="QC">QC</option>
+						<option value="SK">SK</option>
+						<option value="YT">YT</option>
+					</select>
+					<select ng-model="order.BillingAddress.StateCode" name="state" ng-if="order.BillingAddress.Country=='USA'">
+						<option value="AK">AK</option>
+						<option value="AL">AL</option>
+						<option value="AR">AR</option>
+						<option value="AZ">AZ</option>
+						<option value="CA">CA</option>
+						<option value="CO">CO</option>
+						<option value="CT">CT</option>
+						<option value="DC">DC</option>
+						<option value="DE">DE</option>
+						<option value="FL">FL</option>
+						<option value="GA">GA</option>
+						<option value="HI">HI</option>
+						<option value="IA">IA</option>
+						<option value="ID">ID</option>
+						<option value="IL">IL</option>
+						<option value="IN">IN</option>
+						<option value="KS">KS</option>
+						<option value="KY">KY</option>
+						<option value="LA">LA</option>
+						<option value="MA">MA</option>
+						<option value="MD">MD</option>
+						<option value="ME">ME</option>
+						<option value="MI">MI</option>
+						<option value="MN">MN</option>
+						<option value="MO">MO</option>
+						<option value="MS">MS</option>
+						<option value="MT">MT</option>
+						<option value="NC">NC</option>
+						<option value="ND">ND</option>
+						<option value="NE">NE</option>
+						<option value="NH">NH</option>
+						<option value="NJ">NJ</option>
+						<option value="NM">NM</option>
+						<option value="NV">NV</option>
+						<option value="NY">NY</option>
+						<option value="OH">OH</option>
+						<option value="OK">OK</option>
+						<option value="OR">OR</option>
+						<option value="PA">PA</option>
+						<option value="RI">RI</option>
+						<option value="SC">SC</option>
+						<option value="SD">SD</option>
+						<option value="TN">TN</option>
+						<option value="TX">TX</option>
+						<option value="UT">UT</option>
+						<option value="VA">VA</option>
+						<option value="VT">VT</option>
+						<option value="WA">WA</option>
+						<option value="WI">WI</option>
+						<option value="WV">WV</option>
+						<option value="WY">WY</option>
+						<option value="PR">PR</option>
+						<option value="MP">MP</option>
+						<option value="GU">GU</option>
+						<option value="VI">VI</option>
+						<option value="MH">MH</option>
+						<option value="AS">AS</option>
+						<option value="AE">AE</option>
+						<option value="PW">PW</option>
+						<option value="AP">AP</option>
+						<option value="FM">FM</option>
+						<option value="AA">AA</option>
+					</select>
+				</div>
+				<div class="form-group col-md-12">
+					<label for="zip">ZIP/Postal Code</label>
+					<input ng-class="{ 'danger': orderForm.zip.$invalid && orderForm.zip.$touched}" ng-model="order.BillingAddress.ZipCode" name="zip"class="form-control" type="text" ng-required="true">
+				</div>
+				<div class="form-group col-md-12 ">
+					<button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="submit()">PAY</button>
+				</div>
+				<span class="fail-text"  ng-if="failMes">{{failMessage}}</span>
+				<span class="success-text" ng-if="succseMes">Success payment with data:</span>
+				<ul ng-if="succseMes">
+					<li ng-repeat="(key, value) in succsesMessage">{{key}}: {{value}}</li>
+				</ul>
+			</form>
+			</div>
+		      </div>
+		      <div class="modal-footer">
+		      </div>
+		    </div>
+		  </div>
 		</div>
 		<!--<div>
 			<iframe frameborder="0" style="overflow: hidden; height: 100%;
@@ -275,6 +303,5 @@
 			Secure Payments</a>
 		</div>-->
 		<!--<button ng-click="checkform()">sad</button>-->
-		
 	</body>
 </html>
