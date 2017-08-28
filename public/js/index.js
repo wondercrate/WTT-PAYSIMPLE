@@ -321,7 +321,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 					};
 				};
 				$scope.user.cost = getTheCost();
-				$scope.program = $scope.programs.selected;
+				$scope.order.program = $scope.programs.selected;
 				$scope.order.amountDue = $scope.user.cost;
 			}
 		})
