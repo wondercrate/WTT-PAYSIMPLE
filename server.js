@@ -62,7 +62,7 @@ AUTH ROUTES
 *******************************/
 // GET PROGRAMS \\
 app.get('/api/programs/getPrograms', programController.getPrograms);
-
+app.use("/api/payment", paymentController.router);
 app.get('/wtt/', authController.login);
 app.post('/wtt/', authController.processLogin);
 app.post('/wtt/signup', authController.processSignup);
@@ -90,7 +90,6 @@ app.get('/my-account', function(req, res){
 app.post('/api/programs/addProgram', programController.addProgram);
 app.delete('/api/programs/deleteProgram/:id', programController.deleteProgram);
 app.post('/api/programs/updateProgram', programController.updateProgram);
-app.use("/api/payment", paymentController.router);
 
 app.use(function(err, req, res, next) {
   res.status(404).send(err.message);

@@ -3,7 +3,7 @@
 	<h4>Congratulations on your decision to join one of our adventures! The following enrollment form will take about ten minutes to complete and will require the presence of both the participant and guardian as well as either a check or credit card to complete. Please call 303-242-8541 if you have any questions or issues with this form. We are happy to help.</h4>
 </div>
 <div class="wtt-enroll-form-con clearfix">
-<form id="msform" class="clearfix" novalidate method="POST" action="https://creator.zoho.com/api/zoho_lacey21/json/leadsapp/form/LeadsForm/record/add">
+<form name= "msForm" id="msform" class="clearfix" novalidate method="POST" action="https://creator.zoho.com/api/zoho_lacey21/json/leadsapp/form/LeadsForm/record/add">
 <input type="hidden" name ="authtoken" value="e541da3a8a45335525231b4804918776">
 	<input type="hidden" name ="scope" id="scope" value="creatorapi">
 	<div class="prog-wrap">
@@ -1414,7 +1414,7 @@
 		</div>
 		<div class="input-con one clearfix" ng-show="isSelected()" style="display: none;">
 			<div class="group">      
-				<input type="text" class="form-input" name="amountDue" ng-model="user.cost" required/>
+				<input type="text" class="form-input" name="amountDue" ng-model="order.amountDue" required/>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 			</div>
@@ -1483,30 +1483,308 @@
 	</fieldset>
 	<fieldset>
 		<div class="form-item-grid-2-con clearfix">
-			<div class="form-item-grid-2 clearfix">
-				<div class="form-item-grid-2-inner clearfix">
-					<div class="group">      
-						<input type="email" class="form-input" ng-model="traveler.travelerPrimaryEmail" required>
-						<span class="highlight"></span>
-						<span class="bar"></span>
-						<label>Email</label>
+			<form name="orderForm">
+				<h4 style="margin-bottom: 30px">Order Information</h4>
+				<div class="form-item-grid-6 l clearfix">
+					<div class="form-item-grid-3-inner clearfix">
+						<div class="group">
+							<input type="text" ng-class="{ 'danger': orderForm.firstname.$invalid && orderForm.firstname.$touched}" class="form-input" name="firstname" ng-model="order.FirstName" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>First Name</label>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="form-item-grid-2 clearfix">
-				<div class="form-item-grid-2-inner clearfix">
-					<div class="group">      
-						<input type="password" class="form-input" ng-model="traveler.password" required>
-						<span class="highlight"></span>
-						<span class="bar"></span>
-						<label>Password</label>
+				<div class="form-item-grid-6 l clearfix">
+					<div class="form-item-grid-3-inner clearfix">
+						<div class="group">
+							<input type="text" ng-class="{ 'danger': orderForm.lastname.$invalid && orderForm.lastname.$touched}" class="form-input"
+							 name="lastname" ng-model="order.LastName" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>Last name</label>
+						</div>
 					</div>
 				</div>
-			</div>
+				<h4>Payment Information</h4>
+				<div class="form-item-grid-6 l clearfix">
+					<div class="form-item-grid-3-inner clearfix">
+						<div class="group">
+							<span style="float:left">Payment amount</span>
+							<input type="text" ng-model="order.amountDue" ng-disabled="true" name="payment_amount" class="form-input"
+							 name="payment_amount"  required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							
+						</div>
+					</div>
+				</div>
+				<div class="form-item-grid-6 l clearfix">
+					<div class="form-item-grid-3-inner clearfix">
+						<div class="group">
+							<input type="text" ng-class="{ 'danger': orderForm.card_number.$invalid && orderForm.card_number.$touched}" type="text" class="form-input"
+							 name="card_number" id="cardNumber" cc-number cc-eager-type name="card_number" ng-model="order.CreditCardNumber" ng-required="true">
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>Card number</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-item-grid-6 l clearfix">
+					<div class="form-item-grid-3-inner clearfix">
+						<div class="group">
+							<input ng-class="{ 'danger': orderForm.ccCvc.$invalid && orderForm.ccCvc.$touched}" type="text" class="form-input" id="cvc"
+							 cc-cvc cc-type="ccForm.ccNumber.$ccType" name="ccCvc" ng-model="order.CVV" ng-required="true">
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>CVV2 Code</label>
+						</div>
+					</div>
+				</div>
+				<h4>Expiration Date</h4>
+				<div class="form-item-grid-2-con clearfix">
+					<div class="form-item-grid-2 clearfix">
+						<div class="form-item-grid-2-inner clearfix">
+							<div class="group">
+								<select class="form-input select" ng-model="order.expirationMonth" name="expirationMonth" ng-change="testMonth()" required>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+									</select>
+								<span class="highlight"></span>
+								<span class="bar"></span>
+								<label>Month</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-item-grid-2 clearfix">
+						<div class="form-item-grid-2-inner clearfix">
+							<div class="group">
+								<select class="form-input select" ng-model="order.expirationYear" name="expirationYear" required>
+										<option value="2017">2017</option>
+										<option value="2018">2018</option>
+										<option value="2019">2019</option>
+										<option value="2020">2020</option>
+										<option value="2021">2021</option>
+										<option value="2022">2022</option>
+										<option value="2023">2023</option>
+										<option value="2024">2024</option>
+										<option value="2025">2025</option>
+										<option value="2026">2026</option>
+										<option value="2027">2027</option>
+										<option value="2028">2028</option>
+										<option value="2029">2029</option>
+										<option value="2030">2030</option>
+										<option value="2031">2031</option>
+										<option value="2032">2032</option>
+				  					</select>
+								<span class="highlight"></span>
+								<span class="bar"></span>
+								<label>Year</label>
+							</div>
+						</div>
+					</div>
+				</div>
+					<!--<div class="form-item-grid-2-con clearfix">
+						<div class="form-item-grid-2 clearfix">
+							<div class="form-item-grid-2-inner clearfix">
+								<div class="group">
+									
+								</div>
+							</div>
+						</div>
+						<div class="form-item-grid-2 clearfix">
+							<div class="form-item-grid-2-inner clearfix">
+								<div class="group">
+									<select class="form-input select" ng-model="expirationYear" name="expirationYear" required>
+										<option value="2017">2017</option>
+										<option value="2018">2018</option>
+										<option value="2019">2019</option>
+										<option value="2020">2020</option>
+										<option value="2021">2021</option>
+										<option value="2022">2022</option>
+										<option value="2023">2023</option>
+										<option value="2024">2024</option>
+										<option value="2025">2025</option>
+										<option value="2026">2026</option>
+										<option value="2027">2027</option>
+										<option value="2028">2028</option>
+										<option value="2029">2029</option>
+										<option value="2030">2030</option>
+										<option value="2031">2031</option>
+										<option value="2032">2032</option>
+									</select>
+								</div>
+								
+							</div>
+						</div>
+					</div>-->
+
+				</div>
+				<h4>Billing Address</h4>
+				<div class="form-item-grid-6 l clearfix">
+					<div class="form-item-grid-3-inner clearfix">
+						<div class="group">
+							<input ng-class="{ 'danger': orderForm.address1.$invalid && orderForm.address1.$touched}" ng-model="order.BillingAddress.StreetAddress1"
+							 name="address1" class="form-input" type="text" ng-required="true">
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>Address 1</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-item-grid-6 l clearfix">
+					<div class="form-item-grid-3-inner clearfix">
+						<div class="group">
+							<input ng-class="{ 'danger': orderForm.City.$invalid && orderForm.City.$touched}" ng-model="order.BillingAddress.City" name="City"
+							 class="form-input" type="text" ng-required="true">
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>City</label>
+						</div>
+					</div>
+				</div>
+			
+					<div class="form-item-grid-2-con clearfix">
+						<div class="form-item-grid-2 clearfix">
+							<div class="form-item-grid-2-inner clearfix">
+								<div class="group">
+									<select class="form-input select" ng-model="order.BillingAddress.Country" name="Country" ng-change="changeCountry()">
+										<option value="USA">USA</option>
+										<option value="Canada">Canada</option>	
+									</select>
+									<span class="highlight"></span>
+									<span class="bar"></span>
+									<label>Country</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-item-grid-2 clearfix">
+							<div class="form-item-grid-2-inner clearfix">
+								<div class="group">
+									<select class="form-input select" ng-model="order.BillingAddress.StateCode" name="state" ng-if="order.BillingAddress.Country=='Canada'">
+										<option value="AB">AB</option>
+										<option value="BC">BC</option>
+										<option value="MB">MB</option>
+										<option value="NB">NB</option>
+										<option value="NL">NL</option>
+										<option value="NT">NT</option>
+										<option value="NS">NS</option>
+										<option value="NU">NU</option>
+										<option value="ON">ON</option>
+										<option value="PE">PE</option>
+										<option value="QC">QC</option>
+										<option value="SK">SK</option>
+										<option value="YT">YT</option>
+									</select>
+									<select class="form-input select" ng-model="order.BillingAddress.StateCode" name="state" ng-if="order.BillingAddress.Country=='USA'">
+										<option value="AK">AK</option>
+										<option value="AL">AL</option>
+										<option value="AR">AR</option>
+										<option value="AZ">AZ</option>
+										<option value="CA">CA</option>
+										<option value="CO">CO</option>
+										<option value="CT">CT</option>
+										<option value="DC">DC</option>
+										<option value="DE">DE</option>
+										<option value="FL">FL</option>
+										<option value="GA">GA</option>
+										<option value="HI">HI</option>
+										<option value="IA">IA</option>
+										<option value="ID">ID</option>
+										<option value="IL">IL</option>
+										<option value="IN">IN</option>
+										<option value="KS">KS</option>
+										<option value="KY">KY</option>
+										<option value="LA">LA</option>
+										<option value="MA">MA</option>
+										<option value="MD">MD</option>
+										<option value="ME">ME</option>
+										<option value="MI">MI</option>
+										<option value="MN">MN</option>
+										<option value="MO">MO</option>
+										<option value="MS">MS</option>
+										<option value="MT">MT</option>
+										<option value="NC">NC</option>
+										<option value="ND">ND</option>
+										<option value="NE">NE</option>
+										<option value="NH">NH</option>
+										<option value="NJ">NJ</option>
+										<option value="NM">NM</option>
+										<option value="NV">NV</option>
+										<option value="NY">NY</option>
+										<option value="OH">OH</option>
+										<option value="OK">OK</option>
+										<option value="OR">OR</option>
+										<option value="PA">PA</option>
+										<option value="RI">RI</option>
+										<option value="SC">SC</option>
+										<option value="SD">SD</option>
+										<option value="TN">TN</option>
+										<option value="TX">TX</option>
+										<option value="UT">UT</option>
+										<option value="VA">VA</option>
+										<option value="VT">VT</option>
+										<option value="WA">WA</option>
+										<option value="WI">WI</option>
+										<option value="WV">WV</option>
+										<option value="WY">WY</option>
+										<option value="PR">PR</option>
+										<option value="MP">MP</option>
+										<option value="GU">GU</option>
+										<option value="VI">VI</option>
+										<option value="MH">MH</option>
+										<option value="AS">AS</option>
+										<option value="AE">AE</option>
+										<option value="PW">PW</option>
+										<option value="AP">AP</option>
+										<option value="FM">FM</option>
+										<option value="AA">AA</option>
+									</select>
+									<span class="highlight"></span>
+									<span class="bar"></span>
+									<label>State</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+				<div class="form-item-grid-6 l clearfix">
+					<div class="form-item-grid-3-inner clearfix">
+						<div class="group">
+							<input ng-class="{ 'danger': orderForm.zip.$invalid && orderForm.zip.$touched}" ng-model="order.BillingAddress.ZipCode"
+							 name="zip" class="form-input" type="text" ng-required="true">
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>ZIP/Postal Code</label>
+						</div>
+					</div>
+				</div>
+				<div class="">
+					<span class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="submit()">PAY</span>
+				</div>
+				<div class="text-danger" ng-if="failMes">{{failMessage}}</div>
+				<span class="text-success" ng-if="succseMes">Success payment</span>
+				<ul ng-if="false">
+					<li ng-repeat="(key, value) in succsesMessage">{{key}}: {{value}}</li>
+				</ul>
+			</form>
+			<input type="button" name="previous" class="previous action-button" value="Previous" />
+			<p style="font-style: italic; font-size: 10px; font-color:">Smithsonian Student Adventures is operated by Walking Tree Travel under license from the Smithsonian Institution. The
+				name of the Smithsonian and the sunburst logo are registered trademarks of the Smithsonian Institution and Walking Tree
+				Travel is an authorized user. Walking Tree Travel and Smithsonian Student Adventures will be referred to collectively
+				as WTT throughout this enrollment form.</p>
 		</div>
-		<input type="button" name="previous" class="previous action-button" value="Previous" />
-		<input type="button" name="next" class="next action-button" ng-click="createTraveler()" data-toggle="modal" data-target="#travelerAccountModal" value="Login"/>
-		<p style="font-style: italic; font-size: 10px; font-color:">Smithsonian Student Adventures is operated by Walking Tree Travel under license from the Smithsonian Institution. The name of the Smithsonian and the sunburst logo are registered trademarks of the Smithsonian Institution and Walking Tree Travel is an authorized user. Walking Tree Travel and Smithsonian Student Adventures will be referred to collectively as WTT throughout this enrollment form.</p>
+		
 	</fieldset>		 
 </form>
 </div>

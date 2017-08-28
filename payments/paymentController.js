@@ -16,7 +16,14 @@ paymentRouter.post("/process-transaction", processTransaction);
 let createCustomer = promisify(paysimple.customers.create.bind(paysimple));
 let createPayment = promisify(paysimple.payments.create.bind(paysimple));
 let addCreditCard = promisify(paysimple.paymentAccounts.addCreditCard.bind(paysimple));
-
+let  cardValidator = require('creditcards/card');
+function getIssuer(number) {
+    var type = cardValidator.type(number);
+    if (type === "Visa") return 12;
+    if (type === "MasterCard") return 13;
+    if (type === "American Express") return 14;
+    if (type === "Diners Club") return 15;
+}
 function processTransaction(req, res, next){
     return co(function*(){
         let customer = {
@@ -35,11 +42,10 @@ function processTransaction(req, res, next){
             e.info = r1;
             throw e;
         }
-
         let creditCard = {
             CreditCardNumber: req.body.CreditCardNumber,
             ExpirationDate: req.body.ExpirationDate,
-            Issuer: req.body.Issuer,
+            Issuer: getIssuer(req.body.CreditCardNumber),
             IsDefault: false,
             CustomerId: CustomerId
         };
@@ -53,14 +59,16 @@ function processTransaction(req, res, next){
             e.info = r2;
             throw e;
         }
-
+        console.log('req.body.amountDue')
+        console.log(req.body.amountDue);
         let payment = {
             AccountId: creditCardId,
-            Amount: req.user.amountDue,
+            Amount: req.body.amountDue,
             CVV: req.body.CVV,
-            Description: req.user.program,
+            Description: req.body.program,
             SendToCustomer: true
         };
+        console.log(payment);
 
         try {
             var paymentResponse = (yield createPayment(payment)).Response;
@@ -73,11 +81,11 @@ function processTransaction(req, res, next){
             throw e;
         }
 
-        req.user.amountDue = 0;
-        req.user.paysimpleInfo = {
-            CustomerId: CustomerId
-        };
-        yield userController.updateUser(req.user);
+        // req.user.amountDue = 0;
+        // req.user.paysimpleInfo = {
+        //     CustomerId: CustomerId
+        // };
+        // yield userController.updateUser(req.user);
 
         console.log("Finished transaction mailing is disabled.");
         //yield mailHelper.sendFinishedTransactionMail(req.user.email, paymentResponse);

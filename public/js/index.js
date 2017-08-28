@@ -3,6 +3,22 @@ angular.module('wtt-paysimple', ['ngRoute']);
 angular.module('wtt-paysimple');
 angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http','$sce','$window', function($scope, $http,$sce, $window) {
     //console.log("hello from index.js");
+	$scope.order = {
+		FirstName: "",
+		LastName: "",
+		amountDue: "",
+		Issuer: "",
+		ExpirationDate: "",
+		CreditCardNumber: "",
+		CVV: "",
+		BillingAddress: {
+			StreetAddress1: "",
+			City: "",
+			StateCode: "AK",
+			ZipCode: "",
+			Country: "USA",
+		},
+	}
     	$scope.traveler = {};
     	$scope.user = {};
 		$scope.programs = {};
@@ -305,6 +321,8 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 					};
 				};
 				$scope.user.cost = getTheCost();
+				$scope.program = $scope.programs.selected;
+				$scope.order.amountDue = $scope.user.cost;
 			}
 		})
 		$scope.isSelected = function() {
@@ -327,9 +345,49 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 
 			})
 		}
+		$scope.order.expirationMonth = "1";
+		$scope.succsesMessage = false;
+		$scope.order.expirationYear = "2017"
+		$scope.testMonth = function(){
+		}
+		$scope.submit = function () {
+			$scope.order.ExpirationDate = $scope.order.expirationMonth + '/' + $scope.order.expirationYear;
+			
+			$scope.createTraveler();
+			$http.post('/api/payment/process-transaction', $scope.order)
+				.then(function (res) {
+					$scope.succseMes = true;
+					$scope.failMes = false;
+					$scope.succsesMessage = {
+						id: res.data.Id,
+						Description: res.data.Description,
+						accountId: res.data.AccountId,
+						CustomerFirstName: res.data.CustomerFirstName,
+						CustomerLastName: res.data.CustomerLastName,
+						CustomerId: res.data.CustomerId,
+						PaymentDate: res.data.PaymentDate,
+						Status: res.data.Status,
+						TraceNumber: res.data.TraceNumber,
+					};
+				}).catch(function (e) {
+					$scope.failMes = true;
+					$scope.succseMes = false;
+					$scope.failMessage = e.data;
+				})
+		};
+		$scope.changeCountry = function () {
+			if ($scope.order.BillingAddress.Country === "Canada") $scope.order.BillingAddress.StateCode = "AB";
+			if ($scope.order.BillingAddress.Country === "USA") $scope.order.BillingAddress.StateCode = "AK";
+		}
+
+		
   	}]);
+
 angular.module('wtt-paysimple') 
 	.controller('formController', [ '$scope', '$http', function($scope, $http) {
+		
+
+
 		$(document).ready(function() {
 		var $backToTop = $(".back-to-top");
 		$backToTop.on("click", function(e) {
@@ -399,11 +457,11 @@ angular.module('wtt-paysimple')
 		        },
 		        easing: "easeInOutBack"
 		      }
-		    );
-		  }); 
-		  $(".submit").click(function() {
-		    return false;
+			);
 		  });
+		  $(".submit").click(function() {
+			  return false;
+		  }); 
 		}())	
 	}]);
 angular.module('wtt-paysimple')

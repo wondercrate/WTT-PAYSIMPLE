@@ -83,7 +83,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
     $http.get('/api/me').then(function(res){
       $scope.order.FirstName = res.data.firstName;
       $scope.order.LastName = res.data.lastName;
-       $scope.order.amountDue = res.data.amountDue;
+      $scope.order.amountDue = res.data.amountDue;
     });
 
     function getIssuer(){
