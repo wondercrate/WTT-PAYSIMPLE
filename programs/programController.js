@@ -8,7 +8,8 @@ module.exports = {
 			country: req.body.country,
 			name: req.body.name,
 			duration: req.body.duration,
-			price: req.body.price
+			price: req.body.price,
+			type: req.body.type
 		});
 		program.save(function(err, newProgram) {
 			if(err) {
@@ -47,12 +48,14 @@ module.exports = {
 		var country = req.body.country;
 		var duration = req.body.duration;
 		var price = req.body.price;
+		var type = req.body.type;
 		Program.findById(programId, function(err, programData) {
 			var program = programData;
 			program.name = name;
 			program.country = country;
 			program.duration = duration;
 			program.price = price;
+			program.type = type;
 			program.save(function(err) {
 				if(err) {
 					console.log("fail");

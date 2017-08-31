@@ -28,8 +28,9 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
           name: $scope.program.name,
           country: $scope.program.country,
           duration: $scope.program.duration,
-          price: $scope.program.price
-        }
+          price: $scope.program.price,
+          type: $scope.program.type
+        };
         $http.post('/api/programs/addProgram', data).then(function(response){
           $scope.program = response.data;
           $scope.programsArray.push($scope.program);
@@ -54,7 +55,8 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
           name: $scope.program.name,
           country: $scope.program.country,
           duration: $scope.program.duration,
-          price: $scope.program.price
+          price: $scope.program.price,
+          type: $scope.program.type
         };
         $http.post('/api/programs/updateProgram', data).then(function(){
           getPrograms();

@@ -1384,28 +1384,52 @@
 		</div>
 		<div class="centered-form-item clearfix" ng-show="destinationSelected()">
 			<div class="group">
-				<select class="form-input select" ng-model="programs.selected" name="travelerProgramSelection" required>
+				<select ng-if="traveler.travelerProgramType == 'Custom Enrollment'" class="form-input select" ng-model="programs.selected" name="travelerProgramSelection" required>
 			  		<option value="" selected data-default id="select-default"></option>
-			  		<option ng-repeat="program in belizePrograms" ng-if="belize()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in canadaPrograms" ng-if="canada()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in chinaPrograms" ng-if="china()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in costaRicaPrograms" ng-if="costaRica()" ng-selected="getCost()" value="{{program.name}}">{{program.name}}</option>
-						<option ng-repeat="program in francePrograms" ng-if="france()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in guatemalaPrograms" ng-if="guatemala()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in peruPrograms" ng-if="peru()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in senegalPrograms" ng-if="senegal()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in spainPrograms" ng-if="spain()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in spainToMoroccoPrograms" ng-if="spainToMorocco()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in thailandPrograms" ng-if="thailand()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in italyPrograms" ng-if="italy()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in ecuadorPrograms" ng-if="ecuador()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in panamaPrograms" ng-if="panama()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in southAfricaPrograms" ng-if="southAfrica()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in cubaPrograms" ng-if="cuba()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in usaPrograms" ng-if="usa()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in bhutanPrograms" ng-if="bhutan()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in australiaPrograms" ng-if="australia()" ng-selected="getCost()">{{program.name}}</option>
-						<option ng-repeat="program in japanPrograms" ng-if="japan()" ng-selected="getCost()">{{program.name}}</option>
+			  		<option ng-repeat="program in belizePrograms | filter:{type: 'custom'}" ng-if="belize()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in canadaPrograms | filter:{type: 'custom'}" ng-if="canada()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in chinaPrograms | filter:{type: 'custom'}" ng-if="china()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in costaRicaPrograms | filter:{type: 'custom'}" ng-if="costaRica()" ng-selected="getCost()" value="{{program.name}}">{{program.name}}</option>
+						<option ng-repeat="program in francePrograms | filter:{type: 'custom'}" ng-if="france()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in guatemalaPrograms | filter:{type: 'custom'}" ng-if="guatemala()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in peruPrograms | filter:{type: 'custom'}" ng-if="peru()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in senegalPrograms | filter:{type: 'custom'}" ng-if="senegal()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in spainPrograms | filter:{type: 'custom'}" ng-if="spain()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in spainToMoroccoPrograms | filter:{type: 'custom'}" ng-if="spainToMorocco()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in thailandPrograms | filter:{type: 'custom'}" ng-if="thailand()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in italyPrograms | filter:{type: 'custom'}" ng-if="italy()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in ecuadorPrograms | filter:{type: 'custom'}" ng-if="ecuador()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in panamaPrograms | filter:{type: 'custom'}" ng-if="panama()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in southAfricaPrograms | filter:{type: 'custom'}"  ng-if="southAfrica()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in cubaPrograms | filter:{type: 'custom'}" ng-if="cuba()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in usaPrograms | filter:{type: 'custom'}" ng-if="usa()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in bhutanPrograms | filter:{type: 'custom'}" ng-if="bhutan()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in australiaPrograms | filter:{type: 'custom'}" ng-if="australia()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in japanPrograms | filter:{type: 'custom'}" ng-if="japan()" ng-selected="getCost()">{{program.name}}</option>
+		  		</select>
+				<select ng-if="traveler.travelerProgramType == 'Open Enrollment'" class="form-input select" ng-model="programs.selected"
+				 name="travelerProgramSelection" required>
+			  		<option value="" selected data-default id="select-default"></option>
+			  		<option ng-repeat="program in belizePrograms | filter:{type: 'open'}" ng-if="belize()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in canadaPrograms | filter:{type: 'open'}" ng-if="canada()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in chinaPrograms | filter:{type: 'open'}" ng-if="china()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in costaRicaPrograms | filter:{type: 'open'}" ng-if="costaRica()" ng-selected="getCost()" value="{{program.name}}">{{program.name}}</option>
+						<option ng-repeat="program in francePrograms | filter:{type: 'open'}" ng-if="france()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in guatemalaPrograms | filter:{type: 'open'}" ng-if="guatemala()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in peruPrograms | filter:{type: 'open'}" ng-if="peru()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in senegalPrograms | filter:{type: 'open'}" ng-if="senegal()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in spainPrograms | filter:{type: 'open'}" ng-if="spain()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in spainToMoroccoPrograms | filter:{type: 'open'}" ng-if="spainToMorocco()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in thailandPrograms | filter:{type: 'open'}" ng-if="thailand()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in italyPrograms | filter:{type: 'open'}" ng-if="italy()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in ecuadorPrograms | filter:{type: 'open'}" ng-if="ecuador()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in panamaPrograms | filter:{type: 'open'}" ng-if="panama()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in southAfricaPrograms | filter:{type: 'open'}"  ng-if="southAfrica()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in cubaPrograms | filter:{type: 'open'}" ng-if="cuba()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in usaPrograms | filter:{type: 'open'}" ng-if="usa()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in bhutanPrograms | filter:{type: 'open'}" ng-if="bhutan()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in australiaPrograms | filter:{type: 'open'}" ng-if="australia()" ng-selected="getCost()">{{program.name}}</option>
+						<option ng-repeat="program in japanPrograms | filter:{type: 'open'}" ng-if="japan()" ng-selected="getCost()">{{program.name}}</option>
 		  		</select>
 	  			<span class="highlight"></span>
 				<span class="bar"></span>

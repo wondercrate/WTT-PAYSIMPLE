@@ -42,6 +42,11 @@
 					<input class="form-control" ng-model="program.country" type="text" placeholder="Program country.."/>
 					<input class="form-control" ng-model="program.duration" type="text" placeholder="Program duration.."/>
 					<input class="form-control" ng-model="program.price" type="text" placeholder="Program cost.."/>
+					<select class="form-control" ng-model="program.type" type="text" >
+						<option value="" selected disabled hidden>Choose one</option>
+						<option value="custom" selected>Custom Enrollment</option>
+						<option value="open">Open Enrollment</option>
+					</select>
 					<button class="btn btn-success submit-btn" ng-click="addProgram(program)" type="submit">Submit</button>
 				</form>
 				<div class="programs-con clearfix">
@@ -59,6 +64,9 @@
 								<div class="programs-grid-inner">
 									<h4>$Cost</h4>
 								</div>
+								<div class="programs-grid-inner">
+									<h4>Type</h4>
+								</div>
 							</div>
 							<div class="divider clearfix"></div>
 							<div class="programs-grid-info clearfix">
@@ -70,6 +78,9 @@
 								</div>
 								<div class="programs-grid-inner">
 									<h5>{{program.price}}</h5>
+								</div>
+								<div class="programs-grid-inner">
+									<h5>{{program.type}}</h5>
 								</div>
 							</div>
 							<!-- Modal -->
@@ -89,6 +100,11 @@
 							        <input class="form-control" ng-model="program.duration" placeholder="{{program.duration}}">
 							        <h5>$Cost</h5>
 							        <input class="form-control" ng-model="program.price" placeholder="{{program.price}}">
+									<h5>Type</h5>
+									<select class="form-control" ng-model="program.type" type="text">
+										<option value="custom" selected>Custom Enrollment</option>
+										<option value="open">Open Enrollment</option>
+									</select>
 							      </div>
 							      <div class="modal-footer">
 							        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateProgram()">Save changes</button>

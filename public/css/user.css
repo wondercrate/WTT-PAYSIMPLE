@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5 {
 }
 .programs-grid-inner {
 	display: inline-block;
-	width: 33.33%;
+	width: 24%;
 	float: left;
 	text-align: center;
 	padding: 10px;
