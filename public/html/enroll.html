@@ -1384,7 +1384,7 @@
 		</div>
 		<div class="centered-form-item clearfix" ng-show="destinationSelected()">
 			<div class="group">
-				<select ng-if="traveler.travelerProgramType == 'Custom Enrollment'" class="form-input select" ng-model="programs.selected" name="travelerProgramSelection" required>
+				<select ng-if="traveler.travelerProgramType == 'Custom Enrollment'" class="form-input select" ng-model="programs.selected" name="First_Program_Choice" required>
 			  		<option value="" selected data-default id="select-default"></option>
 			  		<option ng-repeat="program in belizePrograms | filter:{type: 'custom'}" ng-if="belize()" ng-selected="getCost()">{{program.name}}</option>
 						<option ng-repeat="program in canadaPrograms | filter:{type: 'custom'}" ng-if="canada()" ng-selected="getCost()">{{program.name}}</option>
@@ -1408,7 +1408,7 @@
 						<option ng-repeat="program in japanPrograms | filter:{type: 'custom'}" ng-if="japan()" ng-selected="getCost()">{{program.name}}</option>
 		  		</select>
 				<select ng-if="traveler.travelerProgramType == 'Open Enrollment'" class="form-input select" ng-model="programs.selected"
-				 name="travelerProgramSelection" required>
+				 name="First_Program_Choice" required>
 			  		<option value="" selected data-default id="select-default"></option>
 			  		<option ng-repeat="program in belizePrograms | filter:{type: 'open'}" ng-if="belize()" ng-selected="getCost()">{{program.name}}</option>
 						<option ng-repeat="program in canadaPrograms | filter:{type: 'open'}" ng-if="canada()" ng-selected="getCost()">{{program.name}}</option>
