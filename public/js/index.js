@@ -384,9 +384,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
   	}]);
 
 angular.module('wtt-paysimple') 
-	.controller('formController', [ '$scope', '$http', function($scope, $http) {
-		
-
+	.controller('formController', ['$scope', '$http', function ($scope, $http) {
 
 		$(document).ready(function() {
 		var $backToTop = $(".back-to-top");
@@ -476,6 +474,14 @@ angular.module('wtt-paysimple')
 		.when('/enroll', {
 			templateUrl: '/html/enroll.html',
 			controller: 'formController'
+		}).when('/form/enroll', {
+			templateUrl:'/html/enroll-form.html',
+			controller: 'formController',
+			resolve : {
+				header: function(){
+					$("header").hide();				
+					return true;				
+			}}
 		})
 		$locationProvider
 		.html5Mode(false)
