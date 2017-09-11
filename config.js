@@ -19,7 +19,7 @@ module.exports = {
             domain: 'domain'
         }
     },
-    ZOHO : {
+    ZOHO: {
         appName: 'leadsapp',
         ownername: 'zoho_lacey21',
         authtoken: 'e541da3a8a45335525231b4804918776'
