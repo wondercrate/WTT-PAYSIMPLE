@@ -10,6 +10,7 @@ var config = require("./config");
 var paymentController = require("./payments/paymentController");
 var userController = require("./auth/resetUserController");
 var programController = require('./programs/programController');
+var ZCapp = require('zcapp');
 /*******************************
 EXPRESS 
 *******************************/
@@ -46,6 +47,18 @@ app.use(session({
 	resave: true,
 	saveUninitialized: false
 }));
+
+app.post('/api/zoho/', (req, res) => {
+	var app = new ZCapp({
+		appName: config.ZOHO.appName,
+		ownername: config.ZOHO.ownername,
+		authtoken: config.ZOHO.authtoken
+	})
+	app.form('LeadsForm').add(req.body)
+		.then((response) => {
+			res.send(response);
+		})
+});
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));

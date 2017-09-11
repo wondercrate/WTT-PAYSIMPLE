@@ -5,7 +5,7 @@
 <div class="wtt-enroll-form-con clearfix">
 <form name= "msForm" id="msform" class="clearfix" novalidate method="POST" action="https://creator.zoho.com/api/zoho_lacey21/json/leadsapp/form/LeadsForm/record/add">
 <input type="hidden" name ="authtoken" value="e541da3a8a45335525231b4804918776">
-	<input type="hidden" name ="scope" id="scope" value="creatorapi">
+<input type="hidden" name ="scope" id="scope" value="creatorapi">
 	<div class="prog-wrap">
 		<ul id="progressbar" class="prog-desk">
 			<li class="active">Traveler Info</li>
@@ -32,7 +32,7 @@
 		</div>
 		<div class="centered-form-item clearfix">
 			<div class="group">      
-				<input type="text" class="form-input" name="Company_Name" ng-model="traveler.travelerFullName" required>
+				<input type="text" class="form-input" name="Company_Name" ng-model="traveler.Company_Name" required>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>Full Legal Name</label>
@@ -42,7 +42,7 @@
 			<div class="form-item-grid-3 clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="First_Name" ng-model="traveler.travelerFirstName" required>
+						<input type="text" class="form-input" name="First_Name" ng-model="traveler.First_Name" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>First Name</label>
@@ -52,7 +52,7 @@
 			<div class="form-item-grid-3 clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Middle_Name" ng-model="traveler.travelerMiddleName" required>
+						<input type="text" class="form-input" name="Middle_Name" ng-model="traveler.Middle_Name" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Middle Name</label>
@@ -62,7 +62,7 @@
 			<div class="form-item-grid-3 l clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Last_Name" ng-model="traveler.travelerLastName" required>
+						<input type="text" class="form-input" name="Last_Name" ng-model="traveler.Last_Name" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Last Name</label>
@@ -72,7 +72,7 @@
 		</div>
 		<div class="centered-form-item clearfix">
 			<div class="group">      
-				<input type="text" class="form-input" name="Preferred_Name" ng-model="traveler.travelerNickName" required>
+				<input type="text" class="form-input" name="Preferred_Name" ng-model="traveler.Preferred_Name" required>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>Preferred Name <span>(nickname)</span></label>
@@ -82,7 +82,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Mobile" ng-model="traveler.travelerMobilePhone" required>
+						<input type="text" class="form-input" name="Mobile" ng-model="traveler.Mobile" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Mobile Phone</label>
@@ -92,7 +92,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Phone" ng-model="traveler.travelerHomePhone" required>
+						<input type="text" class="form-input" name="Phone" ng-model="traveler.Phone" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Home Phone</label>
@@ -104,7 +104,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Email" ng-model="traveler.travelerPrimaryEmail" required>
+						<input type="text" class="form-input" name="Email" ng-model="traveler.Email" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Primary Email</label>
@@ -114,7 +114,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Secondary_Email" ng-model="traveler.travelerSecondaryEmail" required>
+						<input type="text" class="form-input" name="Secondary_Email" ng-model="traveler.Secondary_Email" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Secondary Email <span>(optional)</span></label>
@@ -126,7 +126,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">
-						<select class="form-input select" name="Sex" ng-model="traveler.travelerGender" required>
+						<select class="form-input select" name="Sex" ng-model="traveler.Sex" required>
 			  				<option value="" selected data-default id="select-default"></option>
 			  				<option>Male</option>
 			  				<option>Female</option>
@@ -141,7 +141,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Date_of_Birth" ng-model="traveler.travelerBirthdate" required>
+						<input type="text" class="form-input" name="Date_of_Birth" ng-model="traveler.Date_of_Birth" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Birthdate <span>(MM/DD/YYYY)</span></label>
@@ -153,7 +153,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Street" ng-model="traveler.travelerMailingAddress" required>
+						<input type="text" class="form-input" name="Street" ng-model="traveler.Street" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Mailing Address</label>
@@ -163,7 +163,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="City" ng-model="traveler.travelerCity" required>
+						<input type="text" class="form-input" name="City" ng-model="traveler.City" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>City</label>
@@ -175,7 +175,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">
-						<select class="form-input select" name="State_Territory" ng-model="traveler.travelerState" required>
+						<select class="form-input select" name="State_Territory" ng-model="traveler.State_Territory" required>
 			  				<option value="" selected data-default id="select-default"></option>
 					  		<option>Alabama</option>
 							<option>Alaska</option>
@@ -238,7 +238,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Zip_Code" ng-model="traveler.travelerZipCode" required>
+						<input type="text" class="form-input" name="Zip_Code" ng-model="traveler.Zip_Code" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Postal Zip Code</label>
@@ -248,7 +248,7 @@
 		</div>
 		<div class="centered-form-item clearfix">
 			<div class="group">
-				<select class="form-input select" ng-model="traveler.travelerCountry" name="Home_Country" required>
+				<select class="form-input select" ng-model="traveler.Home_Country" name="Home_Country" required>
 			  		<option value="" selected data-default id="select-default"></option>
 			  		<option>United States</option>
 					<option>Afghanistan</option>
@@ -507,7 +507,7 @@
 		</div>
 		<div class="centered-form-item clearfix" ng-show="isUSA()">
 			<div class="group">      
-				<input type="text" class="form-input" name="Other_State_Non_U_S" ng-model="traveler.travelerNonUsState" required>
+				<input type="text" class="form-input" name="Other_State_Non_U_S" ng-model="traveler.Other_State_Non_U_S" required>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>Non-US STATE</label>
@@ -519,7 +519,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="School_Organization_Referencing" ng-model="traveler.travelerSchoolOrganization" required>
+						<input type="text" class="form-input" name="School_Organization_Referencing" ng-model="traveler.School_Organization_Referencing" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>School/Organization</label>
@@ -529,7 +529,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">
-						<select class="form-input select" name="Tshirt_Size" ng-model="traveler.travelerTshirtSize" required>
+						<select class="form-input select" name="Tshirt_Size" ng-model="traveler.Tshirt_Size" required>
 			  				<option value="" selected data-default id="select-default"></option>
 			  				<option>XS</option>
 			  				<option>S</option>
@@ -548,7 +548,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">
-						<select class="form-input select" name="What_are_your_swimming_abilities" ng-model="traveler.travelerCanSwim" required>
+						<select class="form-input select" name="What_are_your_swimming_abilities" ng-model="traveler.What_are_your_swimming_abilities" required>
 					  		<option value="" selected data-default id="select-default"></option>
 					  		<option>I don’t know how to swim</option>
 		  					<option>I’m a decent swimmer</option>
@@ -563,7 +563,7 @@
 			<div class="form-item-grid-2 clearfix">
 				<div class="form-item-grid-2-inner clearfix">
 					<div class="group">
-						<select class="form-input select" name="Can_you_ride_a_bike" ng-model="traveler.travelerCanBike" required>
+						<select class="form-input select" name="Can_you_ride_a_bike" ng-model="traveler.Can_you_ride_a_bike" required>
 					  		<option value="" selected data-default id="select-default"></option>
 					  		<option>Yes</option>
 		  					<option>No</option>
@@ -577,7 +577,7 @@
 		</div>
 		<div class="centered-form-item clearfix">
 			<div class="group">      
-				<textarea type="text" class="form-input text-area" name="Hobbies_and_Interests" ng-model="traveler.travelerInterests" required></textarea>
+				<textarea type="text" class="form-input text-area" name="Hobbies_and_Interests" ng-model="traveler.Hobbies_and_Interests" required></textarea>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>What are your hobbies or interests?</label>
@@ -593,7 +593,7 @@
 			<div class="form-item-grid-3 clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Guardian_One_Name" ng-model="traveler.guardian1FullName" required>
+						<input type="text" class="form-input" name="Guardian_One_Name" ng-model="traveler.Guardian_One_Name" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Guardian 1 full name</label>
@@ -603,7 +603,7 @@
 			<div class="form-item-grid-3 clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Guardian_One_Phone" ng-model="traveler.guardian1PrimaryPhone" required>
+						<input type="text" class="form-input" name="Guardian_One_Phone" ng-model="traveler.Guardian_One_Phone" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Guardian 1 Phone</label>
@@ -613,7 +613,7 @@
 			<div class="form-item-grid-3 l clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Guardian_One_Email" ng-model="traveler.guardian1PrimaryEmail" required>
+						<input type="text" class="form-input" name="Guardian_One_Email" ng-model="traveler.Guardian_One_Email" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Guardian 1 Email</label>
@@ -625,7 +625,7 @@
 			<div class="form-item-grid-3 clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Guardian_Two_Name" ng-model="traveler.guardian2FullName" required>
+						<input type="text" class="form-input" name="Guardian_Two_Name" ng-model="traveler.Guardian_Two_Name" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Guardian 2 full name</label>
@@ -635,7 +635,7 @@
 			<div class="form-item-grid-3 clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Guardian_Two_Phone" ng-model="traveler.guardian2PrimaryPhone" required>
+						<input type="text" class="form-input" name="Guardian_Two_Phone" ng-model="traveler.Guardian_Two_Phone" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Guardian 2 Phone</label>
@@ -645,7 +645,7 @@
 			<div class="form-item-grid-3 l clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Guardian_Two_Email" ng-model="traveler.guardian2PrimaryEmail" required>
+						<input type="text" class="form-input" name="Guardian_Two_Email" ng-model="traveler.Guardian_Two_Email" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Guardian 2 Email</label>
@@ -655,7 +655,7 @@
 		</div>
 		<div class="centered-form-item clearfix">
 			<div class="group">
-				<select class="form-input select" name="Who_Does_Participant_Live_With" ng-model="traveler.travelerLivingSituation" required>
+				<select class="form-input select" name="Who_Does_Participant_Live_With" ng-model="traveler.Who_Does_Participant_Live_With" required>
 			  		<option value="" selected data-default id="select-default"></option>
   					<option>Guardian 1</option>
   					<option>Guardian 2</option>
@@ -674,7 +674,7 @@
 			<div class="form-item-grid-3 clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Emergency_Contact_Name" ng-model="traveler.emergencyContactFullName" required>
+						<input type="text" class="form-input" name="Emergency_Contact_Name" ng-model="traveler.Emergency_Contact_Name" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Full name</label>
@@ -684,7 +684,7 @@
 			<div class="form-item-grid-3 clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Emergency_Contact_Phone" ng-model="traveler.emergencyContactPrimaryPhone" required>
+						<input type="text" class="form-input" name="Emergency_Contact_Phone" ng-model="traveler.Emergency_Contact_Phone" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Primary Phone</label>
@@ -694,7 +694,7 @@
 			<div class="form-item-grid-3 l clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Emergency_Contact_Email" ng-model="traveler.emergencyContactPrimaryEmail" required>
+						<input type="text" class="form-input" name="Emergency_Contact_Email" ng-model="traveler.Emergency_Contact_Email" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Primary Email</label>
@@ -704,7 +704,7 @@
 		</div>
 		<div class="centered-form-item clearfix">
 			<div class="group">      
-				<input type="text" class="form-input" name="Emergency_Contact_Relationship_to_Participant" ng-model="traveler.emergencyContactRelationship" required>
+				<input type="text" class="form-input" name="Emergency_Contact_Relationship_to_Participant" ng-model="traveler.Emergency_Contact_Relationship_to_Participant" required>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>Relationship to participant</label>
@@ -721,7 +721,7 @@
 		</div>
 		<div class="centered-form-item f clearfix">
 			<div class="group">      
-				<textarea type="text" class="form-input text-area l" name="Dietary_Information" ng-model="traveler.travelerMedicalIssues" required></textarea>
+				<textarea type="text" class="form-input text-area l" name="Dietary_Information" ng-model="traveler.Dietary_Information" required></textarea>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>Dietary Requirements</label>
@@ -729,7 +729,7 @@
 		</div>
 		<div class="centered-form-item f clearfix">
 			<div class="group">      
-				<textarea type="text" class="form-input text-area l" name="Medical_Information" ng-model="traveler.travelerDietaryRequirements" required></textarea>
+				<textarea type="text" class="form-input text-area l" name="Medical_Information" ng-model="traveler.Medical_Information" required></textarea>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>Medical Disclosure</label>
@@ -741,7 +741,7 @@
 		</div>
 		<div class="centered-form-item clearfix">
 			<div class="group">      
-				<input type="text" class="form-input" name="Full_Name_on_Passport" ng-model="traveler.travelerPassportFullName" required>
+				<input type="text" class="form-input" name="Full_Name_on_Passport" ng-model="traveler.Full_Name_on_Passport" required>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>Full Name <span>(as it appears on passport)</span></label>
@@ -751,7 +751,7 @@
 			<div class="form-item-grid-3 clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Passport_Number" ng-model="traveler.travelerPassportNumber" required>
+						<input type="text" class="form-input" name="Passport_Number" ng-model="traveler.Passport_Number" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Passport Number</label>
@@ -761,7 +761,7 @@
 			<div class="form-item-grid-3 clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Passport_Expires_On" ng-model="traveler.travelerPassportExirationDate" required>
+						<input type="text" class="form-input" name="Passport_Expires_On" ng-model="traveler.Passport_Expires_On" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Passport Expiration Date</label>
@@ -771,7 +771,7 @@
 			<div class="form-item-grid-3 l clearfix">
 				<div class="form-item-grid-3-inner clearfix">
 					<div class="group">      
-						<input type="text" class="form-input" name="Issue_Date" ng-model="traveler.travelerPassportDateOfIssue" required>
+						<input type="text" class="form-input" name="Issue_Date" ng-model="traveler.Issue_Date" required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label>Date of Issue</label>
@@ -781,7 +781,7 @@
 		</div>
 		<div class="centered-form-item clearfix">
 			<div class="group">
-				<select class="form-input select" name="Nationality_on_Passport" ng-model="traveler.travelerPassportCountryOfIssue" required>
+				<select class="form-input select" name="Nationality_on_Passport" ng-model="traveler.Nationality_on_Passport" required>
 			  		<option value="" selected data-default id="select-default"></option>
 			  		<option>United States</option>
 					<option>Afghanistan</option>
@@ -1327,7 +1327,7 @@
 		<h4>Are you traveling with a teacher (Custom Group Travel), or traveling individually (Open Enrollment High School Program)? Please choose one below.</h4>
 		<div class="centered-form-item clearfix">
 			<div class="group">
-				<select class="form-input select" name="Program_Type" ng-model="traveler.travelerProgramType" required>
+				<select class="form-input select" name="Program_Type" ng-model="traveler.Program_Type" required>
 			  		<option value="" selected data-default id="select-default">Choose one</option>
 			  		<option>Custom Enrollment</option>
   					<option>Open Enrollment</option>
@@ -1338,7 +1338,7 @@
 		</div>
 		<div class="centered-form-item f clearfix" ng-show="!isCustom()">
 			<div class="group">      
-				<textarea type="text" class="form-input text-area" name="Personal_Statement" required></textarea>
+				<textarea type="text" class="form-input text-area" name="Personal_Statement" ng-model="traveler.Personal_Statement" required></textarea>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>Tell us a bit why you chose to travel with WTT</label>
@@ -1346,7 +1346,7 @@
 		</div>
 		<div class="centered-form-item clearfix" ng-show="isCustom()">
 			<div class="group">      
-				<input type="text" class="form-input" name="Teacher_Organizer_Email" required>
+				<input type="text" class="form-input" name="Teacher_Organizer_Email" ng-model="traveler.Teacher_Organizer_Email" required>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>Teacher Email</label>
@@ -1384,7 +1384,7 @@
 		</div>
 		<div class="centered-form-item clearfix" ng-show="destinationSelected()">
 			<div class="group">
-				<select ng-if="traveler.travelerProgramType == 'Custom Enrollment'" class="form-input select" ng-model="programs.selected" name="First_Program_Choice" required>
+				<select ng-if="traveler.Program_Type == 'Custom Enrollment'" class="form-input select" ng-model="programs.selected" name="First_Program_Choice" required>
 			  		<option value="" selected data-default id="select-default"></option>
 			  		<option ng-repeat="program in belizePrograms | filter:{type: 'custom'}" ng-if="belize()" ng-selected="getCost()">{{program.name}}</option>
 						<option ng-repeat="program in canadaPrograms | filter:{type: 'custom'}" ng-if="canada()" ng-selected="getCost()">{{program.name}}</option>
@@ -1407,7 +1407,7 @@
 						<option ng-repeat="program in australiaPrograms | filter:{type: 'custom'}" ng-if="australia()" ng-selected="getCost()">{{program.name}}</option>
 						<option ng-repeat="program in japanPrograms | filter:{type: 'custom'}" ng-if="japan()" ng-selected="getCost()">{{program.name}}</option>
 		  		</select>
-				<select ng-if="traveler.travelerProgramType == 'Open Enrollment'" class="form-input select" ng-model="programs.selected"
+				<select ng-if="traveler.Program_Type == 'Open Enrollment'" class="form-input select" ng-model="programs.selected"
 				 name="First_Program_Choice" required>
 			  		<option value="" selected data-default id="select-default"></option>
 			  		<option ng-repeat="program in belizePrograms | filter:{type: 'open'}" ng-if="belize()" ng-selected="getCost()">{{program.name}}</option>
@@ -1445,7 +1445,7 @@
 		</div>
 		<div class="centered-form-item clearfix">
 			<div class="group">
-				<select class="form-input select" ng-model="traveler.travelerDiscovery" name="How_did_you_hear_of_WTT_SA" required>
+				<select class="form-input select" ng-model="traveler.How_did_you_hear_of_WTT_SA" name="How_did_you_hear_of_WTT_SA" required>
 			  		<option value="" selected data-default id="select-default"></option>
 			  		<option>School Sponsored Program</option>
   					<option>Online Search</option>
@@ -1489,7 +1489,7 @@
 		<div class="centered-form-item clearfix">
 			<h4 style="padding-bottom: 15px;">If you have been given a code to use for any special promotion, please enter it here</h4>
 			<div class="group">      
-				<input type="text" class="form-input" name="Promo_Code" ng-model="traveler.travelerPromoCode" required>
+				<input type="text" class="form-input" name="Promo_Code" ng-model="traveler.Promo_Code" required>
 				<span class="highlight"></span>
 				<span class="bar"></span>
 				<label>Promo Code</label>
@@ -1498,11 +1498,11 @@
 		<div class="important l clearfix" ng-show="isCustoml()">
 			<h4 style="color: black;">Please check the box if you are applying for financial aid.</h4>
 			<div class="centered-form-item checkbox clearfix">
-				<input type="checkbox" class="aid" name="Applying_for_Financial_Aid" value="Yes"/>
+				<input type="checkbox" class="aid" name="Applying_for_Financial_Aid" ng-model="traveler.Applying_for_Financial_Aid" value="Yes"/>
 			</div>
 		</div>
 		<input type="button" name="previous" class="previous action-button" value="Previous" />
-		<input type="submit" name="next" class="next action-button" value="next"/>
+		<input type="button" ng-click="sendToZoho()" name="next" class="next action-button" value="next"/>
 		<p style="font-style: italic; font-size: 10px; font-color:">Smithsonian Student Adventures is operated by Walking Tree Travel under license from the Smithsonian Institution. The name of the Smithsonian and the sunburst logo are registered trademarks of the Smithsonian Institution and Walking Tree Travel is an authorized user. Walking Tree Travel and Smithsonian Student Adventures will be referred to collectively as WTT throughout this enrollment form.</p>
 	</fieldset>
 	<fieldset>

@@ -25,22 +25,22 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		$scope.destination = {};
 		//$scope.paymentForUrl =  $sce.trustAsResourceUrl("https://sandbox-payments.paysimple.com/buyer/checkoutformpay/7NNi8W85qISUCY-RGVPUjNRTr-g-");
 		$scope.isUSA = function() {
-			return $scope.traveler.travelerCountry !== "United States" && $scope.traveler.travelerCountry !== undefined;
+			return $scope.traveler.Home_Country !== "United States" && $scope.traveler.Home_Country !== undefined;
 		}
 		$scope.isReferral = function() {
-			return $scope.traveler.travelerDiscovery == "Referral" && $scope.traveler.travelerDiscovery !== undefined;
+			return $scope.traveler.How_did_you_hear_of_WTT_SA == "Referral" && $scope.traveler.How_did_you_hear_of_WTT_SA !== undefined;
 		}
 		$scope.programTypeSelected = function() {
-			return $scope.traveler.travelerProgramType !== undefined;
+			return $scope.traveler.Program_Type !== undefined;
 		}
 		$scope.destinationSelected = function() {
 			return $scope.destination.selected !== undefined;
 		}
 		$scope.isCustom = function() {
-			return $scope.traveler.travelerProgramType == "Custom Enrollment";
+			return $scope.traveler.Program_Type == "Custom Enrollment";
 		}
 		$scope.isCustoml = function() {
-			return $scope.traveler.travelerProgramType !== "Custom Enrollment" && $scope.traveler.travelerProgramType !== undefined;
+			return $scope.traveler.Program_Type !== "Custom Enrollment" && $scope.traveler.Program_Type !== undefined;
 		} 
 		$scope.belize = function() {
 			return $scope.destination.selected !== "Canada" && $scope.destination.selected !== "China" && $scope.destination.selected !== "Costa Rica" && $scope.destination.selected !== "France" && $scope.destination.selected !== "Guatemala" && $scope.destination.selected !== "Peru" && $scope.destination.selected !== "Senegal" && $scope.destination.selected !== "Spain" && $scope.destination.selected !== "Spain to Morocco" && $scope.destination.selected !== "Thailand" && $scope.destination.selected !== "Italy" && $scope.destination.selected !== "Ecuador" && $scope.destination.selected !== "Panama" && $scope.destination.selected !== "South Africa" && $scope.destination.selected !== "Cuba" && $scope.destination.selected !== "USA" && $scope.destination.selected !== "Bhutan" && $scope.destination.selected !== "Australia" && $scope.destination.selected !== "Japan" ;
@@ -330,6 +330,16 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 		}
 		$scope.resetPassword =function (){
 			console.log()
+		}
+		$scope.sendToZoho = function(){
+			$scope.traveler.First_Program_Choice = $scope.programs.selected;
+			console.log($scope.traveler.Applying_for_Financial_Aid);
+			if($scope.traveler.Applying_for_Financial_Aid){
+				$scope.traveler.Applying_for_Financial_Aid = "Yes";
+			} else {
+				$scope.traveler.Applying_for_Financial_Aid = undefined;
+			}
+			$http.post('/api/zoho', $scope.traveler);
 		}
 		$scope.createTraveler = function() {
 			var data = {
