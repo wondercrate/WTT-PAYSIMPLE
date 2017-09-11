@@ -7,12 +7,12 @@ let promisify = require("es6-promisify");
 let userController = require("../auth/resetUserController");
 let mailHelper = require("../lib/mail-helper");
 let paysimple = new (require('paysimple'))(config.PAYSIMPLE_PARAMS);
-
+var ZCapp = require('zcapp');
 process.env.ENVIRONMENT !== "prod" && paysimple.setDevmode();
 
 let paymentRouter = express.Router();
 paymentRouter.post("/process-transaction", processTransaction);
-
+paymentRouter.post("/zoho-transaction", zohoTransaction);
 let createCustomer = promisify(paysimple.customers.create.bind(paysimple));
 let createPayment = promisify(paysimple.payments.create.bind(paysimple));
 let addCreditCard = promisify(paysimple.paymentAccounts.addCreditCard.bind(paysimple));
@@ -92,6 +92,18 @@ function processTransaction(req, res, next){
 
         res.send(paymentResponse);
     }).catch(next);
+}
+function zohoTransaction(req, res, next) {
+    var app = new ZCapp({
+        appName: config.ZOHO.appName,
+        ownername: config.ZOHO.ownername,
+        authtoken: config.ZOHO.authtoken
+    });
+    app.form('LeadsForm').add(req.body)
+        .then((response) => {
+            console.log(response);
+            res.send(response);
+        })
 }
 
 module.exports = {

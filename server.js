@@ -10,7 +10,7 @@ var config = require("./config");
 var paymentController = require("./payments/paymentController");
 var userController = require("./auth/resetUserController");
 var programController = require('./programs/programController');
-var ZCapp = require('zcapp');
+
 /*******************************
 EXPRESS 
 *******************************/
@@ -72,18 +72,6 @@ app.post('/wtt/signup', authController.processSignup);
 
 app.post("/api/user/reset-password-request", userController.resetPasswordRequest);
 app.post("/api/user/reset-password", userController.resetPassword);
-app.post('/api/zoho', function(req, res){
-	var app = new ZCapp({
-		appName: config.ZOHO.appName,
-		ownername: config.ZOHO.ownername,
-		authtoken: config.ZOHO.authtoken
-	});
-	app.form('LeadsForm').add(req.body)
-		.then((response) => {
-			console.log(response);
-			res.send(response);
-		})
-});
 /*******************************
 GET USER ROUTE
 *******************************/

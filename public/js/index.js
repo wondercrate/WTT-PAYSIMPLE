@@ -339,7 +339,7 @@ angular.module('wtt-paysimple').controller('mainController', ['$scope', '$http',
 			} else {
 				$scope.traveler.Applying_for_Financial_Aid = undefined;
 			}
-			$http.post('/api/zoho', $scope.traveler).then(function(res){
+			$http.post('/api/payment/zoho-transaction', $scope.traveler).then(function(res){
 				console.log(res);
 			});
 		}
